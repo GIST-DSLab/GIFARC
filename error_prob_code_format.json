@@ -1,0 +1,16 @@
+{ 
+    "non_deterministic": 0, 
+    "non_color_invariant": 
+        {
+            "transformation_fail": 0, 
+            "non_well_formed": 0, 
+            "non_color_invariant": 0
+        }, 
+    "identity": 0, 
+    "non_well_formed_output": 0, 
+    "black_output": 0, 
+    "timeout": 0, 
+    "non_well_formed_input": 0, 
+    "duplicate_input": 0, 
+    "total": 0 
+}
