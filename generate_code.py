@@ -152,7 +152,7 @@ def ensure_colors_exist(code):
 
     return code
 
-from hyeonseok_utils.arg_parser import parse_cli_args_step_3
+from GIFARC_utils.arg_parser import parse_cli_args_step_3
 
 def main():
     arguments = parse_cli_args_step_3()
@@ -386,9 +386,9 @@ def main():
         file_name_json = os.path.join(arguments.outdir, os.path.basename(description_file_base))
     
     print(f"Writing to jsonl {file_name_json}")
-    from hyeonseok_utils.result_recoder import parse_step_code_result
-    from hyeonseok_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
-    from hyeonseok_utils.csv_key_unique_check import find_value_in_column
+    from GIFARC_utils.result_recoder import parse_step_code_result
+    from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
+    from GIFARC_utils.csv_key_unique_check import find_value_in_column
 
     import uuid
     from datetime import datetime, timezone

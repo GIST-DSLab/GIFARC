@@ -1,5 +1,5 @@
-from hyeonseok_utils.gif_list_load import gif_list_load
-from hyeonseok_utils.check_data_already_exists_recursive import check_data_path_already_exists_recursive
+from GIFARC_utils.gif_list_load import gif_list_load
+from GIFARC_utils.check_data_already_exists_recursive import check_data_path_already_exists_recursive
 import os
 from pathlib import Path
 

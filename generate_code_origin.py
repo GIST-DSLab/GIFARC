@@ -152,7 +152,7 @@ def ensure_colors_exist(code):
 
     return code
 
-from hyeonseok_utils.arg_parser import parse_cli_args_step_3
+from GIFARC_utils.arg_parser import parse_cli_args_step_3
 
 def main():
     arguments = parse_cli_args_step_3()
