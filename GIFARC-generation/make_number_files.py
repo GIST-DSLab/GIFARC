@@ -26,3 +26,5 @@ if __name__ == "__main__":
     write_number_files(start=1, end=400, chunk=100, stem="test_relational-pattern")
     write_number_files(start=1, end=400, chunk=100, stem="test_sequence")
 
+# these text files are used in generate_descriptions.py, tester.ipynb
+

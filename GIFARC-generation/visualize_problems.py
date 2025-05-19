@@ -171,7 +171,7 @@ if __name__ == "__main__":
     all_uids = []
     for idx, problem in enumerate(data):
         code = problem["source"]
-        seeds = problem["]
+        seeds = problem["seeds"]
         
         code = remove_trailing_code(code)
         
