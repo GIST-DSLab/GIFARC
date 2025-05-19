@@ -1,0 +1,6 @@
+time,error_type,server_response,status_code,gif_name,model,temperature,max_tokens
+2025-05-04T23:00:17,BadRequestError,"{""error"":{""code"":""BadRequest"",""message"":""The image is too large. The maximum limit is 20MB."",""param"":null,""type"":null}}",400,63.gif,o1,0.7,40000
+2025-05-04T23:13:57,BadRequestError,"{""error"":{""code"":""BadRequest"",""message"":""The image is too large. The maximum limit is 20MB."",""param"":null,""type"":null}}",400,70.gif,o1,0.7,40000
+2025-05-05T00:33:54,BadRequestError,"{""error"":{""code"":""BadRequest"",""message"":""The image is too large. The maximum limit is 20MB."",""param"":null,""type"":null}}",400,110.gif,o1,0.7,40000
+2025-05-05T07:03:34,BadRequestError,"{""error"":{""code"":""BadRequest"",""message"":""Invalid image data."",""param"":null,""type"":null}}",400,296.gif,o1,0.7,40000
+2025-05-05T09:32:26,BadRequestError,"{""error"":{""code"":""BadRequest"",""message"":""The image is too large. The maximum limit is 20MB."",""param"":null,""type"":null}}",400,375.gif,o1,0.7,40000
