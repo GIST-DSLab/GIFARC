@@ -74,7 +74,7 @@ def make_self_instruct_prompt(seeds_contents, rng_seed, num_descriptions=None, u
         examples = "\n\n".join([f"Example puzzle description:\n```python\n# description:\n# {description}\n```" for concept_list, description in concepts_and_descriptions_in_seeds])
 
     # read the prompt template from prompts/description_prompt.md
-    with open("prompts/description_prompt.md") as f:
+    with open("../prompts/description_prompt.md") as f:
         prompt_template = f.read()
     
     prompt = prompt_template.format(examples=examples, num_generations=num_generations)
@@ -122,11 +122,11 @@ def make_self_instruct_prompt_with_gif(seeds_contents, rng_seed, num_description
         examples = "\n\n".join([f"Example puzzle description:\n```python\n# description:\n# {description}\n```" for concept_list, description in concepts_and_descriptions_in_seeds])
 
     if intergrated:
-        with open("prompts/description_prompt_with_gif_intergrated.md") as f:
+        with open("../prompts/description_prompt_with_gif_intergrated.md") as f:
             prompt_template = f.read()
 
     else:
-        with open("prompts/description_prompt_with_gif.md") as f:
+        with open("../prompts/description_prompt_with_gif.md") as f:
             prompt_template = f.read()
 
     if intergrated:
@@ -220,14 +220,14 @@ def main():
     # get all files in seeds directory
     # get current directory path
     current_file_dir = os.path.dirname(os.path.realpath(__file__))
-    seeds = os.listdir(os.path.join(current_file_dir, "seeds"))
+    seeds = os.listdir(os.path.join(current_file_dir, "./seeds"))
     # filter files with .py extension and 8 hex value characters in the file name
     pattern = r"[0-9a-f]{8}(_[a-zA-Z]+)?\.py"
     # get all files and its content
     seeds = [seed for seed in seeds if re.match(pattern, seed)]
     seeds_contents = []
     for seed in seeds:
-        with open(os.path.join(current_file_dir, "seeds", seed)) as f:
+        with open(os.path.join(current_file_dir, "./seeds", seed)) as f:
             seeds_contents.append((seed, f.read()))
 
     # print all files
@@ -377,14 +377,14 @@ def main2():
     # get all files in seeds directory
     # get current directory path
     current_file_dir = os.path.dirname(os.path.realpath(__file__))
-    seeds = os.listdir(os.path.join(current_file_dir, "seeds"))
+    seeds = os.listdir(os.path.join(current_file_dir, "./seeds"))
     # filter files with .py extension and 8 hex value characters in the file name
     pattern = r"[0-9a-f]{8}(_[a-zA-Z]+)?\.py"
     # get all files and its content
     seeds = [seed for seed in seeds if re.match(pattern, seed)]
     seeds_contents = []
     for seed in seeds:
-        with open(os.path.join(current_file_dir, "seeds", seed)) as f:
+        with open(os.path.join(current_file_dir, "./seeds", seed)) as f:
             seeds_contents.append((seed, f.read()))
 
     # print all files
@@ -409,14 +409,14 @@ def main2():
         base64_encoded = direct_encode_gif_to_base64(check_path)
 
         if arguments.intergrated:
-            with open("prompts/gif_intergrated.md", encoding="utf-8") as f:
+            with open("../prompts/gif_intergrated.md", encoding="utf-8") as f:
                 gif_prompt = f.read()
-            with open("prompts/system_prompt_gif_intergrated.md", encoding="utf-8") as f: 
+            with open("../prompts/system_prompt_gif_intergrated.md", encoding="utf-8") as f: 
                 gif_system_prompt = f.read()
         else:
-            with open("prompts/gif.md", encoding="utf-8") as f:
+            with open("../prompts/gif.md", encoding="utf-8") as f:
                 gif_prompt = f.read()
-            with open("prompts/system_prompt_gif.md", encoding="utf-8") as f:
+            with open("../prompts/system_prompt_gif.md", encoding="utf-8") as f:
                 gif_system_prompt = f.read()
 
         image_block = {"type": "image_url", "image_url": {"url": f"data:image/gif;base64,{base64_encoded}"}}

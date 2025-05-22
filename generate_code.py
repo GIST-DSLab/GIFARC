@@ -57,23 +57,23 @@ def make_self_instruct_prompt(seed_embeddings, seed_contents, function_names, fu
     # read the prompt template
     if not suggest_function:
         if test == None or test == 'None':
-            prompt_template_file = "prompts/problem_from_description.md"
+            prompt_template_file = "../prompts/problem_from_description.md"
         elif test == 'float':
-            prompt_template_file = "prompts/[float]problem_from_description.md"
+            prompt_template_file = "../prompts/[float]problem_from_description.md"
         elif test == 'variable':
-            prompt_template_file = "prompts/[variable]problem_from_description.md"
+            prompt_template_file = "../prompts/[variable]problem_from_description.md"
         elif test == 'line':
-            prompt_template_file = "prompts/[line]problem_from_description.md"
+            prompt_template_file = "../prompts/[line]problem_from_description.md"
         elif 'float' in test and 'variable' in test and 'line' not in test:
-            prompt_template_file = "prompts/[float-variable]problem_from_description.md"
+            prompt_template_file = "../prompts/[float-variable]problem_from_description.md"
         elif 'float' in test and 'variable' not in test and 'line' in test:
-            prompt_template_file = "prompts/[float-line]problem_from_description.md"
+            prompt_template_file = "../prompts/[float-line]problem_from_description.md"
         elif 'float' not in test and 'variable' in test and 'line' in test:
-            prompt_template_file = "prompts/[variable-line]problem_from_description.md"
+            prompt_template_file = "../prompts/[variable-line]problem_from_description.md"
         elif 'float' in test and 'variable' in test and 'line' in test:
-            prompt_template_file = "prompts/[float-variable-line]problem_from_description.md"
+            prompt_template_file = "../prompts/[float-variable-line]problem_from_description.md"
         elif 'size' in test:
-                prompt_template_file = "prompts/[size]problem_from_description.md"
+                prompt_template_file = "../prompts/[size]problem_from_description.md"
             
         with open(prompt_template_file) as f:
             prompt_template = f.read()
@@ -81,7 +81,7 @@ def make_self_instruct_prompt(seed_embeddings, seed_contents, function_names, fu
         prompt = prompt_template.format(description=description, common_lib=common_lib, examples=examples)
         seeds = [seed for seed, _ in best_seeds_contents] + [description]
     else:
-        prompt_template_file = "prompts/problem_from_description_suggesting_function.md"
+        prompt_template_file = "../prompts/problem_from_description_suggesting_function.md"
         with open(prompt_template_file) as f:
             prompt_template = f.read()
 
@@ -152,7 +152,7 @@ def ensure_colors_exist(code):
 
     return code
 
-from hyeonseok_utils.arg_parser import parse_cli_args_step_3
+from GIFARC_utils.arg_parser import parse_cli_args_step_3
 
 def main():
     arguments = parse_cli_args_step_3()
@@ -219,14 +219,14 @@ def main():
     print(" [+] finished calculating embeddings")
     
     # get all files in seeds directory
-    seeds = os.listdir(os.path.join(current_file_dir, "seeds"))
+    seeds = os.listdir(os.path.join(current_file_dir, "./seeds"))
     # filter files with .py extension and 8 hex value characters in the file name
     pattern = r"[0-9a-f]{8}(_[a-zA-Z]+)?\.py"
     # get all files and its content
     seeds = [seed for seed in seeds if re.match(pattern, seed)]
     seeds_contents = []
     for seed in seeds:
-        with open(os.path.join(current_file_dir, "seeds", seed)) as f:
+        with open(os.path.join(current_file_dir, "./seeds", seed)) as f:
             seeds_contents.append((seed, f.read()))
 
     seed_contents = []
@@ -295,23 +295,23 @@ def main():
     client.show_global_token_usage()
 
     if arguments.test == None or arguments.test == 'None':
-        system_prompt_file = "prompts/system_prompt_code.md"
+        system_prompt_file = "../prompts/system_prompt_code.md"
     elif arguments.test == 'float':
-        system_prompt_file = "prompts/[float]system_prompt_code.md"
+        system_prompt_file = "../prompts/[float]system_prompt_code.md"
     elif arguments.test == 'variable':
-        system_prompt_file = "prompts/[variable]system_prompt_code.md"
+        system_prompt_file = "../prompts/[variable]system_prompt_code.md"
     elif arguments.test == 'line':
-        system_prompt_file = "prompts/[line]system_prompt_code.md"
+        system_prompt_file = "../prompts/[line]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' in arguments.test and 'line' not in arguments.test:
-        system_prompt_file = "prompts/[float-variable]system_prompt_code.md"
+        system_prompt_file = "../prompts/[float-variable]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' not in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "prompts/[float-line]system_prompt_code.md"
+        system_prompt_file = "../prompts/[float-line]system_prompt_code.md"
     elif 'float' not in arguments.test and 'variable' in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "prompts/[variable-line]system_prompt_code.md"
+        system_prompt_file = "../prompts/[variable-line]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "prompts/[float-variable-line]system_prompt_code.md"
+        system_prompt_file = "../prompts/[float-variable-line]system_prompt_code.md"
     elif 'size' in arguments.test:
-        system_prompt_file = "prompts/[size]system_prompt_code.md"
+        system_prompt_file = "../prompts/[size]system_prompt_code.md"
 
     with open(system_prompt_file) as f:
         system_prompt = f.read()
@@ -386,9 +386,9 @@ def main():
         file_name_json = os.path.join(arguments.outdir, os.path.basename(description_file_base))
     
     print(f"Writing to jsonl {file_name_json}")
-    from hyeonseok_utils.result_recoder import parse_step_code_result
-    from hyeonseok_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
-    from hyeonseok_utils.csv_key_unique_check import find_value_in_column
+    from GIFARC_utils.result_recoder import parse_step_code_result
+    from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
+    from GIFARC_utils.csv_key_unique_check import find_value_in_column
 
     import uuid
     from datetime import datetime, timezone

@@ -24,10 +24,12 @@ from seeds.common import *  # noqa
 
 PROJECT_DIR = Path(__file__).resolve().parent
 CACHE_DIR = PROJECT_DIR / "cache"
-SEED_DIR = PROJECT_DIR / "seeds"
-PROMPT_DIR = PROJECT_DIR / "prompts"
+SEED_DIR = PROJECT_DIR / "./seeds"
+PROMPT_DIR = PROJECT_DIR / "../prompts"
 RESULT_DIR = PROJECT_DIR / "results"
 LOG_DIR = PROJECT_DIR / "error_logging"
+CACHE_DIR.mkdir(exist_ok=True)
+RESULT_DIR.mkdir(exist_ok=True)
 LOG_DIR.mkdir(exist_ok=True)
 
 CSV_HEADER = [

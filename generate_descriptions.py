@@ -99,12 +99,12 @@ def parse_step_1_result(
 
 
 import json
-from hyeonseok_utils.arg_parser import parse_cli_args
-from hyeonseok_utils.gif_list_load import gif_list_load
-from hyeonseok_utils.data_collector import process_data_list_loader, data_name_list_parser_from_file
-from hyeonseok_utils.check_data_already_exists_recursive import check_data_path_already_exists_recursive
-from hyeonseok_utils.simple_rag import get_seeds_idx_ordered_content_from_files, get_rng_offeset
-from hyeonseok_utils.prompt_template import prompt_template_for_step_1_desc
+from GIFARC_utils.arg_parser import parse_cli_args
+from GIFARC_utils.gif_list_load import gif_list_load
+from GIFARC_utils.data_collector import process_data_list_loader, data_name_list_parser_from_file
+from GIFARC_utils.check_data_already_exists_recursive import check_data_path_already_exists_recursive
+from GIFARC_utils.simple_rag import get_seeds_idx_ordered_content_from_files, get_rng_offeset
+from GIFARC_utils.prompt_template import prompt_template_for_step_1_desc
 
 from itertools import islice
 from typing import Iterable, List, Dict, Any
@@ -123,7 +123,7 @@ def main2():
     AVAILABLE_DATA_FORMATS = [".gif", ".webm"]
     MAX_SAMPLES =  -1 #  arguments.samples
     METADATA_CSV_PATH = f'./results/metadata/step_descriptions_metadata.csv'
-    SELECTOR_FILE = f"./hyeonseok_data_batch/uuid_batchs/batch_{TARGET}.txt"
+    SELECTOR_FILE = f"./GIFARC_data_batch/uuid_batchs/batch_{TARGET}.txt"
     print(SELECTOR_FILE," will load as batch")
     LOG_NAME = 'error_log_{arguments.model}_{TARGET}.csv'
     LOG_FILE = LOG_DIR / LOG_NAME
@@ -152,7 +152,7 @@ def main2():
 
     # 실제 수행부
     # prompt 선제작
-    from hyeonseok_utils.PromptHistory import HistoryManager
+    from GIFARC_utils.PromptHistory import HistoryManager
     prompt_manager = HistoryManager()
     system_prompt_manager = HistoryManager()
     
@@ -248,7 +248,7 @@ def main2():
         
     concepts_descriptions = []
     
-    from hyeonseok_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
+    from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
     from datetime import datetime, timezone
     # 데이터 기록 로직에서 성공 원본 데이터, 성공 메타 데이터, 실패 원본 데이터, 실패 원본 데이터를 전부 기록해야하는가? oo ? 당연한듯 
     # print(final_results)

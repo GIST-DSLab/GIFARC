@@ -279,7 +279,7 @@ def main():
     if args.problem_source_uid:
         problem_source_uids = [args.problem_source_uid]
     elif args.run_all_seed:
-        seeds = os.listdir("seeds")
+        seeds = os.listdir("./seeds")
         # filter files with .py extension and 8 hex value characters in the file name
         pattern = r"([0-9a-f]{8})\.py"
         problem_source_uids = [re.match(pattern, filename).group(1) for filename in seeds if re.match(pattern, filename)]
@@ -312,7 +312,7 @@ def main():
 
     if problem_source_uids:
         for problem_source_uid in problem_source_uids:
-            with open(f"seeds/{problem_source_uid}.py") as f:
+            with open(f"./seeds/{problem_source_uid}.py") as f:
                 source = f.read()
             problems_source.append(source)
 
@@ -392,21 +392,21 @@ def main():
     print(f'Generated {len(problems)} problems')
     print(f"Overall stats: {overall_stats}")
     
-    from hyeonseok_utils.result_recoder import parse_step_code_result
-    from hyeonseok_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
-    from hyeonseok_utils.csv_key_unique_check import find_value_in_column
+    from GIFARC_utils.result_recoder import parse_step_code_result
+    from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
+    from GIFARC_utils.csv_key_unique_check import find_value_in_column
 
     import uuid
     from datetime import datetime, timezone
-    METADATA_CSV_PATH='/home/hyunseok/BARC/results/metadata/step_problem_metadata.csv'
-    METADATA_PREV_CSV_PATH='/home/hyunseok/BARC/results/metadata/step_code_metadata.csv'
+    METADATA_CSV_PATH='./BARC/results/metadata/step_problem_metadata.csv'
+    METADATA_PREV_CSV_PATH='./BARC/results/metadata/step_code_metadata.csv'
     col = "id"
     prev_step_id = os.path.splitext(os.path.basename(args.jsonl))[0]
     result = find_value_in_column(csv_path=METADATA_PREV_CSV_PATH, value=prev_step_id, column=col)
     gif_id = result['records'][0]['gif-id']
 
 
-    from hyeonseok_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
+    from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_descriptions
     if args.jsonl:
         with open(result_saving_file, "w") as f:
             for problem in problems:
