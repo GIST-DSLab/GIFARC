@@ -14,9 +14,6 @@ The data demonstration is also visualized in a [webpage](https://gifarc-visualiz
 # Citation
 The paper describing this project is currently submitted to [NeurIPS 2025 Datasets & Benchmarks Track](https://neurips.cc/Conferences/2025/CallForDatasetsBenchmarks), and under review. Proper citation will be prepared when accepted.
 
-```BibTex
-@Article{woo25gifarc, author = "Woochang Sim and Hyunseok Ryu and Kyungmin Choi and Sungwon Han and Sundong Kim", title = "GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning", journal = "NeurIPS Track on Datasets and Benchmarks", year = "2025" }
-```
 
 # Acknowledgement
 All GIFs used in the pipeline is powered by [Giphy](https://giphy.com/). 
@@ -29,4 +26,3 @@ Generation codes are in most part forked from [BARC](https://github.com/xu3kev/B
 * [GENERATION.md](./docs/GENERATION.md) : GIFARC task generation pipeline instructions.
 * [EXPERIMENTS.md](./docs/EXPERIMENTS.md) : Experiments conducted in paper. 
 
-###### *This work was done @ GIST Data Science Lab*
