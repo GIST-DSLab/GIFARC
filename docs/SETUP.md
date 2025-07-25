@@ -32,43 +32,18 @@ BARC/
 The folder setup is done. Directory structure should look like following. Full project directory tree is written in [project_directory_tree.txt](./project_directory_tree.txt). 
 
 ```
-│  .gitignore
-│  all_gifs_metadata.csv
-│  data_generation_script.sh
-│  data_generation_script_o4-mini.sh
-│  description_executor.ipynb
-│  error_prob_code_format.json
-│  execution.ipynb
-│  execution.py
-│  experiments.py
-│  generate_code.py
-│  generate_code_origin.py
-│  generate_descriptions.py
-│  generate_descriptions_serial.py
-│  generate_problems.py
-│  llm.py
-│  parse_batch_description_samples.py
-│  pip.txt
-│  prompt.py
-│  prompt_utils.py
-│  README.md
-│  requirements-dev.txt
-│  requirements.txt
-│  tester.ipynb
-│  tree.txt
-│  unified_gif_seed_pipeline.py
-│  utils.py
-│  utils_gif.py
-│  visualize_problems.py
-│  
-├─GIFARC_data_batch/
-│  ├─data_batchs/ 
-│  └─uuid_batchs/
-|
-├─GIFARC_utils/
-├─prompts/
-├─scripts/
-└─seeds/
-    ├─ConceptARC/
-    └─input_sandbox/
+├─docs
+└─src
+    ├─GIFARC_data_batch
+    │  ├─data_batchs
+    │  └─uuid_batchs
+    ├─GIFARC_utils
+    ├─misc
+    │  ├─test_scripts
+    │  └─visualization
+    ├─prompts
+    ├─seeds
+    │  ├─ConceptARC
+    │  └─input_sandbox
+    └─utility
 ```

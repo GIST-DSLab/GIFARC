@@ -20,6 +20,10 @@ All GIFs used in the pipeline is powered by [Giphy](https://giphy.com/).
 
 Generation codes are in most part forked from [BARC](https://github.com/xu3kev/BARC) project.
 
+# Folders and Files
+
+- [TBW]
+
 
 # Documentations
 * [SETUP.md](./docs/SETUP.md) : instructions for project folder setup.
