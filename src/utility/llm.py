@@ -30,6 +30,8 @@ class OpenAIModels(Enum):
     O3_MINI_2 = "o3-mini-2"
     O1 = "o1"
     O4_MINI = "o4-mini"
+    # O4_MINI_HIGH = "o4-mini-high"
+
     
 class GroqModels(Enum):
     LLAMA3_70B_8192 = 'llama3-70b-8192'
@@ -94,8 +96,7 @@ class LLMClient:
         elif self.provider == Provider.OPENROUTER:
             return os.getenv("OPENROUTER_API_KEY")
 
-        # return os.getenv("OPENAI_API_KEY")
-        return "<YOUR_OPENAI_API_KEY>"
+        return os.getenv("OPENAI_API_KEY")
 
     def _initialize_client(self):
         if self.provider == Provider.GROQ:
@@ -106,7 +107,9 @@ class LLMClient:
             return OpenAI(api_key="EMPTY", base_url="http://localhost:8100/v1")
         elif self.provider == Provider.OPENROUTER:
             return OpenAI(api_key=self.api_key, base_url="https://openrouter.ai/api/v1")
-        return AzureOpenAI(api_key=self.api_key, azure_endpoint="<YOUR_ENDPOINT_BASE_URL>", api_version = "2024-12-01-preview")
+        elif self.provider == Provider.OPENAI:
+             return OpenAI(api_key=self.api_key)
+        return AzureOpenAI(api_key=self.api_key, azure_endpoint="https://gitarc2.openai.azure.com/", api_version = "2024-12-01-preview")
 
     def _hash_prompt(self, prompt, model, temperature, max_tokens, top_p):
         # Create a unique hash for the given parameters

@@ -57,23 +57,23 @@ def make_self_instruct_prompt(seed_embeddings, seed_contents, function_names, fu
     # read the prompt template
     if not suggest_function:
         if test == None or test == 'None':
-            prompt_template_file = "../prompts/problem_from_description.md"
+            prompt_template_file = "./src/prompts/problem_from_description.md"
         elif test == 'float':
-            prompt_template_file = "../prompts/[float]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[float]problem_from_description.md"
         elif test == 'variable':
-            prompt_template_file = "../prompts/[variable]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[variable]problem_from_description.md"
         elif test == 'line':
-            prompt_template_file = "../prompts/[line]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[line]problem_from_description.md"
         elif 'float' in test and 'variable' in test and 'line' not in test:
-            prompt_template_file = "../prompts/[float-variable]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[float-variable]problem_from_description.md"
         elif 'float' in test and 'variable' not in test and 'line' in test:
-            prompt_template_file = "../prompts/[float-line]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[float-line]problem_from_description.md"
         elif 'float' not in test and 'variable' in test and 'line' in test:
-            prompt_template_file = "../prompts/[variable-line]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[variable-line]problem_from_description.md"
         elif 'float' in test and 'variable' in test and 'line' in test:
-            prompt_template_file = "../prompts/[float-variable-line]problem_from_description.md"
+            prompt_template_file = "./src/prompts/[float-variable-line]problem_from_description.md"
         elif 'size' in test:
-                prompt_template_file = "../prompts/[size]problem_from_description.md"
+                prompt_template_file = "./src/prompts/[size]problem_from_description.md"
             
         with open(prompt_template_file) as f:
             prompt_template = f.read()
@@ -81,7 +81,7 @@ def make_self_instruct_prompt(seed_embeddings, seed_contents, function_names, fu
         prompt = prompt_template.format(description=description, common_lib=common_lib, examples=examples)
         seeds = [seed for seed, _ in best_seeds_contents] + [description]
     else:
-        prompt_template_file = "../prompts/problem_from_description_suggesting_function.md"
+        prompt_template_file = "./src/prompts/problem_from_description_suggesting_function.md"
         with open(prompt_template_file) as f:
             prompt_template = f.read()
 
@@ -198,7 +198,7 @@ def main():
   
    
     try:
-        pick = 1
+        pick = 0
         problem_concepts = [tot_problem_concepts[pick]]
         problem_descriptions = [tot_problem_descriptions[pick]]
         print(problem_concepts, problem_descriptions)
@@ -295,23 +295,23 @@ def main():
     client.show_global_token_usage()
 
     if arguments.test == None or arguments.test == 'None':
-        system_prompt_file = "../prompts/system_prompt_code.md"
+        system_prompt_file = "./src/prompts/system_prompt_code.md"
     elif arguments.test == 'float':
-        system_prompt_file = "../prompts/[float]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[float]system_prompt_code.md"
     elif arguments.test == 'variable':
-        system_prompt_file = "../prompts/[variable]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[variable]system_prompt_code.md"
     elif arguments.test == 'line':
-        system_prompt_file = "../prompts/[line]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[line]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' in arguments.test and 'line' not in arguments.test:
-        system_prompt_file = "../prompts/[float-variable]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[float-variable]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' not in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "../prompts/[float-line]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[float-line]system_prompt_code.md"
     elif 'float' not in arguments.test and 'variable' in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "../prompts/[variable-line]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[variable-line]system_prompt_code.md"
     elif 'float' in arguments.test and 'variable' in arguments.test and 'line' in arguments.test:
-        system_prompt_file = "../prompts/[float-variable-line]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[float-variable-line]system_prompt_code.md"
     elif 'size' in arguments.test:
-        system_prompt_file = "../prompts/[size]system_prompt_code.md"
+        system_prompt_file = "./src/prompts/[size]system_prompt_code.md"
 
     with open(system_prompt_file) as f:
         system_prompt = f.read()
@@ -392,8 +392,8 @@ def main():
 
     import uuid
     from datetime import datetime, timezone
-    METADATA_CSV_PATH = f'./results/metadata/step_code_metadata.csv'
-    METADATA_PREV_CSV_PATH = f'./results/metadata/step_descriptions_metadata.csv'
+    METADATA_CSV_PATH = arguments.metadata_csv_path
+    METADATA_PREV_CSV_PATH = arguments.metadata_prev_csv_path
     col = "id"
     prev_step_id = os.path.splitext(os.path.basename(arguments.jsonl))[0]
     result = find_value_in_column(csv_path=METADATA_PREV_CSV_PATH, value=prev_step_id, column=col)

@@ -173,7 +173,7 @@ output_grid = {function_name}(input_grid)
 
     return output
 
-with open("seeds/common.py", "r") as f:
+with open("./src/seeds/common.py", "r") as f:
     COMMON_LIBRARY_CODE = f.read()
 
 def multi_execute_transformation(sources, input_grids, random_seeds, timeout=1, function_name="main", num_workers=8):

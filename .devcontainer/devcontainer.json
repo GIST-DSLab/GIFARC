@@ -1,0 +1,17 @@
+{
+  "name": "Python & Jupyter Dev",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "jupyter.jupyterServerType": "local"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ],
+  "forwardPorts": [8997],
+  "shutdownAction": "stopCompose"
+}
+

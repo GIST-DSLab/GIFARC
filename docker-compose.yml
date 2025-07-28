@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+    ports:
+      - 8997:8888
+    environment:
+      PYTHONUNBUFFERED: 1
+

@@ -117,11 +117,11 @@ def make_self_instruct_prompt_with_gif(seeds_contents, rng_seed, num_description
         examples = "\n\n".join([f"Example puzzle description:\n```python\n# description:\n# {description}\n```" for concept_list, description in concepts_and_descriptions_in_seeds])
 
     if intergrated:
-        with open("../prompts/description_prompt_with_gif_intergrated.md") as f:
+        with open("./src/prompts/description_prompt_with_gif_intergrated.md") as f:
             prompt_template = f.read()
 
     else:
-        with open("../prompts/description_prompt_with_gif.md") as f:
+        with open("./src/prompts/description_prompt_with_gif.md") as f:
             prompt_template = f.read()
 
     if intergrated:
