@@ -12,38 +12,27 @@ To install requirements, move to the cloned directory and run `pip install`:
 pip install -r requirements.txt
 ```
 
-Next, we need several files from [BARC](https://github.com/xu3kev/BARC) project. Check you are in the project root directory and clone BARC files with git.
+Next, install docker and docker compose
 
-```import
-cd <PROJECT_ROOT_DIRECTORY>
-git clone https://github.com/xu3kev/BARC.git
+```bash
+cd ./gifarc
+docker compose up -d
 ```
 
-From the cloned codes, move following listed directory and files to the project root directory.
+[note] it use port 8998 as jupyter note book, if you want to change you can chage
+Next turn on the vscode and install devcontainer extention.
 
-```
-BARC/
-  |  execution.py
-  |  parse_batch_description_samples.py
-  |  prompt.py
-  └─ seeds/
+
+Ctrl + p and find
+>Dev containers: Open Folder in Container
+Click it and open gifarc folder
+
+Open the container and type
+
+```bash
+export OPENAI_API_KEY="****"
 ```
 
-The folder setup is done. Directory structure should look like following. Full project directory tree is written in [project_directory_tree.txt](./project_directory_tree.txt). 
+after that put gif in to ./data/GIF
+Open, description_executor.ipynb and now run all the ipynb file, it will generate the gif arc under ./results/promblem~~
 
-```
-├─docs
-└─src
-    ├─GIFARC_data_batch
-    │  ├─data_batchs
-    │  └─uuid_batchs
-    ├─GIFARC_utils
-    ├─misc
-    │  ├─test_scripts
-    │  └─visualization
-    ├─prompts
-    ├─seeds
-    │  ├─ConceptARC
-    │  └─input_sandbox
-    └─utility
-```
