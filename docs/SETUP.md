@@ -3,7 +3,7 @@
 First, clone this git.
 
 ```clone
-git clone <GIT_URL>
+git clone <GIT_GIFARC_URL>
 ```
 
 To install requirements, move to the cloned directory and run `pip install`:
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 Next, install docker and docker compose
 
 ```bash
-cd ./gifarc
+cd ./GIFARC
 docker compose up -d
 ```
 
@@ -25,12 +25,14 @@ Next turn on the vscode and install devcontainer extention.
 
 Ctrl + p and find
 >Dev containers: Open Folder in Container
-Click it and open gifarc folder
+Click it and open GIFARC folder
 
 Open the container and type
 
 ```bash
-export OPENAI_API_KEY="****"
+touch .env # make .env file
+# and write below we make it to use wi open ai if you want to work with other api or some other provider or local you can fix under utilitys/llm.py
+OPENAI_API_KEY="****"
 ```
 
 after that put gif in to ./data/GIF

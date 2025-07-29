@@ -20,7 +20,7 @@ def parse_cli_args():
     parser.add_argument("-sam", "--samples", dest="samples", default=-1, type=int)
     parser.add_argument("-i", "--intergrated", action="store_true", help="use intergrated prompt", default=False)
     
-    parser.add_argument("--batch_list_path", "-blp", type=str, default="./data/batch_list/batch_3.txt", help="")
+    parser.add_argument("--batch_list_path", "-blp", type=str, default="./results/batch_list/batch_1.txt", help="")
     parser.add_argument("-pp", "--prompts_path", type=str, help="use prompts folder location", default="./src/prompts")
     parser.add_argument("-encd", "--encoding", type=str, help="", default="utf-8")
     parser.add_argument("--data_dir", "-data", type=str, default="./data/GIF", help="")

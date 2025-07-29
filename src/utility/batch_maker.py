@@ -2,60 +2,60 @@ import os
 
 def get_files_by_extension(directory, extension):
     """
-    지정된 디렉토리에서 주어진 확장자를 가진 파일들의 파일명을 반환합니다.
-    
+    Return the filenames that have the given extension in the specified directory.
+
     Args:
-    directory (str): 파일들을 검색할 디렉토리 경로
-    extension (str): 찾고자 하는 파일의 확장자 (예: '.gif')
-    
+        directory (str): Path to the directory to search.
+        extension (str): File extension to look for (e.g., '.gif').
+
     Returns:
-    list: 확장자가 일치하는 파일 이름들
+        list: Filenames that match the extension (without file extensions).
     """
     file_names = []
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.lower().endswith(extension.lower()):
-                file_names.append(os.path.splitext(file)[0])  # 확장자를 제외한 파일 이름
+                file_names.append(os.path.splitext(file)[0])  # File name without extension
     return file_names
 
 
 def write_batches_to_file(file_names, output_dir, batch_size=50):
     """
-    파일 이름들을 여러 배치로 나누어 지정된 디렉토리에 batch 파일로 저장합니다.
-    
+    Split the file names into multiple batches and save them as batch files
+    in the specified directory.
+
     Args:
-    file_names (list): 저장할 파일 이름 목록
-    output_dir (str): 배치 파일들을 저장할 디렉토리 경로
-    batch_size (int): 하나의 배치 파일에 포함될 파일 이름 수 (기본값: 50)
+        file_names (list): List of file names to save.
+        output_dir (str): Directory path where batch files will be saved.
+        batch_size (int): Number of file names per batch file (default: 50).
     """
-    # 배치 디렉토리 존재하지 않으면 생성
+    # Create the output directory if it does not exist
+    
     os.makedirs(output_dir, exist_ok=True)
     
-    # 배치 파일을 나누어서 저장
+    # Split and save into batch files
     for i in range(0, len(file_names), batch_size):
         batch_name = f"batch_{(i // batch_size) + 1}.txt"
         batch_path = os.path.join(output_dir, batch_name)
         
-        # 배치 파일에 파일 이름을 작성
+        # Write file names to the batch file
         with open(batch_path, 'w') as f:
             for file_name in file_names[i:i + batch_size]:
                 f.write(f"{file_name},\n")
-        print(f"{batch_name} 파일이 {batch_size}개의 항목으로 저장되었습니다.")
-
+        print(f"{batch_name} has been saved with {batch_size} items.")
 
 def process_files(directory, extension, output_dir, batch_size=50):
-    """
-    지정된 디렉토리에서 특정 확장자를 가진 파일들을 처리하고 배치 파일로 저장합니다.
-    
+    """   
+    Process files with the specified extension in the given directory and
+    save them into batch files.
+
     Args:
-    directory (str): 파일들을 검색할 디렉토리 경로
-    extension (str): 필터링할 파일의 확장자
-    output_dir (str): 배치 파일들을 저장할 디렉토리 경로
-    batch_size (int): 배치 파일에 저장할 파일 이름 수 (기본값: 50)
+        directory (str): Path to the directory to search for files.
+        extension (str): File extension to filter by.
+        output_dir (str): Directory path where batch files will be saved.
+        batch_size (int): Number of file names per batch file (default: 50).
     """
-    # 해당 확장자를 가진 파일 이름 가져오기
+    # Get file names that have the given extension
     file_names = get_files_by_extension(directory, extension)
-    
-    # 배치 파일로 나누어 저장
     write_batches_to_file(file_names, output_dir, batch_size)
 
