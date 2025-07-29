@@ -28,6 +28,5 @@ Generation codes are in most part forked from [BARC](https://github.com/xu3kev/B
 # Documentations
 * [SETUP.md](./docs/SETUP.md) : instructions for project folder setup.
 * [GENERATION.md](./docs/GENERATION.md) : GIFARC task generation pipeline instructions.
-* [EXPERIMENTS.md](./docs/EXPERIMENTS.md) : Experiments conducted in paper. 
 
 
