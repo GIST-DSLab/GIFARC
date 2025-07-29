@@ -38,40 +38,39 @@ from GIFARC_utils.generate_metadata_desc import generate_metadata_csv_of_step_de
 from datetime import datetime, timezone
 
 
-# ── 1) CSV 로거 설정 ───────────────────────────────────────────────────────────
+# ── 1) CSV logger settup ───────────────────────────────────────────────────────────
 LOG_DIR  = Path("./loggings/error_desc") 
 LOG_NAME = 'error_log_geometry_o4_mini_base_o3_mini.csv'
 LOG_FILE = LOG_DIR / LOG_NAME
 
 CSV_HEADER = [
-    "time",            # 1. 에러 발생 시간
-    "error_type",      # 2. 에러 종류
-    "server_response", # 3. 상대 서버 응답(본문 일부 or 전문)
-    "status_code",     # 4. HTTP/SDK 응답 코드
-    "gif_name",        # 5‑a. 요청 데이터: 파일명
-    "model",           # 5‑b. 요청 데이터: 모델
-    "temperature",     # 5‑c. 요청 파라미터
-    "max_tokens"       # 5‑d. 요청 파라미터
+    "time",            # 1. Error Raised time
+    "error_type",      # 2. Error type
+    "server_response", 
+    "status_code",     # 4. HTTP/SDK response code
+    "gif_name",        # 5‑a. Req data: file name
+    "model",           # 5‑b. Req data: model name
+    "temperature",     # 5‑c. Req param
+    "max_tokens"       # 5‑d. Req param
 ]
 
-# CSV 첫 행 보장
+
 if not LOG_FILE.exists():
     with open(LOG_FILE, "w", newline="") as f:
         csv.writer(f).writerow(CSV_HEADER)
 
 def log_error(exc: Exception, gif_name: str = "N/A"):
-    """예외 및 메타 정보를 CSV에 기록"""
     with open(LOG_FILE, "a", newline="") as f:
         csv.writer(f).writerow([
             datetime.now().isoformat(timespec="seconds"),
             type(exc).__name__,
-            (str(exc) or "")[:200],     # 너무 긴 메시지는 절단
+            (str(exc) or "")[:200],     # Cut off the long text message
             gif_name
         ])
 
 
 def append_row_to_csv(row: dict) -> None:
-    """CSV 파일이 없으면 헤더부터 쓰고, 있으면 행만 append."""
+    """CSV header check and write, also write data"""
     write_header = not LOG_FILE.exists()
     with LOG_FILE.open("a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_HEADER)
@@ -112,7 +111,7 @@ def safe_first_response(result: dict) -> str | None:
         return None
 
 def log_and_mark_failed(exc: Exception, gif_path: str, failed_box: list | None):
-    log_llm_error_csv(    # ← CSV 로깅
+    log_llm_error_csv(    # ← CSV loggind
         exc=exc,
         server_resp=str(exc)[:200],
         status_code=None,
@@ -169,26 +168,26 @@ def parse_step_1_result(
 
 def first_response_text(result: dict) -> str | None:
     """
-    result 딕셔너리에서 첫 번째 응답 텍스트를 안전하게 반환.
-    • response 필드가 없거나 list/tuple이 아니면 None
-    • 첫 요소가 None 이거나 공백뿐이면 None
+    Safely return the first response text from the result dictionary.
+    - If the 'response' field is missing or is not a list/tuple, returns None.
+    - If the first element is None or consists only of whitespace, returns None.
     """
     resp = result.get("response")
-    if not resp:                    # None, [], '' 모두 False
+    if not resp:                    # None, [], '' is False
         return None
     if isinstance(resp, (list, tuple)):
         first = resp[0] if resp else None
-    else:                           # 간혹 문자열 단독일 수도 있음
+    else:                           # Some time is could be single string
         first = resp
     if first is None:
         return None
     first = str(first).strip()
-    return first or None            # 공백뿐이면 None
+    return first or None            # empty space None
 
 
 
 def batched(it: Iterable[Any], size: int):
-    """Python <3.12에서도 동작하는 간단한 batched 제너레이터"""
+    """Python <3.12 batched generator"""
     it = iter(it)
     while (chunk := list(islice(it, size))):
         yield chunk
@@ -202,7 +201,7 @@ def main():
     # LOG_NAME = f'error_log_{arguments.model}_{TARGET}.csv'
     ENCODING= arguments.encoding
     SPLITOR= arguments.splitor
-    BATCH_SIZE   = arguments.batch_size   # 동시에 보낼 GIF 개수
+    BATCH_SIZE   = arguments.batch_size   # parallel send gif count
     MAX_WORKERS  = arguments.batch_size
     SELECTOR_FILE = arguments.batch_list_path
 
@@ -210,12 +209,12 @@ def main():
     data_path_list, missing_path_list = process_data_list_loader(SELECTOR_FILE, MAX_SAMPLES, DATA_DIR, AVAILABLE_DATA_FORMATS, SPLITOR=SPLITOR, ENCODING=ENCODING)
     if len(missing_path_list) > 0:
         raise Exception("missing_path_list exist")
-    # RAG를 세팅하는는 부분
+    # Setting RAG
     current_file_dir = os.path.dirname(os.path.realpath(__file__))
     seeds, seeds_contents = get_seeds_idx_ordered_content_from_files(current_file_dir)
     rng_offset = get_rng_offeset(arguments.rng_offset, seeds)
     
-    # 프롬프트에 따라 사용하기 편하게 모델을 세팅하는 절차
+    # Model setting progress
     for provider, model in [(provider, model) for provider, model_list in LLMClient.AVAILABLE_MODELS.items() for model in model_list]:
         if model.value == arguments.model:
             # should break on the correct values of model and provider, so we can use those variables later
@@ -227,8 +226,7 @@ def main():
             # should break on the correct values of model and provider, so we can use those variables later
             break
     print(gif_mode_name, "models: prod", gif_provider)
-    # 실제 수행부
-    # prompt 선제작
+    # build pre - prompt 
     prompt_manager = HistoryManager()
     system_prompt_manager = HistoryManager()
     
@@ -238,13 +236,11 @@ def main():
         message_user, image_block, system_prompt = prompt_template_for_step_1_desc(gif_path, arguments.intergrated, arguments.prompts_path)
        
         prompt_manager.add_message_direct(gif_path, message_user)
-        system_prompt_manager.add_message_direct(gif_path, system_prompt) # idx상 1번
+        system_prompt_manager.add_message_direct(gif_path, system_prompt) # idx: 1
         
     # print(system_prompt_manager.get_all_history())
         # print(prompt_manager.get_history(gif_path)[0])
         # print(message_system)
-    # 실행 제약은 다음과 같이 걸린다.
-        # 배치 진행 표시
     batch_pbar = tqdm(
         total=(len(data_path_list) + BATCH_SIZE - 1) // BATCH_SIZE,
         desc="Batch progress"
@@ -266,7 +262,7 @@ def main():
                 try:
                     result = future.result()
                 except Exception as e:
-                    # LLM SDK/HTTP 레벨 등 호출 자체가 실패한 경우
+                    # When failed to call LLM SDK/HTTP 
                     log_and_mark_failed(e, gif_path="UNKNOWN", failed_box=failed_results)
                     continue
 
@@ -289,18 +285,18 @@ def main():
         try:
             content = safe_first_response(response)
             if not content:
-                raise ValueError("받은 응답이 비어 있어 JSON으로 변환할 수 없습니다.")
+                raise ValueError("Response is empty so that cannot convert in  to JSON.")
 
             filtered = strip_code_fence(content)
             gif_result = safe_json_loads(filtered, default=None)
             if gif_result is None:
-                raise ValueError("JSON 파싱 실패")
+                raise ValueError("JSON parsing failed")
 
             gif_results[gif_path] = gif_result
 
         except Exception as e:
             log_and_mark_failed(e, gif_path, failed_box=failed_results)
-            gif_results[gif_path] = {}   # 최소한 빈 dict로 채움(뒤 단계에서 None체크)
+            gif_results[gif_path] = {}   # At least make as empty dict check None after
             continue
         message = make_self_instruct_prompt_with_gif(seeds_contents=seeds_contents, 
                                                     rng_seed=str(response_idx) + str(rng_offset), 
@@ -346,14 +342,13 @@ def main():
         
     concepts_descriptions = []
 
-    # 데이터 기록 로직에서 성공 원본 데이터, 성공 메타 데이터, 실패 원본 데이터, 실패 원본 데이터를 전부 기록해야하는가? oo ? 당연한듯 
     # print(final_results)
     for raw_data_path in data_path_list:
         data_name = os.path.splitext(os.path.basename(raw_data_path))[0]
         data_path = str(raw_data_path)
         step_id = str(uuid.uuid4())
         try:
-            # 데이터 이름이 
+            # Data Name
             sample = final_results[str(data_path)][0]
             if sample == "":
                 raise ValueError("Requested Error")
@@ -381,7 +376,7 @@ def main():
                 "result_code": 1,
                 "result_path": os.path.join(arguments.outdir, step_id+".jsonl"),
                 "error_message": '',
-                "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                 # "token_usage": {"prompt": 142, "completion": 23},
             }]
             generate_metadata_csv_of_step_descriptions( sample_records, output_csv=METADATA_CSV_PATH )
@@ -397,7 +392,7 @@ def main():
                 "result_code": 0,
                 "result_path": "",
                 "error_message": str(e),
-                "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                 # "token_usage": {"prompt": 142, "completion": 23},
             }]
             generate_metadata_csv_of_step_descriptions( sample_records, output_csv=METADATA_CSV_PATH )
@@ -412,7 +407,7 @@ def main():
                 "result_code": 0,
                 "result_path": "",
                 "error_message": str(e),
-                "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                 # "token_usage": {"prompt": 142, "completion": 23},
             }]
             generate_metadata_csv_of_step_descriptions( sample_records, output_csv=METADATA_CSV_PATH )
@@ -426,7 +421,7 @@ def main():
                 "result_code": 0,
                 "result_path": "",
                 "error_message": str(e),
-                "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                 # "token_usage": {"prompt": 142, "completion": 23},
             }]
             generate_metadata_csv_of_step_descriptions( sample_records, output_csv=METADATA_CSV_PATH )

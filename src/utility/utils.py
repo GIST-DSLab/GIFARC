@@ -216,13 +216,12 @@ def parse_code_json_1(json_str):
     return data['total_code']
 def parse_code_json_2(json_str):
     import json
-    # 마크다운 코드블록 제거
+    # post processing markdown json
     if json_str.startswith("```json"):
         json_str = json_str[len("```json"):].strip()
     if json_str.endswith("```"):
         json_str = json_str[:json_str.rfind("```")].strip()
     
-    # JSON 파싱
     data = json.loads(json_str)
     return data['total_code']
 
@@ -282,13 +281,13 @@ def example_function(x):
 import os
 def ensure_dir(path: str) -> None:
     """
-    주어진 경로(path)에 폴더가 없으면 생성합니다.
+    Ensure dir
     """
     if not os.path.exists(path):
         os.makedirs(path, exist_ok=True)
-        print(f"폴더 생성: {path}")
+        print(f"Generated Folder: {path}")
     else:
-        print(f"이미 존재하는 폴더: {path}")
+        print(f"Folder that already exist: {path}")
 
 
 import csv
@@ -311,13 +310,10 @@ FIELDNAMES = [
     "visualization_path",
 ]
 
-
-
 def _normalize_record(rec: Dict[str, Any]) -> Dict[str, Any]:
-    """사전 키를 FIELDNAMES 에 맞춰 정규화 & 직렬화"""
+    """ Key mapping by FIELDNAMES """
     row: Dict[str, Any] = {f: "" for f in FIELDNAMES}
 
-    # 필수/주요 키 매핑
     row["id"] = rec.get("id") or rec.get("step_uuid", "")
     row["step-name"] = rec.get("step_name") or rec.get("step-name", "")
     row["prev-step-id"] = rec.get("prev_step_id") or rec.get("prev-step-id", "")
@@ -326,14 +322,13 @@ def _normalize_record(rec: Dict[str, Any]) -> Dict[str, Any]:
     row["result_code"] = rec.get("result_code", "")
     row["result_path"] = rec.get("result_path", "")
 
-    # error_message: list → JSON 직렬화, str 은 그대로
     err = rec.get("error_message", "")
     if isinstance(err, list):
         row["error_message"] = json.dumps(err, ensure_ascii=False)
     else:
         row["error_message"] = str(err)
 
-    # createAt: datetime→ISO, str→그대로, 없다면 현재 UTC
+    # createAt: datetime→ISO, str→use it, if not curr UTC
     ts = rec.get("createAt") or rec.get("create_at") or rec.get("created_at")
     if isinstance(ts, datetime):
         row["createAt"] = ts.astimezone(timezone.utc).isoformat(timespec="seconds")
@@ -342,7 +337,6 @@ def _normalize_record(rec: Dict[str, Any]) -> Dict[str, Any]:
     else:
         row["createAt"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-    # token‑usage 는 어떤 타입이든 문자열로 저장
     row["token-usage"] = json.dumps(rec.get("token_usage", ""), ensure_ascii=False)
 
     row["visualization_path"] = rec.get("visualization_path", "")
@@ -357,13 +351,13 @@ def generate_metadata_csv_of_step_problem(
     """
     Args
     ----
-    records     : 메타데이터 dict 리스트
-    output_csv  : 저장할 CSV 경로 (없으면 동일 폴더에 생성)
-    encoding    : CSV 인코딩 (기본 utf-8)
+    records     : List of metadata dictionaries
+    output_csv  : Path to the CSV file to save (if not provided, created in the same directory)
+    encoding    : CSV encoding (default: 'utf-8')
 
     Returns
     -------
-    Path 객체 (작성된 CSV 경로)
+    Path object pointing to the written CSV file
     """
     output_csv = Path(output_csv)
     output_csv.parent.mkdir(parents=True, exist_ok=True)
@@ -377,3 +371,7 @@ def generate_metadata_csv_of_step_problem(
             writer.writerow(_normalize_record(rec))
 
     return output_csv
+
+
+
+

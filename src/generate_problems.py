@@ -411,6 +411,7 @@ def main():
 
     if args.jsonl:
         with open(result_saving_file, "w") as f:
+         
             for problem in problems:
                 f.write(json.dumps(problem) + "\n")
             from datetime import datetime, timezone
@@ -427,10 +428,12 @@ def main():
                     "result_code": 1,
                     "result_path": result_saving_file,
                     "error_message": "",
-                    "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                    "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                     # "token_usage": {"prompt": 142, "completion": 23},
                 }]
                 generate_metadata_csv_of_step_problem( sample_records, output_csv=METADATA_CSV_PATH )
+                if(len(problems) == 0):
+                    raise ValueError("No Problem Gened")
             except Exception as e:
                 sample_records = [{
                     "id": step_id,
@@ -441,10 +444,11 @@ def main():
                     "result_code": 0,
                     "result_path": result_saving_file,
                     "error_message": "",
-                    "createAt": datetime.now(timezone.utc),   # ← 현재 UTC 시각
+                    "createAt": datetime.now(timezone.utc),   # ← Curr UTC
                     # "token_usage": {"prompt": 142, "completion": 23},
                 }]
                 generate_metadata_csv_of_step_problem( sample_records, output_csv=METADATA_CSV_PATH )
+
                 print(f"an error occurred: {args.jsonl}, {e}")
            
 if __name__ == "__main__":

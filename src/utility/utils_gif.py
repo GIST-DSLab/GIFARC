@@ -48,37 +48,37 @@ def init_openai_api():
 
 def count_tokens_with_tiktoken(text: str, model: str = "gpt-4") -> int:
     """
-    주어진 텍스트가 주어진 모델 기준으로 몇 개의 토큰으로 인코딩되는지 계산합니다.
+    Calculate the number of tokens that the given text would encode into for the specified model.
 
     Args:
-        text (str): 토큰 개수를 측정할 텍스트 (예: base64 문자열)
-        model (str): 사용할 모델 이름 (예: gpt-4, gpt-3.5-turbo, etc.)
+        text (str): The text to count tokens for (e.g., a base64-encoded string).
+        model (str): The name of the model to use (e.g., 'gpt-4', 'gpt-3.5-turbo', etc.).
 
     Returns:
-        int: 토큰 개수
+        int: The number of tokens.
     """
     try:
         encoding = tiktoken.encoding_for_model(model)
     except KeyError:
-        print(f"[경고] '{model}'에 대한 인코딩이 등록되어 있지 않아 기본 인코딩 사용")
-        encoding = tiktoken.get_encoding("cl100k_base")  # 대부분 모델에서 사용되는 기본값
+        print(f"[WARN] No Setted Encoder for Model:'{model}', will just use base encoder cl100k_base")
+        encoding = tiktoken.get_encoding("cl100k_base") 
 
     tokens = encoding.encode(text)
     return len(tokens)
 
 def call_api(model, message, max_completion_tokens=40_000, stop=None, stream=False, max_retries=3):
     """
-    OpenAI API를 호출하여 응답을 가져옵니다.
-    
+    Call the OpenAI API to retrieve a response.
+
     Args:
-        model (str): 사용할 모델 이름 (예: gpt-4, gpt-3.5-turbo 등)
-        message (list): 메시지 리스트 (예: [{"role": "user", "content": "질문"}])
-        max_completion_tokens (int): 최대 생성 토큰 수
-        stop (list): 정지 토큰 리스트
-        stream (bool): 스트리밍 여부
+        model (str): The model name to use (e.g., 'gpt-4', 'gpt-3.5-turbo', etc.).
+        message (list): A list of message dictionaries (e.g., [{"role": "user", "content": "question"}]).
+        max_completion_tokens (int): The maximum number of tokens to generate.
+        stop (list): A list of stop tokens.
+        stream (bool): Whether to stream the response.
 
     Returns:
-        dict: API 응답
+        dict: The API response.
     """
     global client
     for i in range(max_retries):
@@ -93,10 +93,10 @@ def call_api(model, message, max_completion_tokens=40_000, stop=None, stream=Fal
         except Exception as e:
             error_str = str(e)
             if "potentially violating our usage policy." in error_str:
-                # 사용 정책 위반으로 프롬프트가 차단된 경우
+                # When prompt Blocked by policy
                 continue
             else:
-                raise e  # 다른 오류는 그대로 발생시킴
+                raise e  # Other will be raise
     return completion
 
 
@@ -114,14 +114,12 @@ def check_file_size(file_path, max_size=4 * 1024 * 1024):
 
 
 def compress_gif(input_path, output_path, scale_factor=0.5):
-    # GIF는 여러 프레임을 포함하므로 단순 리사이즈가 쉽지 않을 수 있음.
-    # moviepy를 사용하는 방법도 고려해보세요.
+
     try:
         im = Image.open(input_path)
         new_width = int(im.width * scale_factor)
         new_height = int(im.height * scale_factor)
         
-        # GIF의 경우, 최적화 작업은 프레임 별로 진행해야 할 수도 있음.
         frames = []
         try:
             while True:
@@ -129,22 +127,22 @@ def compress_gif(input_path, output_path, scale_factor=0.5):
                 frames.append(frame)
                 im.seek(im.tell() + 1)
         except EOFError:
-            # 모든 프레임 처리 완료
+            # All frame done
             pass
         frames[0].save(output_path, save_all=True, append_images=frames[1:], optimize=True, loop=0)
         return output_path
     except Exception as e:
         print(f"Error compressing GIF: {e}")
-        return input_path  # 실패 시 원본 리턴
+        return input_path  # when it failed return original
 
 
 def convert_webm_to_gif(webm_path):
     """
-    주어진 webm 파일을 gif로 변환하여 임시 파일 경로를 리턴합니다.
-    max_frames 값에 따라 전체 길이를 제한하고 싶다면 clip.subclip() 등의 방법으로 조절할 수 있습니다.
+    Convert the given WebM file to a GIF and return the path to the temporary GIF file.
+    To limit the total duration based on max_frames, you can use methods such as clip.subclip().
     """
     clip = VideoFileClip(webm_path)
-    # 만약 전체 클립 길이가 길다면 필요한 구간만 사용할 수 있음 (예: 앞 3초)
+    # If the full clip is too long, you can use only the needed segment (e.g., the first 3 seconds)
     # clip = clip.subclip(0, 3)
     
     temp_gif = tempfile.NamedTemporaryFile(suffix=".gif", delete=False)
@@ -249,13 +247,14 @@ def make_output_grid(info):
 
 def direct_encode_gif_to_base64(gif_path):
     """
-    gif_path: 인코딩할 GIF 파일의 경로
-    반환: base64 인코딩된 문자열
+    gif_path: Path to the GIF file to encode.
+    Returns:
+        A base64-encoded string.
     """
     with open(gif_path, "rb") as f:
-        gif_data = f.read()  # 바이너리로 읽기
+        gif_data = f.read()  # Read as  binary
 
-    base64_str = base64.b64encode(gif_data).decode("utf-8")  # base64 인코딩 + 문자열로 변환
+    base64_str = base64.b64encode(gif_data).decode("utf-8")  # base64 + String
     return base64_str
 
 
@@ -264,7 +263,7 @@ def extract_key_frames_from_webm(video_path, num_frames=3):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     
     selected_indices = [0, total_frames // 2, total_frames - 1]
-    selected_indices = [min(idx, total_frames - 1) for idx in selected_indices]  # 범위 체크
+    selected_indices = [min(idx, total_frames - 1) for idx in selected_indices]  # Check range
 
     base64_images = []
     for idx in selected_indices:
@@ -309,23 +308,23 @@ def extract_key_frames_any(path):
     elif path.endswith(".webm"):
         return extract_key_frames_from_webm(path)
     else:
-        raise ValueError("지원하지 않는 파일 형식입니다.")
+        raise ValueError("This format is not supporting")
     
 def filter_non_system_messages(total_history):
     """
     extracts non-system messages from the conversation history.
     """
-    # 기존 total_history에서 system 메시지는 제외한 후, 사용자 메시지에서 image_block 제거
+    # Exclude system messages from total_history, then remove image_block from user messages
     non_system_history = []
     for msg in total_history:
         if msg.get("role") == "system":
-            continue  # system 메시지는 여기서는 제외하고, 나중에 따로 추가함
+            continue  # System messages are excluded here; they will be added separately later
         elif msg.get("role") == "user":
-            # user 메시지의 content에서 image_url 타입을 제거
+            # From user message content, remove type: image_url 
             new_content = [block for block in msg.get("content", []) if block.get("type") != "image_url"]
-            # content가 남아있을 때만 메시지를 추가 (빈 리스트라면 skip)
+            # Only add the message if there is remaining content (skip if the list is empty)
             if new_content:
-                # 복사본 생성 후 content만 교체
+                # After generate copy change the content only
                 new_msg = msg.copy()
                 new_msg["content"] = new_content
                 non_system_history.append(new_msg)
@@ -401,7 +400,7 @@ class ExecutionError(Exception):
     def __init__(self, error_info, target_input):
         self.error_info = error_info
         self.target_input = target_input
-        # error_info를 문자열로 변환해 포함시키거나 JSON 문자열로 만들 수 있습니다.
+
         message = json.dumps({
             "error_info": str(error_info),
             "target_input": target_input

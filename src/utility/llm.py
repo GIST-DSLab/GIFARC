@@ -346,7 +346,6 @@ class LLMClient:
         else:
             cached_samples = []
         # If the number of cached samples is less than requested, generate more samples
-        # TODO 고치기 - 이 부분 로직이 이상함. num_generations가 1일때 동작을 해야 되는데 하지 않음.
         if len(cached_samples) < num_samples:
             remaining_samples = num_samples - len(cached_samples)
             actually_got_samples = False

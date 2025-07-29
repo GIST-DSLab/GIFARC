@@ -1,5 +1,11 @@
-## Requirements & Setup
+# Recommand Env
 
+- Ubuntu 22.04 (If you are using docker then it will be fine)
+- GPU( 3060RTX ~ 4080SUPER ): it will not use GPU however because of some library use gpu, it might be a issue to install cuda.
+
+# Requirements & Setup
+
+Initially you needs install docker and docker compose.
 First, clone this git.
 
 ```clone
@@ -23,18 +29,24 @@ docker compose up -d
 Next turn on the vscode and install devcontainer extention.
 
 
-Ctrl + p and find
+Ctrl + <Shift> + p and find
 >Dev containers: Open Folder in Container
+
 Click it and open GIFARC folder
 
 Open the container and type
 
 ```bash
+
 touch .env # make .env file
 # and write below we make it to use wi open ai if you want to work with other api or some other provider or local you can fix under utilitys/llm.py
-OPENAI_API_KEY="****"
+OPENAI_API_KEY="your open ai api key"
+
 ```
 
-after that put gif in to ./data/GIF
-Open, description_executor.ipynb and now run all the ipynb file, it will generate the gif arc under ./results/promblem~~
+after that put gif in to ./data/GIF then you can run the code.
+READ 
+
+GENERATION.md
+
 
