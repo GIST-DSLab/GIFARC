@@ -42,7 +42,7 @@ def write_batches_to_file(file_names, output_dir, batch_size=50):
         with open(batch_path, 'w') as f:
             for file_name in file_names[i:i + batch_size]:
                 f.write(f"{file_name},\n")
-        print(f"{batch_name} has been saved with {batch_size} items.")
+        print(f"{batch_name} has been saved with{batch_size}: {len(file_names)} items.")
 
 def process_files(directory, extension, output_dir, batch_size=50):
     """   
