@@ -1,7 +1,7 @@
 # GIFARC 🌟  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e2a39dd0-b6af-45da-8be1-eee2f77f534c" /> 
+<img width="1536" height="1024" alt="image" src="./images/logo.png" /> 
 
 
 [![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
@@ -94,7 +94,7 @@ See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc)
 
 ## \:factory: Pipeline Overview
 
-<img width="2048" height="893" alt="image" src="https://github.com/user-attachments/assets/d079e509-dda2-47e6-a7f9-177772fb522b" />
+<img width="2048" height="893" alt="image" src="./images/pipeline.png" />
 
 
 * **Modular & Easy generation** – After put GIF in data/GIF, just click all run button at `description_executor.ipynb` to generate Your own data! 
