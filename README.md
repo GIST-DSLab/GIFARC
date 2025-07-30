@@ -20,9 +20,9 @@
  
 
 ## Table of Contents
-1. [Quick Start](#rocket-quick-start)
-2. [Dataset Card](#open_file_folder-dataset-card)
-3. [Pipeline Overview](#factory-pipeline-overview)
+1. [Quick Start](#rocket-quick-start)  
+2. [Dataset Card](#open_file_folder-dataset-card)  
+3. [Pipeline Overview](#factory-pipeline-overview)  
 4. [Results](#bar_chart-results)
 5. [Project Structure](#file_cabinet-project-structure)
 6. [Citing GIFARC](#bookmark_tabs-citing-gifarc)
@@ -66,10 +66,12 @@ Once your Set up is down Open `description_executor.ipynb` and run the code here
 
 | Split | #Tasks | #Unique GIFs | Max. Frames |   Size |
 | ----- | -----: | -----------: | ----------: | -----: |
-| Train |  10000 |      10000   |       30*30 |   > 24 MB |
+| Train |  10000 |      10000   |       30*30 |   < 24 MB |
 
 
-*Every task packages →* `{
+*Every task packages → *   
+```json
+{
   "source": "<source code>", # python code string
   "examples": [
       [<input_grid_1>,<output_grid_1>], # pair 1
@@ -84,8 +86,8 @@ Once your Set up is down Open `description_executor.ipynb` and run the code here
       "<Concept_and_description>"
     ], 
   "url": "<minified_url>"
-}`
-
+}
+```
 See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for licensing, intended use, and data statements.
 
 ---
@@ -165,10 +167,10 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 Pull requests are welcome! Please:
 
-1. Create a new branch from `main`.
-2. Add tests for new features (`pytest -q`).
-3. Run `pre-commit run --all-files`.
-4. Open a PR and describe your changes clearly.
+1. Create a new branch from `main`.  
+2. Add tests for new features (`pytest -q`).  
+3. Run `pre-commit run --all-files`.  
+4. Open a PR and describe your changes clearly.  
 
 ---
 
