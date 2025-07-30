@@ -1,4 +1,4 @@
-# GIFARC 🌟  
+# GIFARC  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
 
 <img width="1536" height="1024" alt="image" src="./images/logo.png" /> 
@@ -13,7 +13,7 @@
 
 ---
 
-## ✨ TL;DR
+## TL;DR
 
 * **10k** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
@@ -62,7 +62,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 ---
 
-## \:open\_file\_folder: Dataset Card
+## Dataset Card
 
 | Split | #Tasks | #Unique GIFs |    Size |
 | ----- | -----: | -----------: |  -----: |
@@ -88,7 +88,7 @@ Every task packages →
   "url": "<minified_url>"
 }
 ```
-See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for licensing, intended use, and data statements.
+See the full [dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for licensing, intended use, and data statements.
 
 ---
 
@@ -108,7 +108,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 ## \:file\_cabinet: Project Structure
 
 ```
-﻿./GIFARC
+./GIFARC
 ├── data
 │   └── GIF
 ├── description_executor.ipynb # use this to execute
@@ -141,7 +141,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## \:bookmark\_tabs: Citing GIFARC
+## Citing GIFARC
 
 ```bibtex
 @misc{gifarc2025,
@@ -155,7 +155,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## \:sparkles: Acknowledgements
+## Acknowledgements
 
 * **GIPHY** for powering the GIF search API.  
 * **BARC** – our generation pipeline stands on the shoulders of this excellent project.  
@@ -163,7 +163,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## \:scroll: License
+## License
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE.md) for details.
 
