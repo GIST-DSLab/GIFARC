@@ -1,4 +1,4 @@
- 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e2a39dd0-b6af-45da-8be1-eee2f77f534c" /> 
 # GIFARC 🌟  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
 
@@ -55,7 +55,7 @@ ds = load_dataset("DumDev/gif_arc")
 
 Once your Set up is down Open `description_executor.ipynb` and run the code here
 
-### 4. Try the Web Demo
+### 4. Check the Web Demo
 
 [GIFARC Web Demo](https://gifarc.vercel.app/v1.1)
 
