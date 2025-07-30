@@ -1,4 +1,4 @@
-````markdown
+ 
 # GIFARC 🌟  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
 
@@ -173,4 +173,4 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 ```
 
 Feel free to tweak badges, stats, or any placeholders (`TBW`) once results and acceptance details are finalized. Happy publishing!
-```
+ 
