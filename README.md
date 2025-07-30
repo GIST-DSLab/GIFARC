@@ -23,12 +23,11 @@
 1. [Quick Start](#rocket-quick-start)  
 2. [Dataset Card](#open_file_folder-dataset-card)  
 3. [Pipeline Overview](#factory-pipeline-overview)  
-4. [Results](#bar_chart-results)
-5. [Project Structure](#file_cabinet-project-structure)
-6. [Citing GIFARC](#bookmark_tabs-citing-gifarc)
-7. [Contributing](#handshake-contributing)
-8. [Acknowledgements](#sparkles-acknowledgements)
-9. [License](#scroll-license)
+4. [Project Structure](#file_cabinet-project-structure)
+5. [Citing GIFARC](#bookmark_tabs-citing-gifarc)
+6. [Contributing](#handshake-contributing)
+7. [Acknowledgements](#sparkles-acknowledgements)
+8. [License](#scroll-license)
 
 ---
 
