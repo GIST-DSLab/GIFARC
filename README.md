@@ -17,8 +17,7 @@
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use  
 * **Plug‑and‑play generation pipeline** – extend or remix new analogy families in a few lines of Python  
 * **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration
-
-<br/>
+ 
 
 ## Table of Contents
 1. [Quick Start](#rocket-quick-start)
