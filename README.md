@@ -1,7 +1,7 @@
 # GIFARC  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
 
-<img width="1536" height="1024" alt="image" src="./images/logo.png" /> 
+![](./images/logo.png)
 
 
 [![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
@@ -66,11 +66,11 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 | Split | #Tasks | #Unique GIFs |    Size |
 | ----- | -----: | -----------: |  -----: |
-| Train |  10,000 |      10,000   |   < 24 MB |
+| Train | 10,000 |    10,000    | < 24 MB |
 
 
-Every task packages →    
-```
+Every task packages looks as follows:    
+```json
 {
   "source": "<source code>", # python code string
   "examples": [
@@ -94,7 +94,7 @@ See the full [dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for 
 
 ## Pipeline Overview
 
-<img width="2048" height="893" alt="image" src="./images/pipeline.png" />
+![](./images/pipeline.png)
 
 
 * **Modular & Easy generation** – After put GIF in data/GIF, just click all run button at `description_executor.ipynb` to generate Your own data! 
@@ -105,7 +105,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## \:file\_cabinet: Project Structure
+## Project Structure
 
 ```
 ./GIFARC
@@ -141,7 +141,8 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## Citing GIFARC
+
+### Citing GIFARC
 
 ```bibtex
 @misc{gifarc2025,
@@ -163,7 +164,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ---
 
-## License
+## License
 
 Distributed under the **MIT License**.
 
