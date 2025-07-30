@@ -86,10 +86,11 @@ See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc)
 ```mermaid
 flowchart TD
     A[Input GIF pool (GIPHY API)] --> B{Concept Pair Sampler}
-    B --> C[Frame‑level<br/>Visual Filters]
-    C --> D[Analogy Composer<br/>(text + mapping)]
-    D --> E[Quality Gate ✓]
-    E --> F(Output<br/>GIFARC JSONL)
+    B --> C[Frame‑level\nVisual Filters]
+    C --> D[Analogy Composer\n(text + mapping)]
+    D --> E[Quality Gate ✓]
+    E --> F[Output\nGIFARC JSONL]
+
 ```
 
 * **Modular & extensible** – swap your own samplers, filters, or analogy templates
