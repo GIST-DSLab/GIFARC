@@ -1,40 +1,52 @@
 # Recommand Env
 
-- Ubuntu 22.04 (If you are using docker then it will be fine)
-- GPU( 3060RTX ~ 4080SUPER ): it will not use GPU however because of some library use gpu, it might be a issue to install cuda.
+- `>= Ubuntu 22.04`
 
 # Requirements & Setup
 
-Initially you needs install docker and docker compose.
+### 1. Clone git
+
 First, clone this git.
 
 ```clone
 git clone <GIT_GIFARC_URL>
 ```
 
-To install requirements, move to the cloned directory and run `pip install`:
+### 2. Setup requirements.
+
+Move to the cloned directory and run `pip install` to install pip requirements :
 
 ```setup
 pip install -r requirements.txt
 ```
 
-Next, install docker and docker compose
+### 3. Create docker container.
+
+Next, install `docker` and run `docker compose`.
 
 ```bash
 cd ./GIFARC
 docker compose up -d
 ```
 
-[note] it use port 8998 as jupyter note book, if you want to change you can chage
-Next turn on the vscode and install devcontainer extention.
+Note. it uses port 8998 for jupyter notebook.
+
+### 4. Open docker container workspace.
+
+Next, turn on the vscode and install extension `Dev Container`.
 
 
-Ctrl + <Shift> + p and find
->Dev containers: Open Folder in Container
+Type `Ctrl + <Shift> + p` to open workspace command and find
 
-Click it and open GIFARC folder
+```
+> Dev containers: Open Folder in Container
+```
 
-Open the container and type
+Click it, and select GIFARC folder. It will open a workspace in the docker container we created.
+
+### 5. Setup environment variables.
+
+Open the container terminal and type : 
 
 ```bash
 
@@ -44,9 +56,8 @@ OPENAI_API_KEY="your open ai api key"
 
 ```
 
-after that put gif in to ./data/GIF then you can run the code.
-READ 
+### 6. All Set!
 
-GENERATION.md
+You are all set up. Put GIF files in to ./data/GIF and run the codes.
 
 

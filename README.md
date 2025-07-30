@@ -32,14 +32,14 @@
 
 ---
 
-## :rocket: Quick Start
+## Quick Start
 
 ### 1. Install
 
 We highly command to using docker. To setting with docker check [SETUP.md](docs/SETUP.md).  
 
 ```bash
-git clone https://github.com/DumDev/gifarc.git
+git clone <GIT_url>
 cd gifarc
 pip install -r requirements.txt
 pip install -r requirements-dev.txt      
@@ -58,7 +58,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 ### 4. Check the Web Demo
 
-[GIFARC Web Demo](https://gifarc.vercel.app/v1.1).  
+[GIFARC Web Demo](https://gifarc.vercel.app).  
 
 ---
 
@@ -165,9 +165,6 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ## License
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE.md) for details.
-
-```
+Distributed under the **MIT License**.
 
 Feel free to tweak badges, stats, or any placeholders (`TBW`) once results and acceptance details are finalized. Happy publishing!
- 
