@@ -6,10 +6,10 @@
 
 [![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
 [![Hugging Face Datasets](https://img.shields.io/badge/HF%20Datasets-gif_arc-ff69b4.svg)](https://huggingface.co/datasets/DumDev/gif_arc) 
-[![License](https://img.shields.io/github/license/DumDev/gifarc.svg)](LICENSE) 
+[![License](https://img.shields.io/github/license/DumDev/gifarc.svg)](#) 
 [![Build](https://img.shields.io/github/actions/workflow/status/DumDev/gifarc/tests.yml?label=tests)](https://github.com/)
 
-> **GIFARC** distills the magic of everyday analogies into a rigorously curated, GIF‑centric benchmark that pushes large language models (LLMs) beyond pattern matching toward **genuine reasoning**.
+> **GIFARC** By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
 
 ---
 
@@ -27,9 +27,8 @@
 3. [Pipeline Overview](#factory-pipeline-overview)  
 4. [Project Structure](#file_cabinet-project-structure)
 5. [Citing GIFARC](#bookmark_tabs-citing-gifarc)
-6. [Contributing](#handshake-contributing)
-7. [Acknowledgements](#sparkles-acknowledgements)
-8. [License](#scroll-license)
+6. [Acknowledgements](#sparkles-acknowledgements)
+7. [License](#scroll-license)
 
 ---
 
@@ -55,7 +54,7 @@ ds = load_dataset("DumDev/gif_arc")
 
 ### 3. Generate Your Own GIFARC
 
-Once your Set up is down Open `description_executor.ipynb` and run the code here
+Once your Set up is down, open `description_executor.ipynb` and run the code here.
 
 ### 4. Check the Web Demo
 
@@ -65,13 +64,13 @@ Once your Set up is down Open `description_executor.ipynb` and run the code here
 
 ## \:open\_file\_folder: Dataset Card
 
-| Split | #Tasks | #Unique GIFs | Max. Frames |   Size |
-| ----- | -----: | -----------: | ----------: | -----: |
-| Train |  10000 |      10000   |       30*30 |   < 24 MB |
+| Split | #Tasks | #Unique GIFs |    Size |
+| ----- | -----: | -----------: |  -----: |
+| Train |  10,000 |      10,000   |   < 24 MB |
 
 
-*Every task packages → *   
-```json
+Every task packages →    
+```
 {
   "source": "<source code>", # python code string
   "examples": [
@@ -95,16 +94,8 @@ See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc)
 
 ## \:factory: Pipeline Overview
 
-```mermaid
-flowchart TD
-    A["Input GIF pool"] --> B{{"Generate Concept and Description"}}
-    B --> C["Generate Code"]
-    C --> D["Generate Problem with code"]
-    D --> E["Check code is Validate"]
-    E --> F["Done! YOUR GIFARC"]
+<img width="2048" height="893" alt="image" src="https://github.com/user-attachments/assets/d079e509-dda2-47e6-a7f9-177772fb522b" />
 
-
-```
 
 * **Modular & Easy generation** – After put GIF in data/GIF, just click all run button at `description_executor.ipynb` to generate Your own data! 
 * **Stable environment setting** enable easy set up with docker and devcontainer
@@ -161,17 +152,6 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
   url     = {}
 }
 ```
-
----
-
-## \:handshake: Contributing
-
-Pull requests are welcome! Please:
-
-1. Create a new branch from `main`.  
-2. Add tests for new features (`pytest -q`).  
-3. Run `pre-commit run --all-files`.  
-4. Open a PR and describe your changes clearly.  
 
 ---
 
