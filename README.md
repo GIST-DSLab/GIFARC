@@ -1,6 +1,8 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e2a39dd0-b6af-45da-8be1-eee2f77f534c" /> 
 # GIFARC 🌟  
 **Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/e2a39dd0-b6af-45da-8be1-eee2f77f534c" /> 
+
 
 [![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
 [![Hugging Face Datasets](https://img.shields.io/badge/HF%20Datasets-gif_arc-ff69b4.svg)](https://huggingface.co/datasets/DumDev/gif_arc) 
