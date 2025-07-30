@@ -17,7 +17,7 @@
 
 * **10k** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
-* **Easy Play generation pipeline** – extend or remix new analogy families with gif in a few minutes.
+* **Easy Play generation pipeline** - extend or remix new analogy families with gif in a few minutes.
 * **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration.
  
 
@@ -92,7 +92,7 @@ See the full [dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for 
 
 ---
 
-## \:factory: Pipeline Overview
+## Pipeline Overview
 
 <img width="2048" height="893" alt="image" src="./images/pipeline.png" />
 
