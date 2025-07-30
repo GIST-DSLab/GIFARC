@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/github/license/DumDev/gifarc.svg)](#) 
 [![Build](https://img.shields.io/github/actions/workflow/status/DumDev/gifarc/tests.yml?label=tests)](https://github.com/)
 
-> **GIFARC** By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
+> By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
 
 ---
 
@@ -17,8 +17,8 @@
 
 * **10k** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
-* **Easy Play generation pipeline** – extend or remix new analogy families with gif in a few minute.
-* **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration
+* **Easy Play generation pipeline** – extend or remix new analogy families with gif in a few minutes.
+* **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration.
  
 
 ## Table of Contents
@@ -36,7 +36,7 @@
 
 ### 1. Install
 
-We highly command to using docker. To setting with docker check [SETUP.md](docs/SETUP.md)
+We highly command to using docker. To setting with docker check [SETUP.md](docs/SETUP.md).  
 
 ```bash
 git clone https://github.com/DumDev/gifarc.git
@@ -58,7 +58,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 ### 4. Check the Web Demo
 
-[GIFARC Web Demo](https://gifarc.vercel.app/v1.1)
+[GIFARC Web Demo](https://gifarc.vercel.app/v1.1).  
 
 ---
 
@@ -98,7 +98,7 @@ See the full [🤗 dataset card](https://huggingface.co/datasets/DumDev/gif_arc)
 
 
 * **Modular & Easy generation** – After put GIF in data/GIF, just click all run button at `description_executor.ipynb` to generate Your own data! 
-* **Stable environment setting** enable easy set up with docker and devcontainer
+* **Stable environment setting** enable easy set up with docker and devcontainer.  
 * All intermediate artifacts are cached for reproducibility.
 
 Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
@@ -157,8 +157,8 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 ## \:sparkles: Acknowledgements
 
-* **GIPHY** for powering the GIF search API
-* **BARC** – our generation pipeline stands on the shoulders of this excellent project
+* **GIPHY** for powering the GIF search API.  
+* **BARC** – our generation pipeline stands on the shoulders of this excellent project.  
 * GIFARC wouldn’t be possible without the open‑source community and our amazing reviewers.
 
 ---
