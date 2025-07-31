@@ -171,5 +171,3 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 ## License
 
 Distributed under the **MIT License**.
-
-Feel free to tweak badges, stats, or any placeholders (`TBW`) once results and acceptance details are finalized. Happy publishing!
