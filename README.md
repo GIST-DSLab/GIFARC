@@ -13,7 +13,10 @@
 
 ---
 
-![](./images/free-im-free.gif) will turn into .... GIFARC!
+![](./images/free-im-free.gif) 
+
+will turn into .... GIFARC!
+
 ![](./images/example.png) 
   
 ## TL;DR
