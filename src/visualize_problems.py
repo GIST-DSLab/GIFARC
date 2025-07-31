@@ -3,6 +3,7 @@ import argparse
 import shutil
 import numpy as np
 from utility.utils import remove_trailing_code
+from utility.csv_key_unique_check import find_value_in_column
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
@@ -138,9 +139,9 @@ def highlight_code(code):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--jsonl", type=str, required=True)
-    parser.add_argument("--gifid", type=str, required=True)
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--size", type=int, default=100)
+    parser.add_argument("--metadata_prev_csv_path", "-metadata_prev", type=str, default='./results/metadata/step_problem_metadata.csv', help="")
     parser.add_argument("--outdir", type=str, required=True)
     args = parser.parse_args()
     with open(args.jsonl, "r") as f:
@@ -149,7 +150,15 @@ if __name__ == "__main__":
         raise Exception("file is empty")
     with open(args.jsonl, "r") as f:
         lines = f.readlines()
-    
+    try:
+        problem_id = os.path.basename(args.jsonl).split(".")[0]
+        metainfo = find_value_in_column(args.metadata_prev_csv_path, 'id', problem_id)
+        print(metainfo)
+        gif_name = metainfo.get('records')[0]['gif-id']
+    except:
+        print("Failed to find gif or problem meta check metadata dir, or gif dir",args.jsonl,args.metadata_prev_csv_path)
+        raise ImportError("Can't find Failed to find gif or problem meta check metadata dir, or gif dir",args.jsonl,args.metadata_prev_csv_path,metainfo)
+
     print("Reading JSONL file...")
     from tqdm import tqdm
     data = [json.loads(line) for line in tqdm(lines)]
@@ -206,7 +215,7 @@ if __name__ == "__main__":
         }
         json_data_base64 = base64.b64encode(json.dumps(json_data).encode()).decode()
 
-        gif_path = get_problem_gif_path(args.gifid)
+        gif_path = get_problem_gif_path(gif_name)
         if gif_path:
             gif_base64_src = load_gif_base64_from_path(gif_path)
             gif_html = f'''
@@ -419,8 +428,8 @@ if __name__ == "__main__":
         f.write(final_html)
     
     support_files = {
-        "misc/visualization/visualization-script.js": os.path.join(long_path_prefix, "script.js"),
-        "misc/visualization/visualization-style.css": os.path.join(long_path_prefix, "style.css")
+        "src/misc/visualization/visualization-script.js": os.path.join(long_path_prefix, "script.js"),
+        "src/misc/visualization/visualization-style.css": os.path.join(long_path_prefix, "style.css")
     }
 
     for src, dest in support_files.items():

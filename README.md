@@ -13,13 +13,17 @@
 
 ---
 
+![](./images/free-im-free.gif) will turn into .... GIFARC!
+![](./images/example.png) 
+  
 ## TL;DR
 
 * **10k** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
 * **Easy Play generation pipeline** - extend or remix new analogy families with gif in a few minutes.
 * **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration.
- 
+
+
 
 ## Table of Contents
 1. [Quick Start](#rocket-quick-start)  
@@ -70,7 +74,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 
 Every task packages looks as follows:    
-```json
+```
 {
   "source": "<source code>", # python code string
   "examples": [

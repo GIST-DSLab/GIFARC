@@ -262,6 +262,8 @@ def main():
     parser.add_argument("--reprompt", action="store_true", help="Reprompt for failed problems")
     parser.add_argument("--indexes", nargs=2, type=int, help="Indexes of the problems to generate")
     parser.add_argument("--outdir", type=str, help="Output directory for the generated problems, if not the same as the input jsonl file")
+    parser.add_argument("--model", type=str, help="Output directory for the generated problems, if not the same as the input jsonl file")
+
     parser.add_argument("--metadata_csv_path", "-metadata", type=str, default='./results/metadata/error_fix_step_descriptions_metadata.csv', help="")
     parser.add_argument("--metadata_prev_csv_path", "-metadata_prev", type=str, default='./results/metadata/error_fix_step_descriptions_metadata.csv', help="")
 
@@ -424,7 +426,7 @@ def main():
                     "step_name": "problem",
                     "prev_step_id": str(prev_step_id),
                     "gif_id": str(gif_id),
-                    "gen_model": "o3-mini",
+                    "gen_model": args.model,
                     "result_code": 1,
                     "result_path": result_saving_file,
                     "error_message": "",
@@ -440,7 +442,7 @@ def main():
                     "step_name": "problem",
                     "prev_step_id": str(prev_step_id),
                     "gif_id": str(gif_id),
-                    "gen_model": "o3-mini",
+                    "gen_model":  args.model,
                     "result_code": 0,
                     "result_path": result_saving_file,
                     "error_message": "",

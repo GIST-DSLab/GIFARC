@@ -1,2 +1,5 @@
 id,step-name,prev-step-id,gif-id,gen-model,result_code,result_path,error_message,createAt,token-usage,visualization_path
-fbc09041-8d4f-4c38-aead-b00f08397623,problem,b6353199-eeeb-4812-be7e-d0c78af20187,free-im-free,o3-mini,1,results/problem_o4-mini_202507290745/fbc09041-8d4f-4c38-aead-b00f08397623.jsonl,,2025-07-29T07:53:36+00:00,"""""",
+8abbff15-9bd3-45b7-8b0d-25da5244cf80,problem,27a529e2-c4c5-47dd-8216-971940f4b77c,free-im-free,o4-mini,1,results/problem_o4-mini_202507310655/8abbff15-9bd3-45b7-8b0d-25da5244cf80.jsonl,,2025-07-31T07:01:58+00:00,"""""",
+e0a6aef1-1a20-4a0c-b08f-709fe31d0267,problem,ac174b3f-95d0-4154-beb1-83e60fc495f0,free-im-free,o4-mini,0,results/problem_o4-mini_202507310655/e0a6aef1-1a20-4a0c-b08f-709fe31d0267.jsonl,,2025-07-31T07:43:08+00:00,"""""",
+5102dfa6-fcf8-43fc-9584-fd0901d918ff,problem,27a529e2-c4c5-47dd-8216-971940f4b77c,free-im-free,o4-mini,1,results/problem_o4-mini_202507310655/5102dfa6-fcf8-43fc-9584-fd0901d918ff.jsonl,,2025-07-31T07:43:09+00:00,"""""",
+958dd92e-7e71-450d-aa72-7feac2f28542,problem,9eb2a926-f89a-4daa-852e-e08f01c7be08,free-im-free,o4-mini,1,results/problem_o4-mini_202507310655/958dd92e-7e71-450d-aa72-7feac2f28542.jsonl,,2025-07-31T07:43:09+00:00,"""""",
