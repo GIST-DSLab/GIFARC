@@ -73,7 +73,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 | Split | #Tasks | #Unique GIFs |    Size |
 | ----- | -----: | -----------: |  -----: |
-| Train | 10,000 |    10,000    | < 24 MB |
+| Train | 1,614 |    1,614    | < 100 MB |
 
 
 Every task packages looks as follows:    
