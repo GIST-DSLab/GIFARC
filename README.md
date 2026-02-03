@@ -21,7 +21,7 @@ will turn into .... GIFARC!
   
 ## TL;DR
 
-* **10k** ARC style puzzles made from GIF with analogy.  
+* **1,614** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
 * **Easy Play generation pipeline** - extend or remix new analogy families with gif in a few minutes.
 * **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration.
