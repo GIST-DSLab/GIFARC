@@ -156,7 +156,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
   title   = {GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning},
   author  = { Anonymous },
   year    = {2025},
-  note    = {Under review at NeurIPS Datasets & Benchmarks 2025},
+  note    = {Under review},
   url     = {}
 }
 ```
