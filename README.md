@@ -152,7 +152,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 ### Citing GIFARC
 
 ```bibtex
-@article{sim2026gifarc,
+@misc{sim2026gifarc,
   title={GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning},
   author={Sim, Woochang and Ryu, Hyunseok and Choi, Kyungmin and Han, Sungwon and Kim, Sundong},
   note={Under review},
