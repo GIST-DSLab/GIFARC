@@ -32,10 +32,10 @@ def init_openai_api():
             deployment_image_processor_name = config.get("DEPLOYMENT_IMAGE_PROCESSOR_NAME")
             deployment_data_generator_name = config.get("DEPLOYMENT_DATA_GENERATOR_NAME")
     else:
-        deployment_image_processor_name = config.get("DEPLOYMENT_IMAGE_PROCESSOR_NAME")
-        deployment_data_generator_name = config.get("DEPLOYMENT_DATA_GENERATOR_NAME")
         endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")  
         subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
+        deployment_image_processor_name = os.getenv("DEPLOYMENT_IMAGE_PROCESSOR_NAME")
+        deployment_data_generator_name = os.getenv("DEPLOYMENT_DATA_GENERATOR_NAME")
 
     # Initialize Azure OpenAI Service client with key-based authentication    
     global client

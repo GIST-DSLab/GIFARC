@@ -25,8 +25,8 @@ import random
 random.seed(777)
 
 API_MODE = 'azure'
-API_KEY =  os.getenv("OPENAI_API_KEY")
-API_BASE = os.getenv("AZURE_OPENAI_API_BASE")
+API_KEY = os.getenv("AZURE_OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+API_BASE = os.getenv("AZURE_OPENAI_ENDPOINT")
 
 TRANSPOSE = False
 
@@ -39,7 +39,7 @@ FEW_SHOT_COUNT = 15
 LOG_FILE = "error_log.csv"
 
 if API_MODE == 'azure':
-    openai = AzureOpenAI(api_key="API_KEY", azure_endpoint=API_BASE, api_version = "2024-12-01-preview")
+    openai = AzureOpenAI(api_key=API_KEY, azure_endpoint=API_BASE, api_version = "2024-12-01-preview")
 else:
     openai = OpenAI(api_key=API_KEY, base_url=API_BASE)
 
