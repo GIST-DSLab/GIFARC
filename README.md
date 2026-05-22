@@ -5,9 +5,6 @@
 
 
 [![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
-[![Hugging Face Datasets](https://img.shields.io/badge/HF%20Datasets-gif_arc-ff69b4.svg)](https://huggingface.co/datasets/DumDev/gif_arc) 
-[![License](https://img.shields.io/github/license/DumDev/gifarc.svg)](#) 
-[![Build](https://img.shields.io/github/actions/workflow/status/DumDev/gifarc/tests.yml?label=tests)](https://github.com/)
 
 > By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
 
@@ -24,7 +21,7 @@ will turn into .... GIFARC!
 * **1,614** ARC style puzzles made from GIF with analogy.  
 * Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
 * **Easy Play generation pipeline** - extend or remix new analogy families with gif in a few minutes.
-* **Friendly Hugging Face dataset** & interactive **web demo** for instant exploration.
+* Review artifacts and generated examples are distributed through the anonymous supplementary material during double-blind review.
 
 
 
@@ -52,12 +49,9 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt      
 ````
 
-### 2. Pull the Dataset
+### 2. Use Review Artifacts
 
-```python
-from datasets import load_dataset
-ds = load_dataset("DumDev/gif_arc")
-```
+During double-blind review, use the dataset bundle from the anonymous supplementary material. Place downloaded JSONL files under a local artifact directory and keep large raw outputs out of Git.
 
 ### 3. Generate Your Own GIFARC
 
@@ -65,7 +59,7 @@ Once your Set up is down, open `description_executor.ipynb` and run the code her
 
 ### 4. Check the Web Demo
 
-[GIFARC Web Demo](https://gifarc.vercel.app).  
+[GIFARC Web Demo](https://gifarc.vercel.app).
 
 ---
 
@@ -95,7 +89,7 @@ Every task packages looks as follows:
   "url": "<minified_url>"
 }
 ```
-See the full [dataset card](https://huggingface.co/datasets/DumDev/gif_arc) for licensing, intended use, and data statements.
+See the anonymous supplementary material for licensing, intended use, and data statements during review.
 
 ---
 
@@ -121,15 +115,13 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 ├── description_executor.ipynb # use this to execute
 ├── docker-compose.yml
 ├── docs
-│   ├── EXPERIMENTS.md
+│   ├── ANONYMIZATION.md
 │   ├── GENERATION.md
-│   ├── project_directory_tree.txt
-│   └── SETUP.md
-├── loggings
+│   ├── SETUP.md
+│   └── THIRD_PARTY_NOTICES.md
 ├── README.md
 ├── requirements-dev.txt
 ├── requirements.txt
-├── results # this will generate automatically
 └── src
     ├── execution.py
     ├── experiments.py
@@ -146,15 +138,17 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
     └── visualize_problems.py
 ```
 
+Generated outputs such as `results/`, `experiment_results/`, `loggings/`, and caches are intentionally ignored.
+
 ---
 
 
 ### Citing GIFARC
 
 ```bibtex
-@misc{sim2026gifarc,
+@misc{anonymous2026gifarc,
   title={GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning},
-  author={Sim, Woochang and Ryu, Hyunseok and Choi, Kyungmin and Han, Sungwon and Kim, Sundong},
+  author={Anonymous Authors},
   note={Under review},
   year={2026}
 }
@@ -166,6 +160,7 @@ Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
 
 * **GIPHY** for powering the GIF search API.  
 * **BARC** – our generation pipeline stands on the shoulders of this excellent project.  
+* Some seed-program filenames preserve upstream identifiers for reproducibility; see [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md).
 * GIFARC wouldn’t be possible without the open‑source community and our amazing reviewers.
 
 ---

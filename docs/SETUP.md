@@ -29,7 +29,7 @@ cd ./GIFARC
 docker compose up -d
 ```
 
-Note. it uses port 8998 for jupyter notebook.
+Note. it uses port 8997 for jupyter notebook.
 
 ### 4. Open docker container workspace.
 
@@ -46,18 +46,19 @@ Click it, and select GIFARC folder. It will open a workspace in the docker conta
 
 ### 5. Setup environment variables.
 
-Open the container terminal and type : 
+Open the container terminal and type:
 
 ```bash
-
-touch .env # make .env file
-# and write below we make it to use wi open ai if you want to work with other api or some other provider or local you can fix under utilitys/llm.py
+cp .env.example .env
+# Fill in the keys for the provider you plan to use.
 OPENAI_API_KEY="your open ai api key"
+AZURE_OPENAI_ENDPOINT="your azure openai endpoint"
+AZURE_OPENAI_API_KEY="your azure openai api key"
+DEPLOYMENT_IMAGE_PROCESSOR_NAME="your image processor deployment"
+DEPLOYMENT_DATA_GENERATOR_NAME="your data generator deployment"
 
 ```
 
 ### 6. All Set!
 
 You are all set up. Put GIF files in to ./data/GIF and run the codes.
-
-

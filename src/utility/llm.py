@@ -109,7 +109,9 @@ class LLMClient:
             return OpenAI(api_key=self.api_key, base_url="https://openrouter.ai/api/v1")
         elif self.provider == Provider.OPENAI:
              return OpenAI(api_key=self.api_key)
-        return AzureOpenAI(api_key=self.api_key, azure_endpoint="https://gitarc2.openai.azure.com/", api_version = "2024-12-01-preview")
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        assert azure_endpoint is not None, "AZURE_OPENAI_ENDPOINT is required for Azure OpenAI"
+        return AzureOpenAI(api_key=self.api_key, azure_endpoint=azure_endpoint, api_version = "2024-12-01-preview")
 
     def _hash_prompt(self, prompt, model, temperature, max_tokens, top_p):
         # Create a unique hash for the given parameters
