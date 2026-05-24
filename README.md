@@ -1,10 +1,8 @@
 # GIFARC  
-**Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
+**A GIF-Derived Dataset for Studying Analogical Task Framing in ARC-Style Reasoning**
 
 ![](./images/logo.png)
 
-
-[![Paper](https://img.shields.io/badge/NeurIPS%202025-Under%20Review-orange.svg)](https://neurips.cc/) 
 
 > By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
 
