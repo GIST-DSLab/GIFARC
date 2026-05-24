@@ -1,5 +1,5 @@
 # GIFARC  
-**A GIF-Derived Dataset for Studying Analogical Task Framing in ARC-Style Reasoning**
+**GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning**
 
 ![](./images/logo.png)
 
