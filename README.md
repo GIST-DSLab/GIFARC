@@ -7,10 +7,6 @@
 
 ---
 
-![](./images/free-im-free.gif) 
-
-will turn into .... GIFARC!
-
 ![](./images/example.png) 
   
 ## TL;DR
@@ -52,7 +48,7 @@ During double-blind review, use the dataset bundle from the anonymous supplement
 
 ### 3. Generate Your Own GIFARC
 
-Once your Set up is down, open `description_executor.ipynb` and run the code here.
+Place your own GIF files under `data/GIF/`, then open `description_executor.ipynb` and run the pipeline cells.
 
 ### 4. Check the Web Demo
 

@@ -188,6 +188,7 @@ yarn-error.log*
 *.Zone.Identifier
 *.zip
 project_directory_tree.txt
+.local_backups/
 overleaf/
 wandb/
 mlruns/
@@ -203,6 +204,8 @@ cache_usage/
 src/cache/
 src/cache_usage/
 loggings/
+data/GIF/*
+!data/GIF/.gitkeep
 
 # Large model artifacts
 *.ckpt
