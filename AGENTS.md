@@ -2,13 +2,13 @@
 
 ## Project Structure & Module Organization
 
-GIFARC is a Python/Jupyter pipeline for generating ARC-style puzzles from GIF analogies. Core scripts live in `src/`: `generate_descriptions.py`, `generate_problems.py`, `execution.py`, and `generate_visualization_html.py`. Reusable helpers are under `src/GIFARC_utils/` and `src/utility/`; prompt templates are in `src/prompts/`; seed puzzle programs are in `src/seeds/`. Input GIFs belong in `data/GIF/`. Generated artifacts, metadata, and batch lists are written under `results/`; logs go under `loggings/`. Documentation is in `docs/`, and README assets are in `images/`.
+GIFARC is a Python/Jupyter pipeline for generating ARC-style puzzles from GIF analogies. Core scripts live in `src/`: `generate_descriptions.py`, `generate_problems.py`, `execution.py`, and `generate_visualization_html.py`. Reusable helpers are under `src/GIFARC_utils/` and `src/utility/`; prompt templates are in `src/prompts/`; seed puzzle programs are in `src/seeds/`. Input GIFs belong in `data/GIF/`. Generated artifacts, metadata, and batch lists are written under `results/`; logs go under `loggings/`. Raw GIFs and source URL metadata are not bundled in this review repository.
 
 ## Build, Test, and Development Commands
 
 - `pip install -r requirements.txt && pip install -r requirements-dev.txt`: install runtime and notebook/pipeline dependencies.
 - `docker compose up -d`: build and run the dev container. Jupyter is exposed through the compose/devcontainer setup on host port `8997`.
-- `python src/GIFARC_data_batch/data_batch_generation.py src/all_gifs_metadata.csv -m 300 -c id -o results/batch_list`: regenerate batch-list files from metadata.
+- `python src/GIFARC_data_batch/data_batch_generation.py <metadata.csv> -m 300 -c id -o results/batch_list`: regenerate batch-list files from a local metadata table.
 - `python src/generate_descriptions.py --help` and `python src/generate_problems.py --help`: inspect CLI options before launching model-backed generation.
 - `python -m py_compile <changed-file.py>`: quick syntax check for changed Python files.
 

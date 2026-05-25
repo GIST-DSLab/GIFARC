@@ -206,6 +206,8 @@ src/cache_usage/
 loggings/
 data/GIF/*
 !data/GIF/.gitkeep
+src/all_gifs_metadata.csv
+src/GIFARC_data_batch/all_gifs_metadata.csv
 
 # Large model artifacts
 *.ckpt
