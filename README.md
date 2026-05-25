@@ -1,5 +1,4 @@
-# GIFARC  
-**Synthetic Dataset for Leveraging Human‑Intuitive Analogies to Elevate AI Reasoning**
+# GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing
 
 ![](./images/logo.png)
 
@@ -147,7 +146,7 @@ Generated outputs such as `results/`, `experiment_results/`, `loggings/`, and ca
 
 ```bibtex
 @misc{anonymous2026gifarc,
-  title={GIFARC: Synthetic Dataset for Leveraging Human-Intuitive Analogies to Elevate AI Reasoning},
+  title={GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing},
   author={Anonymous Authors},
   note={Under review},
   year={2026}
