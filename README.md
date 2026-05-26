@@ -45,7 +45,7 @@ pip install -r requirements-dev.txt
 ### 2. Use Review Artifacts
 
 During double-blind review, use the dataset bundle from the anonymous supplementary material. Place downloaded JSONL files under a local artifact directory and keep large raw outputs out of Git.
-Raw GIF files, source GIF URLs, and generated result dumps are not bundled in this software repository.
+This anonymous review artifact supports inspection of the processed GIFARC dataset and running the generation pipeline on user-provided GIF files. It does not include the original GIF files, raw GIPHY crawl metadata, or source GIF URLs used in the internal data collection stage. Therefore, it is not intended to exactly reproduce the original GIPHY crawling stage during double-blind review.
 
 ### 3. Generate Your Own GIFARC
 
@@ -160,4 +160,4 @@ Generated outputs such as `results/`, `experiment_results/`, `loggings/`, and ca
 
 ## License
 
-Distributed under the **MIT License**.
+Distributed under the **MIT License**. See [LICENSE](LICENSE).

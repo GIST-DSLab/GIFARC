@@ -8,7 +8,7 @@ GIFARC is a Python/Jupyter pipeline for generating ARC-style puzzles from GIF an
 
 - `pip install -r requirements.txt && pip install -r requirements-dev.txt`: install runtime and notebook/pipeline dependencies.
 - `docker compose up -d`: build and run the dev container. Jupyter is exposed through the compose/devcontainer setup on host port `8997`.
-- `python src/GIFARC_data_batch/data_batch_generation.py <metadata.csv> -m 300 -c id -o results/batch_list`: regenerate batch-list files from a local metadata table.
+- `python src/GIFARC_data_batch/data_batch_generation.py <your_metadata.csv> -m 300 -c id -o results/batch_list`: regenerate batch-list files from a local metadata table.
 - `python src/generate_descriptions.py --help` and `python src/generate_problems.py --help`: inspect CLI options before launching model-backed generation.
 - `python -m py_compile <changed-file.py>`: quick syntax check for changed Python files.
 
