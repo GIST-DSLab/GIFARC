@@ -1,0 +1,320 @@
+{
+  "scope": "Definitions reused verbatim from actual scoring/evaluation source, imports and release CLI adapters separate. No model calls made for packaging.",
+  "definitions": [
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/data_io.py",
+      "symbol": "parse_seed_description",
+      "source_file_sha256": "bec98adda452497c9aedbd413412acdd1af5c6523e0d9365fe955a7cd721f5d5",
+      "copied_definition_sha256": "c51bee062dcad70f4338547f810cc634938578d8ba0ef086b5c2ce8fe0b84f27",
+      "source_line": 50,
+      "source_end_line": 64
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/prompts.py",
+      "symbol": "render_grid",
+      "source_file_sha256": "4eea42939b5a51cf20dcd9b17933e81602bad7a4a803315d46468afafc3863e7",
+      "copied_definition_sha256": "99772be057452636aec09722b3e0dca784a0a3b135a3343ec3b0bbbecb358e9e",
+      "source_line": 12,
+      "source_end_line": 14
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/prompts.py",
+      "symbol": "normalize_example_pair",
+      "source_file_sha256": "4eea42939b5a51cf20dcd9b17933e81602bad7a4a803315d46468afafc3863e7",
+      "copied_definition_sha256": "df9873efafab8a826e303b3f3c6e32b66db3dbf94e85aeb555247bc0239a3932",
+      "source_line": 21,
+      "source_end_line": 26
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/scoring.py",
+      "symbol": "to_plain",
+      "source_file_sha256": "66b3623ffc34df87bf87443af4d529b25439cdaa219d3fc39ec7fadb021e7ccf",
+      "copied_definition_sha256": "d88303c5733fb871e6091f87c1de10cfbb1b3b38f22842e280806c601d201928",
+      "source_line": 22,
+      "source_end_line": 33
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/scoring.py",
+      "symbol": "validate_grid",
+      "source_file_sha256": "66b3623ffc34df87bf87443af4d529b25439cdaa219d3fc39ec7fadb021e7ccf",
+      "copied_definition_sha256": "8d475875d99dad42d413b1ae39c2159b019eed93ac699e92800684d0758534c4",
+      "source_line": 36,
+      "source_end_line": 53
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/api_client.py",
+      "symbol": "body_output_text",
+      "source_file_sha256": "c3e57edf4439317b01f114757b8c8bd18b86a2f439d235531b054a9532ac9ad6",
+      "copied_definition_sha256": "974db0f35d9b84d71587153594e3ac2d19b819b37fb1a5183bec63fe4f0cb94d",
+      "source_line": 138,
+      "source_end_line": 146
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/src/api_client.py",
+      "symbol": "is_output_truncated",
+      "source_file_sha256": "c3e57edf4439317b01f114757b8c8bd18b86a2f439d235531b054a9532ac9ad6",
+      "copied_definition_sha256": "0f901c1deefc205c50f09b24f7d974d927917bd2ffcdeaab8d1497be9e8e4902",
+      "source_line": 149,
+      "source_end_line": 159
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "cache_key",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "6cfbc51ded38909439fb3f30bd88a5f72e116ebc7a36cd4c10c2f53ceff09300",
+      "source_line": 72,
+      "source_end_line": 77
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "normalize_task_pair",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "24aaf1cdfcdc83c7ef49c22dd226dd5d057762c4231815c9b85a436226c71f1a",
+      "source_line": 80,
+      "source_end_line": 89
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "stored_pairs",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "502b82c319156e60b22a6ea2f4be43d656a2dc45ac3ea7ba2e5643b7ab9c28d1",
+      "source_line": 92,
+      "source_end_line": 103
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "build_stored_pair_backcap_prompt",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "dbccd51dd86ac57d2ec581e93b4d6cece97f5424280ce0198d901852dc94b8c5",
+      "source_line": 106,
+      "source_end_line": 135
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "parse_description",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "bbe815f8adc228ce9909c597a9f88dd91e8c6a63e84d96b710861f5415e5ce64",
+      "source_line": 138,
+      "source_end_line": 154
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "response_body",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "e675e0ac5fec2c1522c32b11c4e4b275b48336ad7401fb28702faa0473b42df4",
+      "source_line": 157,
+      "source_end_line": 163
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "extract_caption",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "9f42bd84ed4462006abbe8df86064cb8d84a4ce70b14167a2f881c2173ba94e4",
+      "source_line": 166,
+      "source_end_line": 179
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "response_body_for_prompt",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "26b8c444fe6a552f26238cbd3f14cad0a925a9b86bbc10a8fcb293141b7e0ed5",
+      "source_line": 204,
+      "source_end_line": 218
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/run_stored_pair_cosine_filter.py",
+      "symbol": "cosine",
+      "source_file_sha256": "7278a0f5e051dbaba059311295183160de63e9dd5490e49cce3306386a5205b6",
+      "copied_definition_sha256": "d4cc8d84030f1386d63f069a502a074b34b1a3a19309787084ae7cb6476ebc2e",
+      "source_line": 399,
+      "source_end_line": 403
+    },
+    {
+      "source_repository": "GIFARC-Filtering",
+      "source_file": "builder_filter/scripts/arr_full_alignment_run.py",
+      "symbol": "retry_allowed",
+      "source_file_sha256": "8e694d8cdd0ddcf405dee20bd06e409b019f89476326909320acd54eb56ba2ae",
+      "copied_definition_sha256": "596727bcbeef22eb209572d05822dfaf7742935c3065c293a424e304e96b4f84",
+      "source_line": 157,
+      "source_end_line": 158
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/report_rebuttal_metrics.py",
+      "symbol": "_mean",
+      "source_file_sha256": "c291b91b26b3116c64d2aa625b0ac107b57b889c1efff1c8c5e30f5d44f71dc3",
+      "copied_definition_sha256": "fb4e79f18cca404d2e425b9d35fb65291ffd96bf83c196d0dc9e9884f2fe4158",
+      "source_line": 720,
+      "source_end_line": 722
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/report_rebuttal_metrics.py",
+      "symbol": "_mean_values",
+      "source_file_sha256": "c291b91b26b3116c64d2aa625b0ac107b57b889c1efff1c8c5e30f5d44f71dc3",
+      "copied_definition_sha256": "38ba99a91b4629ee21f22aa825b7123a9e6c98142f46dc728b5a614d8b2aef17",
+      "source_line": 725,
+      "source_end_line": 728
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/report_rebuttal_metrics.py",
+      "symbol": "_sample_std",
+      "source_file_sha256": "c291b91b26b3116c64d2aa625b0ac107b57b889c1efff1c8c5e30f5d44f71dc3",
+      "copied_definition_sha256": "9135124edbabd09ca44c03753fad511e9a2430ac0e30cc3ed84c7baed7afb96e",
+      "source_line": 731,
+      "source_end_line": 736
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/reaggregate_cached_alignment.py",
+      "symbol": "make_subsets",
+      "source_file_sha256": "1f3bfc3a36ac045d2a936294dd55eb976039db0923d6db28e534bbcbcd618639",
+      "copied_definition_sha256": "375ace0059ea6d3062168d19021d521a2f1994a68b13f138772deb66d85c06d8",
+      "source_line": 97,
+      "source_end_line": 105
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/reaggregate_cached_alignment.py",
+      "symbol": "aggregate",
+      "source_file_sha256": "1f3bfc3a36ac045d2a936294dd55eb976039db0923d6db28e534bbcbcd618639",
+      "copied_definition_sha256": "2cf701d792263c746a165c16cd5ceb8d9389dab8ad5184715a81535c0abfa410",
+      "source_line": 108,
+      "source_end_line": 146
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/reaggregate_cached_alignment.py",
+      "symbol": "write_csv",
+      "source_file_sha256": "1f3bfc3a36ac045d2a936294dd55eb976039db0923d6db28e534bbcbcd618639",
+      "copied_definition_sha256": "1af3f02da068324171732b986c713be2740894542d791942f9c55ee7fcb1dcde",
+      "source_line": 189,
+      "source_end_line": 193
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/analyze_analogy_alignment_margin.py",
+      "symbol": "_aggregate_per_task",
+      "source_file_sha256": "4a93c3f172ced195b746c68033bfa3a9f9a70544747b2b92fe43c3276aac2ba4",
+      "copied_definition_sha256": "6275b5f6ecbaf1fd036b8a8c39f8aba4ea59b61324a36681294344a43e3637d7",
+      "source_line": 423,
+      "source_end_line": 446
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/analyze_analogy_alignment_margin.py",
+      "symbol": "_summarize_conditions",
+      "source_file_sha256": "4a93c3f172ced195b746c68033bfa3a9f9a70544747b2b92fe43c3276aac2ba4",
+      "copied_definition_sha256": "2413eb4e2ea8d8e66da09d9216083e449dbd2cd7731c9cc0e65e836ed8a6046c",
+      "source_line": 449,
+      "source_end_line": 469
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/analyze_analogy_alignment_margin.py",
+      "symbol": "_mean_key",
+      "source_file_sha256": "4a93c3f172ced195b746c68033bfa3a9f9a70544747b2b92fe43c3276aac2ba4",
+      "copied_definition_sha256": "80b09f92b8563fa9a397207adab1c1c6c154abaca5708c8c82e07233cd5d89ea",
+      "source_line": 714,
+      "source_end_line": 715
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/analyze_analogy_alignment_margin.py",
+      "symbol": "_mean_values",
+      "source_file_sha256": "4a93c3f172ced195b746c68033bfa3a9f9a70544747b2b92fe43c3276aac2ba4",
+      "copied_definition_sha256": "38ba99a91b4629ee21f22aa825b7123a9e6c98142f46dc728b5a614d8b2aef17",
+      "source_line": 718,
+      "source_end_line": 721
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "scripts/analyze_analogy_alignment_margin.py",
+      "symbol": "_sample_std",
+      "source_file_sha256": "4a93c3f172ced195b746c68033bfa3a9f9a70544747b2b92fe43c3276aac2ba4",
+      "copied_definition_sha256": "6154c76c671a9dd49a81eaff5255f0fd554ff701de1ce24688125dddfdb425f5",
+      "source_line": 724,
+      "source_end_line": 727
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/utils/grid_utils.py",
+      "symbol": "grid_shape",
+      "source_file_sha256": "66ee478f703329150108a98915e2307e801c5dd8a7854467fa01f226c67c7b84",
+      "copied_definition_sha256": "52d3227f01294290651abf9d2d24cdefc82199824b860bca23f30a6ec78ff327",
+      "source_line": 27,
+      "source_end_line": 28
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/metrics/basic.py",
+      "symbol": "exact_match",
+      "source_file_sha256": "e1836238188ae705e97757051f8587c50a3fbc82a4d8d358879ee000cbf80895",
+      "copied_definition_sha256": "3ce0ad5fd5f72f079897fb9e334396481c6f872a494aa89817cd23fb630d4fd8",
+      "source_line": 10,
+      "source_end_line": 11
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/metrics/basic.py",
+      "symbol": "grid_cell_accuracy",
+      "source_file_sha256": "e1836238188ae705e97757051f8587c50a3fbc82a4d8d358879ee000cbf80895",
+      "copied_definition_sha256": "fd72826fa05350351cb3e3206ee508b9f87320b348ca0c5f4941fa5d53d76db4",
+      "source_line": 14,
+      "source_end_line": 24
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/metrics/basic.py",
+      "symbol": "foreground_accuracy",
+      "source_file_sha256": "e1836238188ae705e97757051f8587c50a3fbc82a4d8d358879ee000cbf80895",
+      "copied_definition_sha256": "5aea0fd685396b016b82a87ad18b7f6398ec46b643f5fe592daf89e1db118cb6",
+      "source_line": 27,
+      "source_end_line": 61
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "gifarc-visualization/scripts/build_icl_confidence_audit.py",
+      "symbol": "high",
+      "source_file_sha256": "dac14fc3fabfe769bdbcd488d94169f1136918e29a3cec48a70cf3e7f2e50e3a",
+      "copied_definition_sha256": "be9d1511bc85e510007ea61d86a5f01874f49dc80f81a4b3ef1df0394f3fcc74",
+      "source_line": 55,
+      "source_end_line": 57
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "gifarc-visualization/scripts/build_icl_confidence_audit.py",
+      "symbol": "select_audit",
+      "source_file_sha256": "dac14fc3fabfe769bdbcd488d94169f1136918e29a3cec48a70cf3e7f2e50e3a",
+      "copied_definition_sha256": "8fd2494edd756a239492b543e4d34cee56f13715b2a2d8fd1583a5c024af28f1",
+      "source_line": 59,
+      "source_end_line": 65
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "gifarc-visualization/scripts/build_icl_confidence_audit.py",
+      "symbol": "summarize",
+      "source_file_sha256": "dac14fc3fabfe769bdbcd488d94169f1136918e29a3cec48a70cf3e7f2e50e3a",
+      "copied_definition_sha256": "4a1f40a102a38c77fae693498e4fa94c4756a994f4ae0c3beaf8a4c90764b898",
+      "source_line": 67,
+      "source_end_line": 74
+    }
+  ]
+}

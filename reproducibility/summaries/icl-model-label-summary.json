@@ -1,0 +1,93 @@
+{
+  "analysis_id": "icl-paired-confidence-audit-20261007-v1",
+  "dataset_id": "arc2-icl-error-census-20261006",
+  "source_manifest_sha256": "54a9a1ee8b1d8b8be75e16c9cc6a200422180b6ff7a19a82b8a80141a0b473f2",
+  "total_responses": 1002,
+  "usable_responses": 858,
+  "global_high_confidence_without_undetermined": 690,
+  "common_shape_pairs": 111,
+  "selected_pairs": 79,
+  "selected_responses": 158,
+  "unique_evaluation_tasks": 44,
+  "unique_source_task_files": 35,
+  "eligible_coverage_of_common_shape_pairs": 0.7117117117117117,
+  "by_condition": {
+    "base": {
+      "denominator": 79,
+      "labels": {
+        "localization": 18,
+        "rule_output_inconsistency": 30,
+        "object_selection": 38,
+        "declared_rule_contradiction": 36,
+        "color": 32,
+        "no_observed_error": 5
+      },
+      "percent": {
+        "localization": 22.78481012658228,
+        "rule_output_inconsistency": 37.9746835443038,
+        "object_selection": 48.10126582278481,
+        "declared_rule_contradiction": 45.56962025316456,
+        "color": 40.50632911392405,
+        "no_observed_error": 6.329113924050633
+      },
+      "sampled_responses": 21
+    },
+    "full": {
+      "denominator": 79,
+      "labels": {
+        "object_selection": 29,
+        "declared_rule_contradiction": 34,
+        "rule_output_inconsistency": 39,
+        "color": 27,
+        "no_observed_error": 9,
+        "localization": 16
+      },
+      "percent": {
+        "object_selection": 36.70886075949367,
+        "declared_rule_contradiction": 43.037974683544306,
+        "rule_output_inconsistency": 49.36708860759494,
+        "color": 34.177215189873415,
+        "no_observed_error": 11.39240506329114,
+        "localization": 20.253164556962027
+      },
+      "sampled_responses": 9
+    }
+  },
+  "sampled_response_ids": [
+    "16b78196__test0__r0__base",
+    "16b78196__test0__r0__full",
+    "1ae2feb7__test0__r0__base",
+    "1ae2feb7__test1__r0__full",
+    "1ae2feb7__test2__r0__full",
+    "1ae2feb7__test2__r1__base",
+    "1ae2feb7__test2__r2__base",
+    "21897d95__test1__r1__base",
+    "221dfab4__test0__r0__base",
+    "28a6681f__test0__r2__base",
+    "2b83f449__test0__r2__full",
+    "332f06d7__test0__r1__base",
+    "332f06d7__test0__r2__base",
+    "36a08778__test0__r2__base",
+    "409aa875__test0__r0__base",
+    "62593bfd__test1__r2__base",
+    "8f3a5a89__test0__r1__full",
+    "9385bd28__test0__r1__full",
+    "9385bd28__test1__r2__base",
+    "97d7923e__test0__r2__base",
+    "b99e7126__test0__r0__base",
+    "b99e7126__test0__r2__base",
+    "b9e38dc0__test0__r0__base",
+    "d59b0160__test0__r1__full",
+    "db695cfb__test0__r0__full",
+    "dbff022c__test0__r1__base",
+    "e3721c99__test0__r2__base",
+    "e3721c99__test1__r2__base",
+    "e376de54__test0__r2__base",
+    "e87109e9__test0__r0__full"
+  ],
+  "annotation_status": "model_only",
+  "human_audit_status": "26 sampled incorrect responses reviewed separately; four exact matches mechanically checked",
+  "human_audit_completed": true,
+  "labels_nonexclusive": true,
+  "inference_limit": "Descriptive labels conditional on common shape correctness and both conditions having high model confidence. Not all-task error prevalence or a causal explanation."
+}

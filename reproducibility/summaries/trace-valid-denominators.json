@@ -1,0 +1,80 @@
+[
+  {
+    "model": "gpt-5.4-mini",
+    "condition": "neutral",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 291,
+    "by_run": {
+      "1": 97,
+      "2": 97,
+      "3": 97
+    },
+    "tasks_with_valid_scores": 98
+  },
+  {
+    "model": "gpt-5.4",
+    "condition": "neutral",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 287,
+    "by_run": {
+      "1": 88,
+      "2": 99,
+      "3": 100
+    },
+    "tasks_with_valid_scores": 100
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "condition": "rich",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 292,
+    "by_run": {
+      "1": 97,
+      "2": 98,
+      "3": 97
+    },
+    "tasks_with_valid_scores": 98
+  },
+  {
+    "model": "gpt-5.4",
+    "condition": "rich",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 288,
+    "by_run": {
+      "1": 90,
+      "2": 99,
+      "3": 99
+    },
+    "tasks_with_valid_scores": 99
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "condition": "neutral A+G",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 292,
+    "by_run": {
+      "1": 96,
+      "2": 98,
+      "3": 98
+    },
+    "tasks_with_valid_scores": 99
+  },
+  {
+    "model": "gpt-5.4",
+    "condition": "neutral A+G",
+    "planned_tasks": 100,
+    "planned_runs": 3,
+    "valid_case_scores": 287,
+    "by_run": {
+      "1": 89,
+      "2": 99,
+      "3": 99
+    },
+    "tasks_with_valid_scores": 99
+  }
+]

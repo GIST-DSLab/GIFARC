@@ -1,0 +1,139 @@
+{
+  "num_tasks": 1614,
+  "num_input_output_pairs": 17010,
+  "avg_pairs_per_task": 10.539,
+  "min_pairs_per_task": 4,
+  "max_pairs_per_task": 19,
+  "fields": [
+    "examples",
+    "seeds",
+    "source",
+    "task_id",
+    "alignment"
+  ],
+  "source_code_length_chars": {
+    "mean": 2027.36,
+    "median": 1965.0,
+    "min": 750,
+    "max": 4787
+  },
+  "generation_artifacts_per_task": {
+    "mean": 5,
+    "min": 5,
+    "max": 5,
+    "note": "This counts all entries in the `seeds` field. The field name is inherited from the generation pipeline and does not denote random seeds."
+  },
+  "retrieved_seed_references_per_task": {
+    "mean": 4,
+    "min": 4,
+    "max": 4,
+    "note": "These are retrieved ARC-style seed example references, typically four .py files per task."
+  },
+  "task_sketch_entries_per_task": {
+    "mean": 1,
+    "min": 1,
+    "max": 1,
+    "note": "These entries contain the generated concepts and description used to synthesize the task."
+  },
+  "contains_original_gif_files": false,
+  "contains_source_gif_urls": false,
+  "sha256_data_jsonl": "4f02ef5c3e1280d38cc312a791f9b64fd02153b735850df56d5d45de3dcf0bbf",
+  "sha256_alignment_scores_jsonl": "7ede582e47a1b365c47c88eedec89421ef05e660cf964689824f7dde9ab6bfac",
+  "alignment": {
+    "num_scored_tasks": 1608,
+    "num_unscored_tasks": 6,
+    "scored_fraction": 0.9962825278810409,
+    "num_reverse_captions": 1608,
+    "unscored_task_ids": [
+      18,
+      260,
+      536,
+      719,
+      781,
+      1310
+    ],
+    "unscored_reason": "reverse_caption_max_output_tokens",
+    "reverse_caption_attempts_per_unscored_task": 2,
+    "output_token_limit_per_attempt": 16384,
+    "threshold_operator": ">=",
+    "threshold_retention": [
+      {
+        "threshold": 0.45,
+        "retained_corpus_tasks": 987,
+        "unscored_excluded": 6,
+        "human_validation_retained": 105,
+        "human_validation_true_positives": 83,
+        "human_validation_precision": 0.7904761904761904,
+        "human_validation_recall": 0.8058252427184466
+      },
+      {
+        "threshold": 0.5,
+        "retained_corpus_tasks": 622,
+        "unscored_excluded": 6,
+        "human_validation_retained": 73,
+        "human_validation_true_positives": 63,
+        "human_validation_precision": 0.863013698630137,
+        "human_validation_recall": 0.6116504854368932
+      },
+      {
+        "threshold": 0.55,
+        "retained_corpus_tasks": 319,
+        "unscored_excluded": 6,
+        "human_validation_retained": 41,
+        "human_validation_true_positives": 37,
+        "human_validation_precision": 0.9024390243902439,
+        "human_validation_recall": 0.3592233009708738
+      },
+      {
+        "threshold": 0.6,
+        "retained_corpus_tasks": 129,
+        "unscored_excluded": 6,
+        "human_validation_retained": 21,
+        "human_validation_true_positives": 20,
+        "human_validation_precision": 0.9523809523809523,
+        "human_validation_recall": 0.1941747572815534
+      },
+      {
+        "threshold": 0.65,
+        "retained_corpus_tasks": 39,
+        "unscored_excluded": 6,
+        "human_validation_retained": 9,
+        "human_validation_true_positives": 9,
+        "human_validation_precision": 1.0,
+        "human_validation_recall": 0.08737864077669903
+      }
+    ]
+  },
+  "grid_dimensions": {
+    "criterion": "A task is within the 30x30 bound only when every stored input and output grid has at most 30 rows and 30 columns.",
+    "tasks_all_grids_within_30x30": 798,
+    "tasks_with_any_grid_exceeding_30x30": 816,
+    "input": {
+      "num_grids": 17010,
+      "grids_exceeding_30x30": 3160,
+      "maximum_rows": 196,
+      "maximum_columns": 510,
+      "maximum_cells": 12500,
+      "fraction_exceeding_30x30": 0.18577307466196355
+    },
+    "output": {
+      "num_grids": 17010,
+      "grids_exceeding_30x30": 5578,
+      "maximum_rows": 10933,
+      "maximum_columns": 3105,
+      "maximum_cells": 283024,
+      "fraction_exceeding_30x30": 0.32792475014697237
+    },
+    "maxima_note": "Maximum rows, columns and cells are computed separately and may correspond to different grids.",
+    "scope": "Grid-size compatibility is separate from execution checks and sketch-to-task alignment filtering."
+  },
+  "generation_record_limits": "Historical generation materials lack complete rejected-candidate and API-attempt records. Filter-specific task rejection rates and actual API retry counts cannot be recovered; input, pair and program failure counts do not identify rejected-task counts.",
+  "human_validation": {
+    "consensus_subset_size": 140,
+    "aligned_tasks": 103,
+    "misaligned_tasks": 37,
+    "precision_positive_label": "aligned",
+    "recall_denominator": 103,
+    "scope": "Precision and recall describe the 140-task human-consensus subset, not the whole corpus."
+  }
+}

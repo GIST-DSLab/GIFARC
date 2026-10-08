@@ -1,0 +1,195 @@
+{
+  "scope": "Retained full ground-truth SFT training files for seeds 444/555/666; this audit does not establish exact checkpoint-to-data-hash lineage or tokenizer-stage task retention. No retraining or API calls.",
+  "summary": [
+    {
+      "seed": 444,
+      "threshold": 0.45,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 596,
+      "below_threshold_tasks": 401,
+      "pass_percent_of_training": 59.6,
+      "maximum_pass_if_unscored_all_pass": 599
+    },
+    {
+      "seed": 444,
+      "threshold": 0.5,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 374,
+      "below_threshold_tasks": 623,
+      "pass_percent_of_training": 37.4,
+      "maximum_pass_if_unscored_all_pass": 377
+    },
+    {
+      "seed": 444,
+      "threshold": 0.55,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 190,
+      "below_threshold_tasks": 807,
+      "pass_percent_of_training": 19.0,
+      "maximum_pass_if_unscored_all_pass": 193
+    },
+    {
+      "seed": 444,
+      "threshold": 0.6,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 80,
+      "below_threshold_tasks": 917,
+      "pass_percent_of_training": 8.0,
+      "maximum_pass_if_unscored_all_pass": 83
+    },
+    {
+      "seed": 444,
+      "threshold": 0.65,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 25,
+      "below_threshold_tasks": 972,
+      "pass_percent_of_training": 2.5,
+      "maximum_pass_if_unscored_all_pass": 28
+    },
+    {
+      "seed": 555,
+      "threshold": 0.45,
+      "training_tasks": 1000,
+      "scored_tasks": 995,
+      "unscored_tasks": 5,
+      "pass_tasks": 606,
+      "below_threshold_tasks": 389,
+      "pass_percent_of_training": 60.6,
+      "maximum_pass_if_unscored_all_pass": 611
+    },
+    {
+      "seed": 555,
+      "threshold": 0.5,
+      "training_tasks": 1000,
+      "scored_tasks": 995,
+      "unscored_tasks": 5,
+      "pass_tasks": 381,
+      "below_threshold_tasks": 614,
+      "pass_percent_of_training": 38.1,
+      "maximum_pass_if_unscored_all_pass": 386
+    },
+    {
+      "seed": 555,
+      "threshold": 0.55,
+      "training_tasks": 1000,
+      "scored_tasks": 995,
+      "unscored_tasks": 5,
+      "pass_tasks": 201,
+      "below_threshold_tasks": 794,
+      "pass_percent_of_training": 20.1,
+      "maximum_pass_if_unscored_all_pass": 206
+    },
+    {
+      "seed": 555,
+      "threshold": 0.6,
+      "training_tasks": 1000,
+      "scored_tasks": 995,
+      "unscored_tasks": 5,
+      "pass_tasks": 78,
+      "below_threshold_tasks": 917,
+      "pass_percent_of_training": 7.8,
+      "maximum_pass_if_unscored_all_pass": 83
+    },
+    {
+      "seed": 555,
+      "threshold": 0.65,
+      "training_tasks": 1000,
+      "scored_tasks": 995,
+      "unscored_tasks": 5,
+      "pass_tasks": 24,
+      "below_threshold_tasks": 971,
+      "pass_percent_of_training": 2.4,
+      "maximum_pass_if_unscored_all_pass": 29
+    },
+    {
+      "seed": 666,
+      "threshold": 0.45,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 606,
+      "below_threshold_tasks": 391,
+      "pass_percent_of_training": 60.6,
+      "maximum_pass_if_unscored_all_pass": 609
+    },
+    {
+      "seed": 666,
+      "threshold": 0.5,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 380,
+      "below_threshold_tasks": 617,
+      "pass_percent_of_training": 38.0,
+      "maximum_pass_if_unscored_all_pass": 383
+    },
+    {
+      "seed": 666,
+      "threshold": 0.55,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 193,
+      "below_threshold_tasks": 804,
+      "pass_percent_of_training": 19.3,
+      "maximum_pass_if_unscored_all_pass": 196
+    },
+    {
+      "seed": 666,
+      "threshold": 0.6,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 74,
+      "below_threshold_tasks": 923,
+      "pass_percent_of_training": 7.4,
+      "maximum_pass_if_unscored_all_pass": 77
+    },
+    {
+      "seed": 666,
+      "threshold": 0.65,
+      "training_tasks": 1000,
+      "scored_tasks": 997,
+      "unscored_tasks": 3,
+      "pass_tasks": 23,
+      "below_threshold_tasks": 974,
+      "pass_percent_of_training": 2.3,
+      "maximum_pass_if_unscored_all_pass": 26
+    }
+  ],
+  "overlap_between_training_seeds": {
+    "444_555": 659,
+    "444_666": 672,
+    "555_666": 666
+  },
+  "common_all_three": 441,
+  "interpretation": "Only a subset of each retained training file satisfies each score threshold. An existing checkpoint trained with the full original file is not a filtered-training checkpoint; filtered SFT effects require retraining.",
+  "training_alignment_filter_applied": false,
+  "training_files": [
+    {
+      "seed": 444,
+      "sha256": "99bb2bd66d900dd7e4eb33d5a2860d994b466fefe7c9faa1c0a7c05447c45fc1",
+      "unique_canonical_tasks": 1000
+    },
+    {
+      "seed": 555,
+      "sha256": "ce8bf22e7e8f7c0df742349d07e667830cd3e58362563797a5534118b92a3e3c",
+      "unique_canonical_tasks": 1000
+    },
+    {
+      "seed": 666,
+      "sha256": "28a1783d9a94cd37595a4d9d366017d1f7b6e3b4f0134d4fd99be86d2c4642ba",
+      "unique_canonical_tasks": 1000
+    }
+  ]
+}

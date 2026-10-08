@@ -27,3 +27,9 @@ Recent history uses short, imperative messages such as `Update README.md`, `Revi
 ## Security & Configuration Tips
 
 Store provider credentials only in `.env`; do not commit API keys, cache databases, or large result dumps unless they are intentional dataset artifacts. `OPENAI_API_KEY` is the default key used by `src/utility/llm.py`, with optional provider-specific keys supported there.
+
+## Anonymous reproducibility extension
+
+`reproducibility/` contains the actual scoring/evaluation helper definitions and offline release adapters; compact scientific artifacts belong in `reproducibility/summaries/`. Keep copied definitions intact and record source hashes in `source-provenance.json`. Public task IDs are canonical one-based IDs, independent of Data JSONL line order. The original generation scripts, notebook, and timeout defaults are preserved.
+
+Validate changes with Python syntax checks, offline `--help`, filtering against the released Data sidecar, and exact reproduction of the included summaries. No model-backed generation, new caption/embedding calls, retraining, or publication is needed for these checks. Do not include credentials, internal author paths, full raw logs, reviewer identity, or model/API operation identifiers.

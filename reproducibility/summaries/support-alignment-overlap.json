@@ -1,0 +1,51 @@
+{
+  "thresholds": [
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65
+  ],
+  "scores_and_membership": [
+    {
+      "canonical_task_id": 838,
+      "alignment_score": 0.526157702277487,
+      "pass_ge_0.45": true,
+      "pass_ge_0.50": true,
+      "pass_ge_0.55": false,
+      "pass_ge_0.60": false,
+      "pass_ge_0.65": false
+    },
+    {
+      "canonical_task_id": 902,
+      "alignment_score": 0.47414481203078224,
+      "pass_ge_0.45": true,
+      "pass_ge_0.50": false,
+      "pass_ge_0.55": false,
+      "pass_ge_0.60": false,
+      "pass_ge_0.65": false
+    },
+    {
+      "canonical_task_id": 878,
+      "alignment_score": 0.5012805125575244,
+      "pass_ge_0.45": true,
+      "pass_ge_0.50": true,
+      "pass_ge_0.55": false,
+      "pass_ge_0.60": false,
+      "pass_ge_0.65": false
+    }
+  ],
+  "passing_support_count": {
+    "0.45": 3,
+    "0.50": 2,
+    "0.55": 0,
+    "0.60": 0,
+    "0.65": 0
+  },
+  "interpretation": "At 0.45 the unchanged demonstrations satisfy the threshold. This is a retrospective score audit, not evidence that they were originally selected by this filter. At 0.50 one demonstration falls below threshold; at 0.55 and above all three fall below threshold.",
+  "canonical_support_task_ids": [
+    838,
+    902,
+    878
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "format": "JSON Lines; one task per line",
+  "num_records": 1614,
+  "top_level_fields": {
+    "source": "String containing executable Python code for the ARC-style transformation, including the task concepts and description in comments.",
+    "examples": "List of input-output grid pairs. Each pair is represented as [input_grid, output_grid], where each grid is a 2D integer array with values 0-9.",
+    "seeds": "List of generation support artifacts inherited from the task synthesis pipeline. The field usually contains four retrieved ARC-style seed example references (e.g., .py filenames) plus one generated task sketch containing concepts and description. It does not denote random seeds.",
+    "task_id": "Integer canonical experiment task ID (1-1614), verified through unique SHA-256 matching of exact source code and equality of examples and generation artifacts. IDs are not JSONL line numbers.",
+    "alignment": "Object with score, status and unscored_reason, described in alignment_fields. Original source/examples/seeds fields are preserved exactly."
+  },
+  "grid_value_range": "Integers 0-9, following ARC-style color indices.",
+  "original_gif_files_included": false,
+  "original_gif_urls_included": false,
+  "alignment_fields": {
+    "score": "Finite cosine similarity float in [-1, 1], stored without decimal rounding, or null when no reverse caption was returned.",
+    "status": "One of scored or unscored. scored requires a finite score and null unscored_reason; unscored requires null score and the verified reason.",
+    "unscored_reason": "null for scored tasks; reverse_caption_max_output_tokens for six tasks whose two reverse-caption attempts each reached 16,384 output tokens without a caption."
+  },
+  "alignment_sidecar": {
+    "path": "data/alignment_scores.jsonl",
+    "num_records": 1614,
+    "fields": {
+      "task_id": "Same canonical integer ID as in data/data.jsonl.",
+      "source_sha256": "Lowercase SHA-256 hex digest of the exact source string encoded as UTF-8; excludes JSON escaping and enclosing JSON.",
+      "alignment": "Same object and field contract as the main task record.",
+      "reverse_caption": "Anonymous grid-only transformation caption used in scoring, or null for the six unscored tasks."
+    },
+    "join_key": "task_id",
+    "order": "Same record order as data/data.jsonl; use task_id for joins."
+  },
+  "grid_shape_contract": "Stored grids are nonempty rectangular 2D integer arrays. Dimensions are not uniformly bounded by 30x30: 798 tasks meet that bound for every stored input and output; 816 tasks contain at least one larger grid. See statistics.json for size counts and independently computed maxima.",
+  "alignment_filter": "Keep records with alignment.status == scored and alignment.score >= threshold. A null score is unknown and is excluded from thresholded subsets."
+}

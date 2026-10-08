@@ -1,0 +1,256 @@
+{
+  "num_tasks": 1614,
+  "num_input_output_pairs": 17010,
+  "original_fields_preserved": [
+    "source",
+    "examples",
+    "seeds"
+  ],
+  "task_id_join": {
+    "method": "Unique SHA-256 of exact UTF-8 source code, followed by exact equality of source, examples and seeds against canonical payloads; no assumption about row order.",
+    "matched_tasks": 1614,
+    "ambiguous_matches": 0,
+    "unmatched_tasks": 0,
+    "canonical_byte_hashes_verified": 1614
+  },
+  "scoring_protocol": {
+    "caption_model": "gpt-5.4-2026-03-05",
+    "reasoning_effort": "medium",
+    "pair_policy": "first3 valid stored pairs in original order",
+    "caption_inputs": "Stored input-output grid pairs only; task sketch and executable source were withheld.",
+    "embedding_model": "text-embedding-3-large",
+    "embedding_dimensions": 3072,
+    "score": "Cosine similarity between the reverse caption and the original task sketch description.",
+    "max_output_tokens": 16384
+  },
+  "resource_scope": "GIFARC is a GIF-derived resource for analogy-guided task framing, with observable task annotations, executable code and grid demonstrations. It supports empirical comparisons of model-generated rule descriptions and solving performance.",
+  "interpretation_limits": "The annotations and reverse captions are observable artifacts, not hidden model reasoning traces. Alignment scores and rule-description similarity do not establish causal mechanisms or guarantee solving or transfer gains.",
+  "generation_record_limits": "Historical generation materials lack complete rejected-candidate and API-attempt records. Filter-specific task rejection rates and actual API retry counts cannot be recovered; input, pair and program failure counts do not identify rejected-task counts.",
+  "grid_dimensions": {
+    "criterion": "A task is within the 30x30 bound only when every stored input and output grid has at most 30 rows and 30 columns.",
+    "tasks_all_grids_within_30x30": 798,
+    "tasks_with_any_grid_exceeding_30x30": 816,
+    "input": {
+      "num_grids": 17010,
+      "grids_exceeding_30x30": 3160,
+      "maximum_rows": 196,
+      "maximum_columns": 510,
+      "maximum_cells": 12500,
+      "fraction_exceeding_30x30": 0.18577307466196355
+    },
+    "output": {
+      "num_grids": 17010,
+      "grids_exceeding_30x30": 5578,
+      "maximum_rows": 10933,
+      "maximum_columns": 3105,
+      "maximum_cells": 283024,
+      "fraction_exceeding_30x30": 0.32792475014697237
+    },
+    "maxima_note": "Maximum rows, columns and cells are computed separately and may correspond to different grids.",
+    "scope": "Grid-size compatibility is separate from execution checks and sketch-to-task alignment filtering."
+  },
+  "coverage": {
+    "num_scored_tasks": 1608,
+    "num_unscored_tasks": 6,
+    "scored_fraction": 0.9962825278810409,
+    "num_reverse_captions": 1608,
+    "unscored_task_ids": [
+      18,
+      260,
+      536,
+      719,
+      781,
+      1310
+    ],
+    "unscored_reason": "reverse_caption_max_output_tokens",
+    "reverse_caption_attempts_per_unscored_task": 2,
+    "output_token_limit_per_attempt": 16384,
+    "threshold_operator": ">=",
+    "threshold_retention": [
+      {
+        "threshold": 0.45,
+        "retained_corpus_tasks": 987,
+        "unscored_excluded": 6,
+        "human_validation_retained": 105,
+        "human_validation_true_positives": 83,
+        "human_validation_precision": 0.7904761904761904,
+        "human_validation_recall": 0.8058252427184466
+      },
+      {
+        "threshold": 0.5,
+        "retained_corpus_tasks": 622,
+        "unscored_excluded": 6,
+        "human_validation_retained": 73,
+        "human_validation_true_positives": 63,
+        "human_validation_precision": 0.863013698630137,
+        "human_validation_recall": 0.6116504854368932
+      },
+      {
+        "threshold": 0.55,
+        "retained_corpus_tasks": 319,
+        "unscored_excluded": 6,
+        "human_validation_retained": 41,
+        "human_validation_true_positives": 37,
+        "human_validation_precision": 0.9024390243902439,
+        "human_validation_recall": 0.3592233009708738
+      },
+      {
+        "threshold": 0.6,
+        "retained_corpus_tasks": 129,
+        "unscored_excluded": 6,
+        "human_validation_retained": 21,
+        "human_validation_true_positives": 20,
+        "human_validation_precision": 0.9523809523809523,
+        "human_validation_recall": 0.1941747572815534
+      },
+      {
+        "threshold": 0.65,
+        "retained_corpus_tasks": 39,
+        "unscored_excluded": 6,
+        "human_validation_retained": 9,
+        "human_validation_true_positives": 9,
+        "human_validation_precision": 1.0,
+        "human_validation_recall": 0.08737864077669903
+      }
+    ]
+  },
+  "human_validation": {
+    "consensus_subset_size": 140,
+    "aligned_tasks": 103,
+    "misaligned_tasks": 37,
+    "precision_positive_label": "aligned",
+    "recall_denominator": 103,
+    "scope": "Precision and recall describe the 140-task human-consensus subset, not the whole corpus."
+  },
+  "unscored_attempt_evidence": [
+    {
+      "task_id": 18,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 18,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 260,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 260,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 536,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 536,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 719,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 719,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 781,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 781,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 1310,
+      "attempt_number": 1,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    },
+    {
+      "task_id": 1310,
+      "attempt_number": 2,
+      "status": "incomplete",
+      "reason": "max_output_tokens",
+      "output_token_limit": 16384,
+      "output_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "caption_returned": false
+    }
+  ],
+  "provenance_sha256": {
+    "original_data_jsonl": "5d49facc5a6fdb7b07b9b0d41b8785ed0b036a816ea192e7f5573f2e57953c78",
+    "alignment_score_snapshot": "a4e7a2287f8ebdeb011152c1a48baba0631cb7dfe442867d738caec270b2327f"
+  },
+  "limitations": [
+    "Alignment scores are automatic proxies validated on a 140-task consensus subset; the full corpus has not been human verified.",
+    "The six null scores are unknown, not zero scores or evidence of task difficulty or quality.",
+    "No single threshold is prescribed. Thresholded retention does not establish training readiness or the effectiveness of filtered training."
+  ]
+}

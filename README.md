@@ -1,142 +1,82 @@
 # GIFARC: A GIF-Derived Resource for Analogy-Guided Task Framing
 
-![](./images/logo.png)
+![GIFARC logo](images/logo.png)
 
+GIFARC contains **1,614 ARC-style tasks** with **17,010 stored input/output pairs**, derived from GIF-inspired task sketches. Each task combines an analogical task frame, executable generation/transformation code, and grid examples. It is a resource for studying how task framing appears in model-generated rule descriptions, how support components affect solving, and how GIFARC transfers to ARC-AGI.
 
-> By embedding robust human-intuitive analogies into ARC-style tasks, GIFARC guides AI agents to evaluate the task analogically before engaging in brute-force pattern search, thus efficiently reducing problem complexity and build a more concise and human-understandable solution.
+The paper finds modestly greater metaphorical wording and reference-frame alignment in emitted `inferred_rule` descriptions. These descriptions are model outputs; the analyses do not measure internal reasoning. Solving effects depend on the model, support components, and metric; matched wording comparisons show no consistent solving advantage for metaphorical wording. Supervised fine-tuning reaches up to 6.4% ARC-AGI-1 exact match and improves ARC-AGI-2 cell-level metrics, while ARC-AGI-2 exact match remains zero. In-context results are mixed across exact match, grid-cell accuracy, and foreground accuracy.
 
----
+GIFARC includes grids beyond ARC's 30×30 bound: **798 tasks** have every stored input and output within 30 rows and 30 columns; **3,160 input grids** and **5,578 output grids** exceed that bound. These counts describe stored examples, without executing task programs.
 
-![](./images/example.png) 
-  
-## TL;DR
+![Example tasks](images/example.png)
 
-* **1,614** ARC style puzzles made from GIF with analogy.  
-* Pair‑wise **ground‑truth mappings** + rich **textual rationales** for supervised or in‑context use.  
-* **Easy Play generation pipeline** - extend or remix new analogy families with gif in a few minutes.
-* Review artifacts and generated examples are distributed through the anonymous supplementary material during double-blind review.
+## Inspect the review artifacts
 
+This Software supplement preserves the original generation pipeline and adds the actual alignment/evaluation helper definitions, offline filtering, saved-metric reaggregation, and a compact ICL human-review sample. The [Data supplement](Data/README.md) contains `Data/data/data.jsonl` and `Data/data/alignment_scores.jsonl`. Raw source GIFs, original crawl metadata, private logs, checkpoints, and source GIF URLs are not distributed here.
 
+The Data rows retain `source`, `examples`, and `seeds`, and add `task_id` and `alignment`:
 
-## Table of Contents
-1. [Quick Start](#rocket-quick-start)  
-2. [Dataset Card](#open_file_folder-dataset-card)  
-3. [Pipeline Overview](#factory-pipeline-overview)  
-4. [Project Structure](#file_cabinet-project-structure)
-5. [Citing GIFARC](#bookmark_tabs-citing-gifarc)
-6. [Acknowledgements](#sparkles-acknowledgements)
-7. [License](#scroll-license)
-
----
-
-## Quick Start
-
-### 1. Install
-
-We highly command to using docker. To setting with docker check [SETUP.md](docs/SETUP.md).  
-
-```bash
-git clone <GIT_url>
-cd gifarc
-pip install -r requirements.txt
-pip install -r requirements-dev.txt      
-````
-
-### 2. Use Review Artifacts
-
-During double-blind review, use the dataset bundle from the anonymous supplementary material. Place downloaded JSONL files under a local artifact directory and keep large raw outputs out of Git.
-This anonymous review artifact supports inspection of the processed GIFARC dataset and running the generation pipeline on user-provided GIF files. It does not include the original GIF files, raw GIPHY crawl metadata, or source GIF URLs used in the internal data collection stage. Therefore, it is not intended to exactly reproduce the original GIPHY crawling stage during double-blind review.
-
-### 3. Generate Your Own GIFARC
-
-Place your own GIF files under `data/GIF/`, then open `description_executor.ipynb` and run the pipeline cells.
-
-### 4. Check the Web Demo
-
-[GIFARC Web Demo](https://gifarc.vercel.app).
-
----
-
-## Dataset Card
-
-| Split | #Tasks | #Unique GIFs |    Size |
-| ----- | -----: | -----------: |  -----: |
-| Train | 1,614 |    1,614    | < 100 MB |
-
-
-Every task packages looks as follows:    
-```
+```json
 {
-  "source": "<source code>", # python code string
-  "examples": [
-      [<input_grid_1>,<output_grid_1>], # pair 1
-      [<input_grid_2>,<output_grid_2>], # pair 2
-      ...
-    ], 
-  "seeds": [
-      "<file_name_1>",
-      "<file_name_2>",
-      ...,
-      "<file_name_N>",
-      "<Concept_and_description>"
-    ], 
-  "url": "<minified_url>"
+  "task_id": 240,
+  "source": "<Python program>",
+  "examples": [["<input grid>", "<output grid>"]],
+  "seeds": ["<upstream seed filename>", "<concepts and description>"],
+  "alignment": {
+    "score": 0.51,
+    "status": "scored",
+    "unscored_reason": null
+  }
 }
 ```
-See the anonymous supplementary material for licensing, intended use, and data statements during review.
 
----
+This is a schema illustration, not an actual score for task 240. `task_id` is the canonical **one-based original identity**, independent of JSONL row order. The `seeds` list contains generation provenance and a final concepts/description entry; it is not a list of random-number seeds. Unscored records use `score: null`, `status: "unscored"`, and the verified failure reason. The release does not contain a `url` field and does not establish a unique-GIF count from its task count.
 
-## Pipeline Overview
+## Offline checks and filtering
 
-![](./images/pipeline.png)
+Python 3.11 is sufficient for filtering and cached-result aggregation; these commands need no provider credentials. Run from this repository root. For ARR ZIPs, extract Data and Software beside each other and run from Software, using `../Data/` instead of `Data/`:
 
-* **Modular & Easy generation** – Place review-safe GIF inputs under `data/GIF/`, then run `description_executor.ipynb` to generate local outputs.
-* **Stable environment setting** enable easy set up with docker and devcontainer.  
-* All intermediate artifacts are cached for reproducibility.
-
-Detailed instructions live in **[GENERATION.md](docs/GENERATION.md)**.
-
----
-
-## Project Structure
-
-```
-./GIFARC
-├── data
-│   └── GIF
-├── description_executor.ipynb # use this to execute
-├── docker-compose.yml
-├── docs
-│   ├── ANONYMIZATION.md
-│   ├── GENERATION.md
-│   ├── SETUP.md
-│   └── THIRD_PARTY_NOTICES.md
-├── README.md
-├── requirements-dev.txt
-├── requirements.txt
-└── src
-    ├── execution.py
-    ├── experiments.py
-    ├── generate_descriptions.py
-    ├── generate_problems.py
-    ├── generate_visualization_html.py
-    ├── GIFARC_data_batch
-    ├── GIFARC_utils
-    ├── misc
-    ├── parse_batch_description_samples.py
-    ├── prompts
-    ├── seeds
-    ├── utility
-    └── visualize_problems.py
+```bash
+python reproducibility/filter_alignment.py --help
+python reproducibility/filter_alignment.py \
+  --data Data/data/data.jsonl \
+  --scores Data/data/alignment_scores.jsonl \
+  --tau 0.45 --output results/filtered_ge_045.jsonl
+python reproducibility/reaggregate_results.py \
+  --scores Data/data/alignment_scores.jsonl \
+  --output-dir results/alignment_reaggregation
+python reproducibility/summarize_trace_margin.py --output results/trace_margin.csv
+python reproducibility/summarize_icl_review.py
 ```
 
-Generated outputs such as `results/`, `experiment_results/`, `loggings/`, and caches are intentionally ignored.
+Filtering retains `score >= tau`, excludes null scores, checks the sidecar source hashes, and copies selected original lines without rounding. It never executes task source. The five thresholds 0.45/0.50/0.55/0.60/0.65 retain 987/622/319/129/39 tasks, respectively, from 1,608 scored tasks; six unscored tasks are excluded. Reaggregation uses compact metrics from existing runs, keeps the original supports fixed, and reports metric-specific valid denominators.
 
----
+Usage Ratio is the proportion of detected **word tokens tagged as metaphorical** in an emitted rule description. Similarity is the embedding cosine similarity between that description and its reference GIFARC task frame. Existing `trace_*` filenames are retained for compatibility and refer to this rule-description analysis. GIFARC SFT jointly supervises task frames, solution code, and output grids; its transfer gains do not isolate task framing.
 
+[Reproducibility documentation](docs/REPRODUCIBILITY.md) describes the actual scoring settings, aggregation conventions, limitations, and included source provenance. [ICL review documentation](docs/ICL_ERROR_ANALYSIS.md) describes the nine-label taxonomy and the fixed sample of 26 human-reviewed incorrect responses.
 
-### Citing GIFARC
+## Generate tasks from your own GIFs
+
+Install the original generation dependencies using [SETUP.md](docs/SETUP.md), place GIF files you can use under `data/GIF/`, and run `description_executor.ipynb`. See [GENERATION.md](docs/GENERATION.md). Model-backed generation requires your own provider configuration. The original generation implementation and timeout defaults are preserved; the notebook explicitly supplies `--total_timeout 300`.
+
+The review bundle supports local generation with user-provided GIFs. It does not reproduce the paper's original GIF crawling stage or certify that a newly generated task has adequate conceptual alignment.
+
+## Structure
+
+```text
+README.md
+LICENSE
+AGENTS.md
+Data/                        processed tasks, alignment metadata, and dataset documentation
+description_executor.ipynb
+src/                         original generation code, prompts, and seed programs
+data/GIF/                    local input GIF directory
+docs/                        setup, generation, reproducibility, and provenance
+reproducibility/             copied scientific helpers and offline release adapters
+reproducibility/summaries/   compact saved metrics and reviewed sample
+```
+
+## Citation and license
 
 ```bibtex
 @misc{anonymous2026gifarc,
@@ -147,17 +87,4 @@ Generated outputs such as `results/`, `experiment_results/`, `loggings/`, and ca
 }
 ```
 
----
-
-## Acknowledgements
-
-* **GIPHY** for powering the GIF search API.  
-* **BARC** – our generation pipeline stands on the shoulders of this excellent project.  
-* Some seed-program filenames preserve upstream identifiers for reproducibility; see [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md).
-* GIFARC wouldn’t be possible without the open‑source community and our amazing reviewers.
-
----
-
-## License
-
-Distributed under the **MIT License**. See [LICENSE](LICENSE).
+The original software is distributed under the [MIT License](LICENSE). Consult the [Data supplement](Data/DATA_LICENSE.md) for its data terms and [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md) for seed-program provenance and unresolved upstream licensing details. The software license does not grant rights to third-party GIFs, benchmark datasets, or model services.

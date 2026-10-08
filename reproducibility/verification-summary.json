@@ -1,0 +1,82 @@
+{
+  "syntax": {
+    "python_files": 204,
+    "passed": true
+  },
+  "filtering": {
+    "task_count": 1614,
+    "scored": 1608,
+    "unscored_excluded": 6,
+    "thresholds": [
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65
+    ],
+    "retained": [
+      987,
+      622,
+      319,
+      129,
+      39
+    ],
+    "original_line_bytes_preserved": true
+  },
+  "cached_metric_reaggregation": {
+    "case_metric_rows": 4200,
+    "summary_rows": 98,
+    "per_run_rows": 294,
+    "maximum_absolute_difference": 0.0
+  },
+  "trace_margin": {
+    "valid_case_scores": 1737,
+    "task_condition_groups": 593,
+    "summary_rows": 6,
+    "maximum_absolute_difference": 1.3877787807814457e-17,
+    "interpretation": "Legacy filename: alignment of emitted inferred_rule descriptions with reference task frames."
+  },
+  "copied_scientific_definitions": 35,
+  "human_sample": {
+    "sample_size": 30,
+    "exact_mechanical_checks": 4,
+    "confirmed_error_reviews": 26,
+    "exclusive_counts": [
+      12,
+      3,
+      11
+    ]
+  },
+  "generation_source_and_notebook_unchanged": true,
+  "api_calls": 0,
+  "new_generation_or_training": false,
+  "scope": "Latest uploaded manuscript checked against released Data and existing saved results, offline. Syntax/filtering/reaggregation use Python 3.10.12. Original prompt/scoring and grid helpers also verified using bundled Python 3.12.14 and NumPy 2.3.5. No stored embedding vectors, paid calls, task programs, or training were rerun.",
+  "stored_grid_dimensions": {
+    "tasks": 1614,
+    "pairs": 17010,
+    "input_grids_exceeding_30": 3160,
+    "output_grids_exceeding_30": 5578,
+    "all_stored_grids_within_30_tasks": 798
+  },
+  "rule_description_analysis": {
+    "output_field": "inferred_rule",
+    "usage_ratio": "Proportion of detected word tokens tagged as metaphorical.",
+    "similarity": "Embedding cosine similarity with the reference GIFARC task frame.",
+    "internal_reasoning_measured": false
+  },
+  "cohort_checks": {
+    "common_shape_pairs": 111,
+    "eligible_pairs": 79,
+    "response_pool": 158,
+    "sample_responses": 30,
+    "released_human_incorrect_reviews": 26,
+    "previously_mechanically_checked_exact_responses": 4,
+    "four_exact_response_grids_rechecked_this_refresh": false
+  },
+  "scientific_helpers_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "source": "Bundled workspace dependencies, no installation."
+  },
+  "privacy_scan_hits": []
+}

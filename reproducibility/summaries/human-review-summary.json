@@ -1,0 +1,51 @@
+{
+  "fixed_sample_records": 30,
+  "automatic_exact_match_records": 4,
+  "manual_error_review_targets": 26,
+  "confirmed_sample_errors": 26,
+  "pending_sample_errors": 0,
+  "confirmed_human_label_counts": {
+    "rule_output_inconsistency": 14,
+    "declared_rule_contradiction": 23
+  },
+  "both_rule_labels": 11,
+  "confirmed_by_condition": {
+    "base": {
+      "confirmed_responses": 19,
+      "selected_wrong_responses": 19,
+      "human_label_counts": {
+        "rule_output_inconsistency": 11,
+        "declared_rule_contradiction": 18
+      }
+    },
+    "full": {
+      "confirmed_responses": 7,
+      "selected_wrong_responses": 7,
+      "human_label_counts": {
+        "rule_output_inconsistency": 3,
+        "declared_rule_contradiction": 5
+      }
+    }
+  },
+  "unique_source_tasks_in_confirmed_sample": 21,
+  "unique_test_queries_in_confirmed_sample": 23,
+  "confirmed_pair_ids": 25,
+  "rule_label_set_agreements": 9,
+  "interpretation_status": "Report only the recorded rule labels. Visual-label review scope has not been clarified; label absence does not establish rejection.",
+  "rule_agreement_interpretation": "Label-set comparison only; not judge accuracy, calibration, or whole-cohort human validation.",
+  "proposal_seen_before_confirmation": 1,
+  "saved_solver_text_viewed": 26,
+  "rules_nonexclusive": true,
+  "exclusive_counts": {
+    "declared_rule_contradiction_only": 12,
+    "rule_output_inconsistency_only": 3,
+    "both": 11
+  },
+  "classifier": {
+    "configured_model_alias": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "interface": "Codex in-session classification",
+    "immutable_serving_snapshot": null
+  },
+  "inference_limit": "26 confirmed human error judgments in the fixed 30-response sample. All remaining classifications are model-only. Absence of a visual label does not establish no visual error."
+}

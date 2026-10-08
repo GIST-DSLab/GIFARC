@@ -1,0 +1,2 @@
+# Only needed for saved-vector cosine scoring and original prompt/grid helpers.
+numpy
