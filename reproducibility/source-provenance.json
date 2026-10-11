@@ -315,6 +315,207 @@
       "copied_definition_sha256": "4a1f40a102a38c77fae693498e4fa94c4756a994f4ae0c3beaf8a4c90764b898",
       "source_line": 67,
       "source_end_line": 74
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "finite",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "247142b14adc7216a0b5b142182b3758644239ef40b912cf6489b179e826f9e5",
+      "source_line": 66,
+      "source_end_line": 67,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "mean",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "13dfcf697c64cb0da6bc6333fee01e3609416f2ffef583af56ad08d57e086e86",
+      "source_line": 70,
+      "source_end_line": 72,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "digest",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "e3449e1f327c70dde9799bffcb39b5a275de7bc7cf9c2878fd8a057357a8b6f6",
+      "source_line": 75,
+      "source_end_line": 76,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "stable_seed",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "e23027af0b41e2854ea6f1a57390aa1da1ed6eb9f225723c6633812774541f21",
+      "source_line": 79,
+      "source_end_line": 80,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "bootstrap_ci",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "d4952fa443b6dd12d7d2b03c1b3585bb4a145714c8be9ecb740d1f65e8dd0cc4",
+      "source_line": 83,
+      "source_end_line": 114,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "collapse_pairs",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "15de8f31ea3088613c674b573f38206e11cd59f2a6f2f21b1097ace15ba1424e",
+      "source_line": 117,
+      "source_end_line": 147,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "missing_reason",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "db5d4950f8d9b164ed957064328f054701406c41e534d22fee324b00fbb372c3",
+      "source_line": 150,
+      "source_end_line": 160,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "write_csv",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "bc79c71be7d12f4773f24b23882549fcb810bf2b16bb054cd2d136c0a5eea024",
+      "source_line": 260,
+      "source_end_line": 268,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "reproduce",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "c26cd2d5a68bfe5cf5079572a5052fa2078212b5c021f7dc9062d86416c849c4",
+      "source_line": 271,
+      "source_end_line": 313,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "analyze_pairs",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "52fe8413e66cdba5108a235abf572392356bb323ff36aaaea9917f6e23c63c4d",
+      "source_line": 316,
+      "source_end_line": 366,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC",
+      "source_file": "work/statistics-2026-10-08/analyze_saved_statistics.py",
+      "symbol": "self_test",
+      "source_file_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+      "copied_definition_sha256": "effc965ca60b013e9fecbc0dc5a10c98b9ba20aec134a957199e991133082b13",
+      "source_line": 369,
+      "source_end_line": 391,
+      "release_file": "reproducibility/paired_statistics.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "validate_code_structure",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "ec95df0aff1b778be8269200e28ea3aca24bd87c9e61330d93496786f6fabf21",
+      "source_line": 183,
+      "source_end_line": 196,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "validate_behavior",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "513333ffae5e1942075c912614699d737190739c72fc4a087b2ddf700435da35",
+      "source_line": 199,
+      "source_end_line": 250,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "_top_level_imports",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "9edc4533667831eaac0106902fa6c2d61e2d617f52f586de1502d54f7d4f9527",
+      "source_line": 253,
+      "source_end_line": 258,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "_top_level_assignments",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "33779fd62626a11cb9c21dce3892eb2b1588740378b8c2b3ad2b781d50116d53",
+      "source_line": 261,
+      "source_end_line": 268,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "_top_level_function_signatures",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "7c03f10776d0c9158e0b934c218bb26a65fb1b6c0b41226db3cf93c944248ac9",
+      "source_line": 271,
+      "source_end_line": 276,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "src/preprocess/code_neutralizer.py",
+      "symbol": "_load_module_from_source",
+      "source_file_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+      "copied_definition_sha256": "7282174b11572caadcb5e7c9ec9aafb557524cd1fd7ab2ce430621f47cdac434",
+      "source_line": 279,
+      "source_end_line": 286,
+      "release_file": "reproducibility/support_code_validator.py"
+    },
+    {
+      "source_repository": "GIFARC-openhpc",
+      "source_file": "sft_train.py",
+      "source_file_sha256": "e7c13eb98ed4a68ed0bb1c11275affaf7ebf5f4286a2a02a9bb4d596df288ff1",
+      "symbol": "convert_to_sft_format",
+      "source_line": 75,
+      "source_end_line": 180,
+      "copied_definition_sha256": "6a81e6de572008f4d3c4ad9a1ef8fee4205dd9156d81813b75a2cc9ecaf17f44",
+      "release_file": "reproducibility/sft_sequence_logic.py"
+    }
+  ],
+  "sequence_prefix": {
+    "source_repository": "GIFARC-openhpc",
+    "source_file": "sft_train.py",
+    "source_file_sha256": "e7c13eb98ed4a68ed0bb1c11275affaf7ebf5f4286a2a02a9bb4d596df288ff1",
+    "symbol": "prepare_arc_dataset.tokenize_function",
+    "source_statement_lines": [
+      387,
+      515
+    ],
+    "dedented_prefix_sha256": "480b0049489bb4490ea8871b3655131d165333fc5b249d22f12fef40d1eabd72",
+    "release_file": "reproducibility/sft_sequence_logic.py",
+    "adaptation": "Lifted existing nested function to module scope; retained sequence statement prefix unchanged; appended result return instead of tensor conversion and label masking."
+  },
+  "whole_file_copies": [
+    {
+      "source_repository": "GIFARC-Sec-5-1",
+      "source_file": "seeds/common.py",
+      "source_file_sha256": "df11506442a1f6628fe59b377ab412cd1c8bf265ff32e477a9481e2072d18ec4",
+      "release_file": "reproducibility/summaries/finite-support-check/common.py"
     }
   ]
 }

@@ -64,7 +64,10 @@
         "human_validation_retained": 105,
         "human_validation_true_positives": 83,
         "human_validation_precision": 0.7904761904761904,
-        "human_validation_recall": 0.8058252427184466
+        "human_validation_recall": 0.8058252427184466,
+        "retained_corpus_tasks_all_grids_within_30": 469,
+        "human_validation_false_positives": 22,
+        "human_validation_precision_minus_prefilter_base_rate_percentage_points": 5.476190476190467
       },
       {
         "threshold": 0.5,
@@ -73,7 +76,10 @@
         "human_validation_retained": 73,
         "human_validation_true_positives": 63,
         "human_validation_precision": 0.863013698630137,
-        "human_validation_recall": 0.6116504854368932
+        "human_validation_recall": 0.6116504854368932,
+        "retained_corpus_tasks_all_grids_within_30": 285,
+        "human_validation_false_positives": 10,
+        "human_validation_precision_minus_prefilter_base_rate_percentage_points": 12.729941291585122
       },
       {
         "threshold": 0.55,
@@ -82,7 +88,10 @@
         "human_validation_retained": 41,
         "human_validation_true_positives": 37,
         "human_validation_precision": 0.9024390243902439,
-        "human_validation_recall": 0.3592233009708738
+        "human_validation_recall": 0.3592233009708738,
+        "retained_corpus_tasks_all_grids_within_30": 140,
+        "human_validation_false_positives": 4,
+        "human_validation_precision_minus_prefilter_base_rate_percentage_points": 16.672473867595816
       },
       {
         "threshold": 0.6,
@@ -91,7 +100,10 @@
         "human_validation_retained": 21,
         "human_validation_true_positives": 20,
         "human_validation_precision": 0.9523809523809523,
-        "human_validation_recall": 0.1941747572815534
+        "human_validation_recall": 0.1941747572815534,
+        "retained_corpus_tasks_all_grids_within_30": 61,
+        "human_validation_false_positives": 1,
+        "human_validation_precision_minus_prefilter_base_rate_percentage_points": 21.666666666666657
       },
       {
         "threshold": 0.65,
@@ -100,7 +112,10 @@
         "human_validation_retained": 9,
         "human_validation_true_positives": 9,
         "human_validation_precision": 1.0,
-        "human_validation_recall": 0.08737864077669903
+        "human_validation_recall": 0.08737864077669903,
+        "retained_corpus_tasks_all_grids_within_30": 21,
+        "human_validation_false_positives": 0,
+        "human_validation_precision_minus_prefilter_base_rate_percentage_points": 26.428571428571423
       }
     ]
   },
@@ -125,7 +140,7 @@
       "fraction_exceeding_30x30": 0.32792475014697237
     },
     "maxima_note": "Maximum rows, columns and cells are computed separately and may correspond to different grids.",
-    "scope": "Grid-size compatibility is separate from execution checks and sketch-to-task alignment filtering."
+    "scope": "Optional stored-grid compatibility criterion, separate from execution checks and alignment filtering. No new 30x30 requirement is imposed, and new generated examples are not guaranteed to satisfy it."
   },
   "generation_record_limits": "Historical generation materials lack complete rejected-candidate and API-attempt records. Filter-specific task rejection rates and actual API retry counts cannot be recovered; input, pair and program failure counts do not identify rejected-task counts.",
   "human_validation": {
@@ -134,6 +149,38 @@
     "misaligned_tasks": 37,
     "precision_positive_label": "aligned",
     "recall_denominator": 103,
-    "scope": "Precision and recall describe the 140-task human-consensus subset, not the whole corpus."
+    "scope": "Conditional on the 140-task binary-agreement subset; 60 disagreements among 200 annotated tasks are excluded. This is neither a random full-corpus estimate nor adjudicated ground truth, and does not certify all task quality.",
+    "raw_annotated_tasks": 200,
+    "binary_disagreement_tasks_excluded": 60,
+    "label_mapping": "y and y? -> aligned; n and n? -> misaligned; retain binary-agreeing labels.",
+    "prefilter_consensus_aligned_base_rate": 0.7357142857142858,
+    "prefilter_consensus_aligned_base_rate_percent_rounded": 73.6
+  },
+  "optional_task_metadata": {
+    "jsonl_path": "task_metadata.jsonl",
+    "csv_path": "task_metadata.csv",
+    "schema_path": "task_metadata_schema.json",
+    "num_records": 1614,
+    "join_key": "task_id",
+    "source_identity": "Exact UTF-8 source SHA-256"
+  },
+  "optional_subset_selectors": {
+    "json_path": "subset_ids.json",
+    "text_directory": "subset_ids/",
+    "num_selectors": 11,
+    "counts": {
+      "all_grids_within_30": 798,
+      "alignment_score_ge_0_45": 987,
+      "all_grids_within_30_and_alignment_score_ge_0_45": 469,
+      "alignment_score_ge_0_50": 622,
+      "all_grids_within_30_and_alignment_score_ge_0_50": 285,
+      "alignment_score_ge_0_55": 319,
+      "all_grids_within_30_and_alignment_score_ge_0_55": 140,
+      "alignment_score_ge_0_60": 129,
+      "all_grids_within_30_and_alignment_score_ge_0_60": 61,
+      "alignment_score_ge_0_65": 39,
+      "all_grids_within_30_and_alignment_score_ge_0_65": 21
+    },
+    "scope": "Optional selectors over stored examples; no mandatory size bound or primary score threshold."
   }
 }

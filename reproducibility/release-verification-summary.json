@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "release_date": "2026-10-11",
+  "original_generation_files_preserved": 239,
+  "syntax_modules_checked": 7,
+  "offline_help_and_selftest_checks": 5,
+  "normalized_saved_records": 4200,
+  "core_contrasts": 6,
+  "matched_solving_contrasts": 18,
+  "all_comparisons": 34,
+  "original_table_statistics_reproduced": 126,
+  "bootstrap_draws": 50000,
+  "bootstrap_seed_base": 20261008,
+  "paired_output_comparison_numeric_tolerance": 1e-12,
+  "finite_support_tasks": 3,
+  "finite_stored_inputs_all_outputs_equal": 29,
+  "sft_numeric_rows_reaggregated": 12000,
+  "full_tokenization_repeated_for_this_release": false,
+  "historical_truncation_counts": null,
+  "alignment_filter_retained_counts": {
+    "0.45": 987,
+    "0.50": 622,
+    "0.55": 319,
+    "0.60": 129,
+    "0.65": 39
+  },
+  "original_trace_margin_summary_reproduced": true,
+  "specific_sensitive_scan_matches": 0,
+  "broken_relative_doc_links": 0,
+  "no_paid_calls_or_training": true,
+  "paired_maximum_numeric_error": 0.0,
+  "paired_compared_numeric_fields": 80037
+}

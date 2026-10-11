@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "normalized_records": 4200,
+  "paired_run_rows": 9947,
+  "paired_task_rows": 3400,
+  "comparisons": 34,
+  "unique_published_statistics": 126,
+  "checks": {
+    "raw_numeric_fields": 21000,
+    "raw_hashes_and_flags": 4200,
+    "cached_numeric_fields": 12600,
+    "analysis_output_hashes": 9,
+    "paired_point_estimates": 34,
+    "expanded_legacy_estimates": 34,
+    "restricted_legacy_estimates": 34,
+    "strict3_estimates": 34,
+    "run_equal_estimates": 34,
+    "paired_count_and_interval_rows": 34,
+    "paired_run_fields": 29841,
+    "paired_task_fields": 23800,
+    "valid_run_means": 264,
+    "table8_means": 18,
+    "table8_task_sd": 18
+  },
+  "max_errors": {
+    "raw_numeric_fields": 0.0,
+    "cached_numeric_fields": 0.0,
+    "paired_point_estimates": 0.0,
+    "expanded_legacy_estimates": 0.0,
+    "restricted_legacy_estimates": 0.0,
+    "strict3_estimates": 0.0,
+    "run_equal_estimates": 1.214306433183765e-17,
+    "paired_run_fields": 0.0,
+    "paired_task_fields": 0.0,
+    "valid_run_means": 0.0,
+    "table8_means": 0.0,
+    "table8_task_sd": 1.3877787807814457e-17
+  },
+  "bootstrap_endpoint_validation": "Executed NumPy implementation, synthetic invariants, independent code review; not independent random-stream regeneration",
+  "raw_mutation_check": "All source file SHA-256 hashes agree with input manifest",
+  "scope": "Original verification of saved raw inputs and numerical analyses; public identifiers subsequently converted to canonical one-based task IDs."
+}

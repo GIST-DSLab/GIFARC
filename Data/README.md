@@ -8,7 +8,10 @@ It is intended to be uploaded through the ARR **Data** field.
 - `data/data.jsonl`: all 1,614 processed GIFARC tasks, with canonical IDs and alignment metadata, one task per line.
 - `data/alignment_scores.jsonl`: per-task source hashes, scores/status/reasons and anonymous reverse captions.
 - `alignment_report.json`: scoring protocol, coverage, threshold counts and anonymous unscored-attempt evidence.
-- `schema.json`: description of the top-level fields and grid representation.
+- `task_metadata.jsonl` and `task_metadata.csv`: optional per-task dimensions and exact alignment metadata, joined by canonical ID and source SHA-256.
+- `task_metadata_schema.json`: field definitions for the optional metadata.
+- `subset_ids.json` and `subset_ids/`: 11 optional selections as sorted canonical ID lists and equivalent text files.
+- `schema.json`: description of the main records, sidecars, selectors and grid representation.
 - `statistics.json`: basic dataset statistics and checksum for `data/data.jsonl`.
 - `dataset_card.md`: short dataset card for reviewers.
 - `DATA_LICENSE.md`: data release note.
@@ -44,15 +47,15 @@ Scores are available for 1,608 of 1,614 tasks. Canonical IDs 18, 260, 536, 719, 
 
 Scoring uses GPT-5.4 to reverse-caption the first three valid stored input-output pairs in their original order, without the sketch or executable code. The score is cosine similarity between embeddings of that caption and the original sketch description, using `text-embedding-3-large` with 3,072 dimensions. The protocol and verified coverage are in `alignment_report.json`.
 
-| Minimum score | Retained corpus tasks | Unscored tasks excluded |
-| --- | ---: | ---: |
-| 0.45 | 987 | 6 |
-| 0.50 | 622 | 6 |
-| 0.55 | 319 | 6 |
-| 0.60 | 129 | 6 |
-| 0.65 | 39 | 6 |
+| Minimum score | Retained corpus tasks | Also all stored grids ≤30×30 | Unscored tasks excluded |
+| --- | ---: | ---: | ---: |
+| 0.45 | 987 | 469 | 6 |
+| 0.50 | 622 | 285 | 6 |
+| 0.55 | 319 | 140 | 6 |
+| 0.60 | 129 | 61 | 6 |
+| 0.65 | 39 | 21 | 6 |
 
-These counts apply to all 1,614 released tasks. Precision and recall in the paper are computed on the separate 140-task human-consensus subset (103 aligned and 37 misaligned); they are reproduced in `statistics.json`. The automatic scores do not establish that all tasks were human verified. No single filtering threshold is prescribed.
+These corpus counts apply to all 1,614 released tasks. Human validation is conditional on the separate 140-task binary-agreement subset: 103 aligned and 37 misaligned, with 60 disagreements among 200 annotated tasks excluded. The existing binary mapping treats `y`/`y?` as aligned and `n`/`n?` as misaligned. Before filtering, 103/140 (73.6%) consensus tasks are aligned. At threshold 0.45, 83/105 retained consensus tasks are aligned (79.0% precision), 5.5 percentage points above that base rate; recall is 83/103 (80.6%). These results validate the score only on the consensus subset; they are not a random full-corpus quality estimate or adjudicated ground truth. The release does not certify all task quality, training readiness, or filtered-training gains. Exact denominators and the other thresholds are in `statistics.json`. No single filtering threshold is prescribed.
 
 ## Construct a filtered subset
 
@@ -83,3 +86,39 @@ The annotations and reverse captions are observable artifacts, not hidden model 
 The full corpus retains all stored grid sizes. A task meets ARC's 30x30 bound only when every stored input and output grid has at most 30 rows and 30 columns. This holds for 798 tasks; the other 816 contain at least one larger grid. Across 17,010 pairs, 3,160 input grids (18.6%) and 5,578 output grids (32.8%) exceed the bound. Input maxima are 196 rows, 510 columns and 12,500 cells; output maxima are 10,933 rows, 3,105 columns and 283,024 cells. Each maximum is computed separately and may correspond to a different grid. Size compatibility is separate from execution checks and alignment-score filtering. See `statistics.json`.
 
 Historical generation materials lack complete rejected-candidate and API-attempt records. Filter-specific task rejection rates and actual API retry counts cannot be recovered; input, pair and program failure counts do not identify rejected-task counts.
+
+
+## Optional dimension metadata and exact selectors
+
+The full release retains all 1,614 tasks and imposes no new 30×30 requirement. Users can optionally select the 798 tasks whose **every stored input and output** has height ≤30 and width ≤30, apply an alignment threshold, or use both conditions. `all_grids_within_30` does not guarantee the dimensions of new `generate_input()` results or enforce generator behavior. Size compatibility does not certify alignment or task quality.
+
+`task_metadata.jsonl` and its CSV equivalent contain 1,614 rows in ascending canonical `task_id` order. Metadata order can differ from `data/data.jsonl`: join by `task_id`, which is not a line number, and check `source_sha256` against the exact UTF-8 source string and `data/alignment_scores.jsonl`. Rows include the stored pair count, input/output maxima, oversized input/output counts and exact alignment score/status/reason. Maximum height, width and cells are computed independently, so multiplying maximum height by maximum width does not recover the maximum cell count. CSV empty cells mean JSON null and CSV booleans are `true`/`false`.
+
+`subset_ids.json` contains all 11 sorted, exact selections: `all_grids_within_30`, five `alignment_score_ge_0_XX` selectors and five `all_grids_within_30_and_alignment_score_ge_0_XX` intersections. Equivalent one-ID-per-line files are in `subset_ids/`. The bounded-only selection is independent of score status; all score-based selectors exclude the six unknown/null scores. The table above lists each intersection count.
+
+From the extracted archive directory, this example writes the optional intersection at 0.50 while preserving main-record order and each selected JSONL line:
+
+```python
+import hashlib
+import json
+
+with open("task_metadata.jsonl", encoding="utf-8") as source:
+    metadata = {row["task_id"]: row for row in map(json.loads, source)}
+with open("subset_ids.json", encoding="utf-8") as source:
+    ids = set(json.load(source)["all_grids_within_30_and_alignment_score_ge_0_50"])
+
+count = 0
+with open("data/data.jsonl", encoding="utf-8") as source, open("selected.jsonl", "w", encoding="utf-8") as target:
+    for line in source:
+        task = json.loads(line)
+        info = metadata[task["task_id"]]
+        assert hashlib.sha256(task["source"].encode("utf-8")).hexdigest() == info["source_sha256"]
+        assert task["alignment"]["score"] == info["alignment_score"]
+        assert task["alignment"]["status"] == info["alignment_status"]
+        if task["task_id"] in ids:
+            target.write(line)
+            count += 1
+assert count == 285
+```
+
+Editing or regenerating examples requires a new dimension audit. The original main dataset, score sidecar, source/examples/seeds values, scores/status and record order remain byte-identical to the preceding release. This addendum does not provide a new quality evaluation or completed filtered-training experiment.

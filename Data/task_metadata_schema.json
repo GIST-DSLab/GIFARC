@@ -1,0 +1,87 @@
+{
+  "format": "JSON Lines; one metadata object per task. CSV has the same fields.",
+  "num_records": 1614,
+  "join_key": "task_id",
+  "order": "Ascending canonical task_id",
+  "top_level_fields": {
+    "task_id": {
+      "type": "integer",
+      "description": "Canonical experiment ID, 1-1614. Not JSONL row number."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of exact UTF-8 source-code string; 64 lowercase hex digits."
+    },
+    "stored_pair_count": {
+      "type": "integer",
+      "description": "Number of stored [input_grid,output_grid] examples."
+    },
+    "all_grids_within_30": {
+      "type": "boolean",
+      "description": "Every stored input and output has height<=30 and width<=30."
+    },
+    "max_input_height": {
+      "type": "integer",
+      "description": "Independent maximum height across every stored input grid."
+    },
+    "max_input_width": {
+      "type": "integer",
+      "description": "Independent maximum width across every stored input grid."
+    },
+    "max_input_cells": {
+      "type": "integer",
+      "description": "Independent maximum cells across every stored input grid."
+    },
+    "max_output_height": {
+      "type": "integer",
+      "description": "Independent maximum height across every stored output grid."
+    },
+    "max_output_width": {
+      "type": "integer",
+      "description": "Independent maximum width across every stored output grid."
+    },
+    "max_output_cells": {
+      "type": "integer",
+      "description": "Independent maximum cells across every stored output grid."
+    },
+    "oversized_input_grid_count": {
+      "type": "integer",
+      "description": "Number of stored input grids with height>30 or width>30."
+    },
+    "oversized_output_grid_count": {
+      "type": "integer",
+      "description": "Number of stored output grids with height>30 or width>30."
+    },
+    "alignment_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Exact released finite cosine score in [-1,1], or null if unknown."
+    },
+    "alignment_status": {
+      "type": "string",
+      "enum": [
+        "scored",
+        "unscored"
+      ]
+    },
+    "alignment_unscored_reason": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "null if scored; reverse_caption_max_output_tokens if unscored."
+    }
+  },
+  "csv_null_representation": "Empty cell",
+  "csv_boolean_representation": [
+    "true",
+    "false"
+  ],
+  "maxima_note": "Height, width, and cells maxima are independent and may come from different stored grids.",
+  "alignment_filter": "alignment_status == scored and alignment_score >= threshold; null is unknown and excluded.",
+  "dimension_scope": "All stored examples, not new generated examples. No dimension enforcement added to generators.",
+  "source_data_sha256": "4f02ef5c3e1280d38cc312a791f9b64fd02153b735850df56d5d45de3dcf0bbf",
+  "source_alignment_sha256": "7ede582e47a1b365c47c88eedec89421ef05e660cf964689824f7dde9ab6bfac"
+}

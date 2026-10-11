@@ -1,0 +1,182 @@
+{
+  "support_codes": [
+    {
+      "legacy_task_id": 837,
+      "field": "solution_code",
+      "sha256": "dedad3f97dfdb0d83529ac0835822e3b314335c93480320c946316a9aae4ecb3",
+      "imports": [
+        "from common import *",
+        "import numpy as np"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "blit_sprite",
+        "divmod",
+        "draw_line",
+        "enumerate",
+        "input_grid.copy",
+        "np.full",
+        "np.random.choice",
+        "np.random.randint",
+        "np.where",
+        "range"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    },
+    {
+      "legacy_task_id": 837,
+      "field": "neutral_code",
+      "sha256": "bbe4200902a363a6ac364f8bee95f4f71e164a4a48ff468b7a0ddb05bbf56141",
+      "imports": [
+        "from common import *",
+        "import numpy as np"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "blit_sprite",
+        "divmod",
+        "draw_line",
+        "enumerate",
+        "grid_in.copy",
+        "np.full",
+        "np.random.choice",
+        "np.random.randint",
+        "np.where",
+        "range"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    },
+    {
+      "legacy_task_id": 877,
+      "field": "solution_code",
+      "sha256": "e389879cfac69e887463568d92b9ea24a55f95dd16e43f6b1d10c980d1ba2304",
+      "imports": [
+        "from common import *",
+        "import numpy as np",
+        "import random"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "border.append",
+        "draw_line",
+        "enumerate",
+        "input_grid.copy",
+        "len",
+        "np.zeros",
+        "random.randint",
+        "range"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    },
+    {
+      "legacy_task_id": 877,
+      "field": "neutral_code",
+      "sha256": "1fbc8b13d67ba613742928788fe1bc24d8e7e17214fb8600fc6a6f1609c094ac",
+      "imports": [
+        "from common import *",
+        "import numpy as np",
+        "import random"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "draw_line",
+        "enumerate",
+        "input_grid.copy",
+        "len",
+        "np.zeros",
+        "perimeter_cells.append",
+        "random.randint",
+        "range"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    },
+    {
+      "legacy_task_id": 901,
+      "field": "solution_code",
+      "sha256": "ede9e9ab7b7e37e23768c6abe953e515edd865682335adac750127d506e8d0bc",
+      "imports": [
+        "from common import *",
+        "import numpy as np",
+        "import random"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "blit_sprite",
+        "input_grid.copy",
+        "np.array",
+        "np.full",
+        "np.random.randint",
+        "np.zeros",
+        "random.sample",
+        "random_free_location_for_sprite",
+        "range",
+        "stripe_positions.append"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    },
+    {
+      "legacy_task_id": 901,
+      "field": "neutral_code",
+      "sha256": "2c5a3f1157dbd207a247c80f060f3730e598bc5f5c851c8a34fbc0eba44a129d",
+      "imports": [
+        "from common import *",
+        "import numpy as np",
+        "import random"
+      ],
+      "top_level_nodes": [
+        "ImportFrom",
+        "Import",
+        "Import",
+        "FunctionDef",
+        "FunctionDef"
+      ],
+      "calls": [
+        "blit_sprite",
+        "input_grid.copy",
+        "np.array",
+        "np.full",
+        "np.random.randint",
+        "np.zeros",
+        "random.sample",
+        "random_free_location_for_sprite",
+        "range",
+        "stripe_positions.append"
+      ],
+      "inspection": "Only common/numpy/random imports and main/generate_input definitions. No file/network/process/dynamic-execution calls in the three inspected support codes."
+    }
+  ],
+  "configured_common_top_level": [
+    "'Common library for ARC'",
+    "import numpy as np",
+    "import random"
+  ],
+  "scope": "Inspection limited to these three original/neutral code pairs and their configured retained common helper."
+}

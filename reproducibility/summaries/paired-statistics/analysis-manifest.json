@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-08T12:29:39.908940+00:00",
+  "analysis": "offline_saved_results_task_bootstrap",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "bootstrap_draws": 50000,
+  "bootstrap_seed_base": 20261008,
+  "interval_method": "pointwise percentile 95%; numpy quantile linear; task cluster resampling",
+  "primary_estimand": "equal mean across tasks of same-task same-recorded-run valid paired differences",
+  "sensitivity_estimands": [
+    "separate available-run task means",
+    "complete three paired runs",
+    "run-equal common-paired means"
+  ],
+  "direction": "original metaphorical wording minus grid-level reformulation",
+  "provenance": {
+    "included_raw_records": 4200,
+    "target_tasks": 100,
+    "excluded_other_conditions": [
+      {
+        "run": 1,
+        "condition": "no_support",
+        "n": 44
+      }
+    ],
+    "source_cases_sha256": "85352c29ce7645643ed334187a2bdfafd73bc776785a82d59bb10f8e35c3f975",
+    "cache_validation": {
+      "rows": 1737,
+      "reference_tasks": 100,
+      "per_task_rows": 593,
+      "max_per_task_discrepancy": 1.1102230246251565e-16,
+      "own_minus_saved_AAS_max_abs": 0.006600514655964895,
+      "own_minus_saved_AAS_mean": -2.968962692749909e-06
+    },
+    "cache_sha256": {
+      "per_case_margin.csv": "443104c79b0b96e81902bf090222f6f37f26940f81c1830351d88412698d4774",
+      "per_task_margin.csv": "dd9539c76cb9fc2b111aea856a0636a1d222c19313fc08f11e2281c9742f72b2",
+      "condition_margin_summary.csv": "ef9f30f7bd5f6ab6af144d044b1d175b027e71a38502017fa53d3640ad8f1cb3"
+    },
+    "first_run_bootstrap_manifest_sha256": "65402465024a5c878a17ea8a8a132879674a628ae00c1466a6f08432c5a5b6cb",
+    "first_run_retained_case_lineage": {
+      "copied_success_case_count": 28,
+      "selected_models": [
+        "gpt-5.4"
+      ],
+      "excluded_conditions": [
+        "neutral"
+      ],
+      "note": "Some cases in recorded run 1 were retained from an earlier saved run; pairing uses recorded run indices and does not assert shared random draws."
+    }
+  },
+  "analysis_script_sha256": "a1dac8da4c519064bc08b84475df8f8c7c73a58d0a0413ef4e1be75ac1dad7f7",
+  "scope": "selected 100 evaluation targets, available responses, three saved runs; no new paid calls",
+  "caveats": [
+    "not a probability sample of corpus",
+    "does not remove informative missingness",
+    "pointwise intervals, no simultaneous/multiple-testing significance claims",
+    "conditional on saved executions, not uncertainty across future runs",
+    "run indices paired, not an assertion of shared random draws",
+    "Table8 cached own cosine differs slightly per case from originally saved AAS; both kept"
+  ],
+  "output_sha256": {
+    "normalized-records.csv": "afa090a284842392d1447778b3093790dc9589c08cc70de64b55ea9b03554b1c",
+    "original-aggregate-summary.csv": "b8ad69f5c1d5b0aca60f25ffe9211304a070aff2132fef3e3e9faa9029f04b58",
+    "paired-confidence-intervals.csv": "ace9e5f139623391e3f38586f128c9d95bf4981f176833e6491291554d58bfa2",
+    "paired-task-means.csv": "af09b5fd0d3a24b0bd71bbb3f9410f05a56e83da80ecdd1eef31449d47c3bc33",
+    "paired-task-run-differences.csv": "01709ad37f21330993244b64a4c5d7f89b2c7ca7ad17d6463a128551e09582e4",
+    "published-rounding-audit.csv": "ba14b775293ea385061f53f2bfa0c7a9f288d50902732d6c9f2f994196599a2d",
+    "source-case-hashes.csv": "0168e6b5092480eb9fc60079bfe4e51121284b8d2f61071f183028fa853e6c22",
+    "table8-condition-confidence-intervals.csv": "dca72c5fb5cd81eeb69816a927b492c888e46b2f065619a1322324577d09f7db",
+    "valid-run-summary.csv": "9af9933befa3c9d7d220b3ccf25044a8cf5acf798c4c09912b95424c63a42c9f"
+  },
+  "run_indices": [
+    1,
+    2,
+    3
+  ],
+  "task_identity": "Canonical one-based task IDs; original saved-analysis zero-based IDs shifted by +1 without changing numerical values.",
+  "release_adapter": "reproducibility/analyze_saved_statistics.py"
+}

@@ -29,5 +29,35 @@
     "order": "Same record order as data/data.jsonl; use task_id for joins."
   },
   "grid_shape_contract": "Stored grids are nonempty rectangular 2D integer arrays. Dimensions are not uniformly bounded by 30x30: 798 tasks meet that bound for every stored input and output; 816 tasks contain at least one larger grid. See statistics.json for size counts and independently computed maxima.",
-  "alignment_filter": "Keep records with alignment.status == scored and alignment.score >= threshold. A null score is unknown and is excluded from thresholded subsets."
+  "alignment_filter": "Keep records with alignment.status == scored and alignment.score >= threshold. A null score is unknown and is excluded from thresholded subsets.",
+  "optional_task_metadata": {
+    "jsonl_path": "task_metadata.jsonl",
+    "csv_path": "task_metadata.csv",
+    "schema_path": "task_metadata_schema.json",
+    "num_records": 1614,
+    "join_key": "task_id",
+    "identity_check": "source_sha256 must equal SHA-256 of the exact source string encoded as UTF-8 and the hash in data/alignment_scores.jsonl.",
+    "order": "Ascending canonical task_id; use task_id for joins, not line number.",
+    "scope": "Dimensions describe every stored input and output grid only; they do not guarantee newly generated examples or add dimension enforcement to generators.",
+    "optional": true
+  },
+  "optional_subset_selectors": {
+    "json_path": "subset_ids.json",
+    "text_directory": "subset_ids/",
+    "num_selectors": 11,
+    "format": "JSON object mapping each selector name to sorted unique canonical task IDs; equivalent one-integer-per-line .txt files.",
+    "dimensions": "all_grids_within_30 requires height <= 30 and width <= 30 for every stored input and output.",
+    "alignment": "alignment_score_ge_0_XX uses alignment_status == scored and alignment_score >= threshold; null scores are unknown and excluded.",
+    "intersection": "all_grids_within_30_and_alignment_score_ge_0_XX requires both predicates.",
+    "scope": "Optional user selections; the full release remains unchanged and no dimension bound or primary threshold is mandatory."
+  },
+  "alignment_validation_scope": {
+    "statistics_path": "statistics.json",
+    "raw_annotated_tasks": 200,
+    "consensus_subset_size": 140,
+    "binary_disagreements_excluded": 60,
+    "prefilter_consensus_aligned": "103/140 (73.6%)",
+    "threshold_0_45_consensus_aligned": "83/105 (79.0%)",
+    "scope": "Existing validation is conditional on the binary-agreement subset; scores do not certify all task quality, training readiness or filtered-training gains."
+  }
 }

@@ -1,0 +1,265 @@
+model,condition,metric,run,planned_n,valid_n,missing_n,valid_mean,missing_reasons
+gpt-5.4,rich,MWR,1,100,90,10,0.08246043105754262,"{""execution_error_flag"": 9, ""parse_error_flag"": 1}"
+gpt-5.4,rich,MWR,2,100,99,1,0.08141033694923601,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,MWR,3,100,99,1,0.08219376146954543,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,AAS,1,100,90,10,0.451119537576014,"{""execution_error_flag"": 9, ""parse_error_flag"": 1}"
+gpt-5.4,rich,AAS,2,100,99,1,0.45129586333049065,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,AAS,3,100,99,1,0.45369776204852597,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,exact,1,100,98,2,0.7959183673469388,"{""execution_error_flag"": 2}"
+gpt-5.4,rich,exact,2,100,100,0,0.74,{}
+gpt-5.4,rich,exact,3,100,100,0,0.78,{}
+gpt-5.4,rich,GC,1,100,98,2,0.8926652353834106,"{""execution_error_flag"": 2}"
+gpt-5.4,rich,GC,2,100,100,0,0.9319241350055224,{}
+gpt-5.4,rich,GC,3,100,100,0,0.9325232661293847,{}
+gpt-5.4,rich,FG,1,100,98,2,0.8791632541105033,"{""execution_error_flag"": 2}"
+gpt-5.4,rich,FG,2,100,100,0,0.8987384975049542,{}
+gpt-5.4,rich,FG,3,100,100,0,0.9165919731617362,{}
+gpt-5.4,rich,own,1,100,90,10,0.4511338303952995,"{""execution_error_flag"": 9, ""parse_error_flag"": 1}"
+gpt-5.4,rich,own,2,100,99,1,0.4512301617861244,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,own,3,100,99,1,0.4537063941533936,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,other,1,100,90,10,0.3984241398368837,"{""execution_error_flag"": 9, ""parse_error_flag"": 1}"
+gpt-5.4,rich,other,2,100,99,1,0.3994632043961853,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,other,3,100,99,1,0.4010303976658917,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,margin,1,100,90,10,0.05270969055841582,"{""execution_error_flag"": 9, ""parse_error_flag"": 1}"
+gpt-5.4,rich,margin,2,100,99,1,0.05176695738993912,"{""parse_error_flag"": 1}"
+gpt-5.4,rich,margin,3,100,99,1,0.052675996487501896,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,MWR,1,100,88,12,0.0709307471192107,"{""execution_error_flag"": 12}"
+gpt-5.4,neutral,MWR,2,100,99,1,0.07476028983358785,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,MWR,3,100,100,0,0.07330295551875246,{}
+gpt-5.4,neutral,AAS,1,100,88,12,0.43913218823986844,"{""execution_error_flag"": 12}"
+gpt-5.4,neutral,AAS,2,100,99,1,0.44559918816462113,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,AAS,3,100,100,0,0.44815561104312973,{}
+gpt-5.4,neutral,exact,1,100,97,3,0.7835051546391752,"{""execution_error_flag"": 3}"
+gpt-5.4,neutral,exact,2,100,100,0,0.75,{}
+gpt-5.4,neutral,exact,3,100,100,0,0.79,{}
+gpt-5.4,neutral,GC,1,100,97,3,0.8835510355798404,"{""execution_error_flag"": 3}"
+gpt-5.4,neutral,GC,2,100,100,0,0.9297815000078982,{}
+gpt-5.4,neutral,GC,3,100,100,0,0.9267807026766542,{}
+gpt-5.4,neutral,FG,1,100,97,3,0.8755351519778892,"{""execution_error_flag"": 3}"
+gpt-5.4,neutral,FG,2,100,100,0,0.9027616689157393,{}
+gpt-5.4,neutral,FG,3,100,100,0,0.9046305757565185,{}
+gpt-5.4,neutral,own,1,100,88,12,0.43911746716920896,"{""execution_error_flag"": 12}"
+gpt-5.4,neutral,own,2,100,99,1,0.44565317437204743,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,own,3,100,100,0,0.44819530263889845,{}
+gpt-5.4,neutral,other,1,100,88,12,0.39205571877782935,"{""execution_error_flag"": 12}"
+gpt-5.4,neutral,other,2,100,99,1,0.39461537878122355,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,other,3,100,100,0,0.3987447359196987,{}
+gpt-5.4,neutral,margin,1,100,88,12,0.04706174839137961,"{""execution_error_flag"": 12}"
+gpt-5.4,neutral,margin,2,100,99,1,0.05103779559082386,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral,margin,3,100,100,0,0.04945056671919972,{}
+gpt-5.4,A+G,MWR,1,100,92,8,0.07827832091408515,"{""execution_error_flag"": 8}"
+gpt-5.4,A+G,MWR,2,100,99,1,0.07923249675693388,"{""parse_error_flag"": 1}"
+gpt-5.4,A+G,MWR,3,100,99,1,0.08420268897462578,"{""parse_error_flag"": 1}"
+gpt-5.4,A+G,AAS,1,100,92,8,0.4426971623353256,"{""execution_error_flag"": 8}"
+gpt-5.4,A+G,AAS,2,100,99,1,0.44979822429505506,"{""parse_error_flag"": 1}"
+gpt-5.4,A+G,AAS,3,100,99,1,0.4512371453867288,"{""parse_error_flag"": 1}"
+gpt-5.4,A+G,exact,1,100,99,1,0.797979797979798,"{""execution_error_flag"": 1}"
+gpt-5.4,A+G,exact,2,100,100,0,0.77,{}
+gpt-5.4,A+G,exact,3,100,100,0,0.78,{}
+gpt-5.4,A+G,GC,1,100,99,1,0.8877395855873237,"{""execution_error_flag"": 1}"
+gpt-5.4,A+G,GC,2,100,100,0,0.953497467348248,{}
+gpt-5.4,A+G,GC,3,100,100,0,0.9299501890465807,{}
+gpt-5.4,A+G,FG,1,100,99,1,0.8744611466158009,"{""execution_error_flag"": 1}"
+gpt-5.4,A+G,FG,2,100,100,0,0.9365793897518039,{}
+gpt-5.4,A+G,FG,3,100,100,0,0.8767528311889485,{}
+gpt-5.4,neutral A+G,MWR,1,100,89,11,0.08040403454771905,"{""execution_error_flag"": 11}"
+gpt-5.4,neutral A+G,MWR,2,100,99,1,0.07677413408135943,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,MWR,3,100,99,1,0.0793483322021076,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,AAS,1,100,89,11,0.4420978439088424,"{""execution_error_flag"": 11}"
+gpt-5.4,neutral A+G,AAS,2,100,99,1,0.4396538730783025,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,AAS,3,100,99,1,0.4396960132094176,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,exact,1,100,98,2,0.7551020408163265,"{""execution_error_flag"": 2}"
+gpt-5.4,neutral A+G,exact,2,100,100,0,0.75,{}
+gpt-5.4,neutral A+G,exact,3,100,100,0,0.75,{}
+gpt-5.4,neutral A+G,GC,1,100,98,2,0.8728038527791397,"{""execution_error_flag"": 2}"
+gpt-5.4,neutral A+G,GC,2,100,100,0,0.9404324338006042,{}
+gpt-5.4,neutral A+G,GC,3,100,100,0,0.945910548996062,{}
+gpt-5.4,neutral A+G,FG,1,100,98,2,0.8615767963811212,"{""execution_error_flag"": 2}"
+gpt-5.4,neutral A+G,FG,2,100,100,0,0.9128689451291916,{}
+gpt-5.4,neutral A+G,FG,3,100,100,0,0.9162622864921588,{}
+gpt-5.4,neutral A+G,own,1,100,89,11,0.44209573721618506,"{""execution_error_flag"": 11}"
+gpt-5.4,neutral A+G,own,2,100,99,1,0.4396102289234331,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,own,3,100,99,1,0.4396885023258234,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,other,1,100,89,11,0.39644433580195615,"{""execution_error_flag"": 11}"
+gpt-5.4,neutral A+G,other,2,100,99,1,0.3919154305788423,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,other,3,100,99,1,0.389646462189887,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,margin,1,100,89,11,0.045651401414228895,"{""execution_error_flag"": 11}"
+gpt-5.4,neutral A+G,margin,2,100,99,1,0.04769479834459081,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral A+G,margin,3,100,99,1,0.05004204013593634,"{""parse_error_flag"": 1}"
+gpt-5.4,C+G,MWR,1,100,91,9,0.07558417822524685,"{""execution_error_flag"": 9}"
+gpt-5.4,C+G,MWR,2,100,99,1,0.07559614072810225,"{""parse_error_flag"": 1}"
+gpt-5.4,C+G,MWR,3,100,99,1,0.07860275307660516,"{""parse_error_flag"": 1}"
+gpt-5.4,C+G,AAS,1,100,91,9,0.44986244680033777,"{""execution_error_flag"": 9}"
+gpt-5.4,C+G,AAS,2,100,99,1,0.44482358394454646,"{""parse_error_flag"": 1}"
+gpt-5.4,C+G,AAS,3,100,99,1,0.4517995043216643,"{""parse_error_flag"": 1}"
+gpt-5.4,C+G,exact,1,100,99,1,0.7676767676767676,"{""execution_error_flag"": 1}"
+gpt-5.4,C+G,exact,2,100,100,0,0.78,{}
+gpt-5.4,C+G,exact,3,100,100,0,0.77,{}
+gpt-5.4,C+G,GC,1,100,99,1,0.883387405357044,"{""execution_error_flag"": 1}"
+gpt-5.4,C+G,GC,2,100,100,0,0.9318580840503856,{}
+gpt-5.4,C+G,GC,3,100,100,0,0.9302622251123847,{}
+gpt-5.4,C+G,FG,1,100,99,1,0.8732886132935631,"{""execution_error_flag"": 1}"
+gpt-5.4,C+G,FG,2,100,100,0,0.9005170359129199,{}
+gpt-5.4,C+G,FG,3,100,100,0,0.9084807895629882,{}
+gpt-5.4,neutral C+G,MWR,1,100,97,3,0.07795856842548173,"{""execution_error_flag"": 3}"
+gpt-5.4,neutral C+G,MWR,2,100,99,1,0.07894488546815981,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral C+G,MWR,3,100,98,2,0.07278959160752248,"{""execution_error_flag"": 2}"
+gpt-5.4,neutral C+G,AAS,1,100,97,3,0.4475800333890514,"{""execution_error_flag"": 3}"
+gpt-5.4,neutral C+G,AAS,2,100,99,1,0.44655419619796755,"{""parse_error_flag"": 1}"
+gpt-5.4,neutral C+G,AAS,3,100,98,2,0.4478304204529722,"{""execution_error_flag"": 2}"
+gpt-5.4,neutral C+G,exact,1,100,100,0,0.74,{}
+gpt-5.4,neutral C+G,exact,2,100,100,0,0.77,{}
+gpt-5.4,neutral C+G,exact,3,100,100,0,0.78,{}
+gpt-5.4,neutral C+G,GC,1,100,100,0,0.923753629969143,{}
+gpt-5.4,neutral C+G,GC,2,100,100,0,0.9524477955922187,{}
+gpt-5.4,neutral C+G,GC,3,100,100,0,0.9421565298581859,{}
+gpt-5.4,neutral C+G,FG,1,100,100,0,0.8998927564882406,{}
+gpt-5.4,neutral C+G,FG,2,100,100,0,0.918075640760112,{}
+gpt-5.4,neutral C+G,FG,3,100,100,0,0.9050190805508243,{}
+gpt-5.4,G only,MWR,1,100,89,11,0.08113051900659403,"{""execution_error_flag"": 11}"
+gpt-5.4,G only,MWR,2,100,99,1,0.08170622855578266,"{""parse_error_flag"": 1}"
+gpt-5.4,G only,MWR,3,100,100,0,0.07848241852427133,{}
+gpt-5.4,G only,AAS,1,100,89,11,0.4349161763000613,"{""execution_error_flag"": 11}"
+gpt-5.4,G only,AAS,2,100,99,1,0.43705756067917256,"{""parse_error_flag"": 1}"
+gpt-5.4,G only,AAS,3,100,100,0,0.43360901541127395,{}
+gpt-5.4,G only,exact,1,100,97,3,0.7422680412371134,"{""execution_error_flag"": 3}"
+gpt-5.4,G only,exact,2,100,100,0,0.78,{}
+gpt-5.4,G only,exact,3,100,100,0,0.75,{}
+gpt-5.4,G only,GC,1,100,97,3,0.8770508971018158,"{""execution_error_flag"": 3}"
+gpt-5.4,G only,GC,2,100,100,0,0.93202664843374,{}
+gpt-5.4,G only,GC,3,100,100,0,0.9287738867218187,{}
+gpt-5.4,G only,FG,1,100,97,3,0.8638187541681251,"{""execution_error_flag"": 3}"
+gpt-5.4,G only,FG,2,100,100,0,0.8920804041804693,{}
+gpt-5.4,G only,FG,3,100,100,0,0.9039034367047883,{}
+gpt-5.4-mini,rich,MWR,1,100,97,3,0.09850786578047524,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,MWR,2,100,98,2,0.10158147337510205,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,MWR,3,100,97,3,0.09334850306633931,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,rich,AAS,1,100,97,3,0.448279986931,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,AAS,2,100,98,2,0.4506982153705923,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,AAS,3,100,97,3,0.4565851006653486,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,rich,exact,1,100,99,1,0.15151515151515152,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,exact,2,100,100,0,0.19,{}
+gpt-5.4-mini,rich,exact,3,100,100,0,0.12,{}
+gpt-5.4-mini,rich,GC,1,100,99,1,0.3809548364950974,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,GC,2,100,100,0,0.4191959514825782,{}
+gpt-5.4-mini,rich,GC,3,100,100,0,0.3571418556155929,{}
+gpt-5.4-mini,rich,FG,1,100,99,1,0.28862552411177983,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,FG,2,100,100,0,0.3410673403651655,{}
+gpt-5.4-mini,rich,FG,3,100,100,0,0.28738184030822406,{}
+gpt-5.4-mini,rich,own,1,100,97,3,0.44830931159385806,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,own,2,100,98,2,0.45064732795372187,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,own,3,100,97,3,0.4565048434391176,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,rich,other,1,100,97,3,0.41145118196857927,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,other,2,100,98,2,0.4106564412586884,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,other,3,100,97,3,0.41534845905446194,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,rich,margin,1,100,97,3,0.036858129625278825,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,margin,2,100,98,2,0.0399908866950335,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,rich,margin,3,100,97,3,0.04115638438465567,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,MWR,1,100,97,3,0.08262994577081995,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,MWR,2,100,97,3,0.09134240485400325,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,MWR,3,100,97,3,0.09534117144896946,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,AAS,1,100,97,3,0.4467228759823013,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,AAS,2,100,97,3,0.44250392345579453,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,AAS,3,100,97,3,0.4495772880608293,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,exact,1,100,99,1,0.1919191919191919,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,exact,2,100,100,0,0.16,{}
+gpt-5.4-mini,neutral,exact,3,100,100,0,0.18,{}
+gpt-5.4-mini,neutral,GC,1,100,99,1,0.4222329189034303,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,GC,2,100,100,0,0.40872045801020834,{}
+gpt-5.4-mini,neutral,GC,3,100,100,0,0.33164192300814294,{}
+gpt-5.4-mini,neutral,FG,1,100,99,1,0.2960674819869817,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,FG,2,100,100,0,0.3020082664830429,{}
+gpt-5.4-mini,neutral,FG,3,100,100,0,0.26950682570175133,{}
+gpt-5.4-mini,neutral,own,1,100,97,3,0.4468301813802313,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,own,2,100,97,3,0.44241711958104846,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,own,3,100,97,3,0.449581511000356,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,other,1,100,97,3,0.409153466043422,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,other,2,100,97,3,0.4073744228417772,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,other,3,100,97,3,0.4084725842743182,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,margin,1,100,97,3,0.03767671533680926,"{""execution_error_flag"": 2, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral,margin,2,100,97,3,0.03504269673927124,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral,margin,3,100,97,3,0.04110892672603775,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,A+G,MWR,1,100,98,2,0.09852147013045881,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,A+G,MWR,2,100,95,5,0.10282460394600239,"{""execution_error_flag"": 1, ""parse_error_flag"": 4}"
+gpt-5.4-mini,A+G,MWR,3,100,97,3,0.1057341571177329,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,A+G,AAS,1,100,98,2,0.43444248716324396,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,A+G,AAS,2,100,95,5,0.4355837571046159,"{""execution_error_flag"": 1, ""parse_error_flag"": 4}"
+gpt-5.4-mini,A+G,AAS,3,100,97,3,0.43415120252979794,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,A+G,exact,1,100,100,0,0.14,{}
+gpt-5.4-mini,A+G,exact,2,100,100,0,0.1,{}
+gpt-5.4-mini,A+G,exact,3,100,100,0,0.17,{}
+gpt-5.4-mini,A+G,GC,1,100,100,0,0.3738871479151103,{}
+gpt-5.4-mini,A+G,GC,2,100,100,0,0.35814047711171726,{}
+gpt-5.4-mini,A+G,GC,3,100,100,0,0.3697687814527214,{}
+gpt-5.4-mini,A+G,FG,1,100,100,0,0.286166151608432,{}
+gpt-5.4-mini,A+G,FG,2,100,100,0,0.2573680577035735,{}
+gpt-5.4-mini,A+G,FG,3,100,100,0,0.2753015202362253,{}
+gpt-5.4-mini,neutral A+G,MWR,1,100,96,4,0.09125674683628549,"{""execution_error_flag"": 1, ""parse_error_flag"": 3}"
+gpt-5.4-mini,neutral A+G,MWR,2,100,98,2,0.09228874326504731,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,MWR,3,100,98,2,0.09487120552956245,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,AAS,1,100,96,4,0.434909389653028,"{""execution_error_flag"": 1, ""parse_error_flag"": 3}"
+gpt-5.4-mini,neutral A+G,AAS,2,100,98,2,0.4331826619378265,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,AAS,3,100,98,2,0.44024039115517904,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,exact,1,100,99,1,0.15151515151515152,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,exact,2,100,100,0,0.17,{}
+gpt-5.4-mini,neutral A+G,exact,3,100,100,0,0.16,{}
+gpt-5.4-mini,neutral A+G,GC,1,100,99,1,0.40514943713948326,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,GC,2,100,100,0,0.36777013062186653,{}
+gpt-5.4-mini,neutral A+G,GC,3,100,100,0,0.2986384797208728,{}
+gpt-5.4-mini,neutral A+G,FG,1,100,99,1,0.3029332079522092,"{""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,FG,2,100,100,0,0.272117711121671,{}
+gpt-5.4-mini,neutral A+G,FG,3,100,100,0,0.23253519833830094,{}
+gpt-5.4-mini,neutral A+G,own,1,100,96,4,0.43488871474224916,"{""execution_error_flag"": 1, ""parse_error_flag"": 3}"
+gpt-5.4-mini,neutral A+G,own,2,100,98,2,0.43320157702413115,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,own,3,100,98,2,0.4402822299585687,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,other,1,100,96,4,0.401522648654691,"{""execution_error_flag"": 1, ""parse_error_flag"": 3}"
+gpt-5.4-mini,neutral A+G,other,2,100,98,2,0.397832834303582,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,other,3,100,98,2,0.40319691750307657,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,margin,1,100,96,4,0.03336606608755815,"{""execution_error_flag"": 1, ""parse_error_flag"": 3}"
+gpt-5.4-mini,neutral A+G,margin,2,100,98,2,0.03536874272054915,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral A+G,margin,3,100,98,2,0.037085312455492125,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,C+G,MWR,1,100,97,3,0.09055357570017422,"{""execution_error_flag"": 3}"
+gpt-5.4-mini,C+G,MWR,2,100,97,3,0.08971092247983446,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,C+G,MWR,3,100,98,2,0.09344529699709268,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,C+G,AAS,1,100,97,3,0.44711574271175253,"{""execution_error_flag"": 3}"
+gpt-5.4-mini,C+G,AAS,2,100,97,3,0.4544265102355232,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,C+G,AAS,3,100,98,2,0.45025533641191395,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,C+G,exact,1,100,100,0,0.16,{}
+gpt-5.4-mini,C+G,exact,2,100,100,0,0.15,{}
+gpt-5.4-mini,C+G,exact,3,100,100,0,0.19,{}
+gpt-5.4-mini,C+G,GC,1,100,100,0,0.3988063353551751,{}
+gpt-5.4-mini,C+G,GC,2,100,100,0,0.3572018914686407,{}
+gpt-5.4-mini,C+G,GC,3,100,100,0,0.3796085619241437,{}
+gpt-5.4-mini,C+G,FG,1,100,100,0,0.3096220702547133,{}
+gpt-5.4-mini,C+G,FG,2,100,100,0,0.255391265884038,{}
+gpt-5.4-mini,C+G,FG,3,100,100,0,0.3015639264676586,{}
+gpt-5.4-mini,neutral C+G,MWR,1,100,97,3,0.08780232295070106,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral C+G,MWR,2,100,98,2,0.08801823546354566,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral C+G,MWR,3,100,95,5,0.08791289868330164,"{""execution_error_flag"": 1, ""parse_error_flag"": 4}"
+gpt-5.4-mini,neutral C+G,AAS,1,100,97,3,0.43712827412854816,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,neutral C+G,AAS,2,100,98,2,0.44218085125189716,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,neutral C+G,AAS,3,100,95,5,0.4468311866197092,"{""execution_error_flag"": 1, ""parse_error_flag"": 4}"
+gpt-5.4-mini,neutral C+G,exact,1,100,100,0,0.17,{}
+gpt-5.4-mini,neutral C+G,exact,2,100,100,0,0.13,{}
+gpt-5.4-mini,neutral C+G,exact,3,100,100,0,0.14,{}
+gpt-5.4-mini,neutral C+G,GC,1,100,100,0,0.41354644740880986,{}
+gpt-5.4-mini,neutral C+G,GC,2,100,100,0,0.3920605388624265,{}
+gpt-5.4-mini,neutral C+G,GC,3,100,100,0,0.3759204591267311,{}
+gpt-5.4-mini,neutral C+G,FG,1,100,100,0,0.31191210881991305,{}
+gpt-5.4-mini,neutral C+G,FG,2,100,100,0,0.30469121767697177,{}
+gpt-5.4-mini,neutral C+G,FG,3,100,100,0,0.27640359933043834,{}
+gpt-5.4-mini,G only,MWR,1,100,99,1,0.09992390222927876,"{""execution_error_flag"": 1}"
+gpt-5.4-mini,G only,MWR,2,100,98,2,0.09499453691944697,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,G only,MWR,3,100,97,3,0.09392278415397291,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,G only,AAS,1,100,99,1,0.41503771573028864,"{""execution_error_flag"": 1}"
+gpt-5.4-mini,G only,AAS,2,100,98,2,0.41648644078480845,"{""execution_error_flag"": 1, ""parse_error_flag"": 1}"
+gpt-5.4-mini,G only,AAS,3,100,97,3,0.4270657730287082,"{""execution_error_flag"": 1, ""parse_error_flag"": 2}"
+gpt-5.4-mini,G only,exact,1,100,100,0,0.17,{}
+gpt-5.4-mini,G only,exact,2,100,100,0,0.16,{}
+gpt-5.4-mini,G only,exact,3,100,100,0,0.15,{}
+gpt-5.4-mini,G only,GC,1,100,100,0,0.353854892536509,{}
+gpt-5.4-mini,G only,GC,2,100,100,0,0.3768390094701449,{}
+gpt-5.4-mini,G only,GC,3,100,100,0,0.34233465869057006,{}
+gpt-5.4-mini,G only,FG,1,100,100,0,0.29906567435836345,{}
+gpt-5.4-mini,G only,FG,2,100,100,0,0.28033954598656713,{}
+gpt-5.4-mini,G only,FG,3,100,100,0,0.24528869674881185,{}

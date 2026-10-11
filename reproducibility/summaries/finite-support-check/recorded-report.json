@@ -1,0 +1,983 @@
+{
+  "scope": "Fresh finite validation of only frozen support IDs837/877/901 (canonical838/878/902); no new API calls, candidates, code fixes, or training.",
+  "source_hashes_unchanged": true,
+  "subprocess_timeout_seconds": 20,
+  "validator_seeds": [
+    0,
+    1,
+    2
+  ],
+  "safety_inspected_codes": 6,
+  "results": [
+    {
+      "legacy_task_id": 837,
+      "canonical_task_id": 838,
+      "structure_valid": true,
+      "structure_reason": null,
+      "seeded_behavior_valid": true,
+      "seeded_behavior_reason": null,
+      "validator_seeds": [
+        0,
+        1,
+        2
+      ],
+      "elapsed_seconds": 0.125,
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy_version": "2.3.5",
+      "stored_pairs": [
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 0,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "fd8019b3d607c73306265eb4a4a06e32a8bf1344fdc244e433df45195718a330",
+          "gold_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 1,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "06b3160a1ba70d94a188f340d1ae4c8e760c1cf72f04a7717c4ed49e3c2348de",
+          "gold_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 2,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "eb7ceddeea4a57339ca14bf31b5c83f9cf64fee88a3b7a1eb400309d9241bad2",
+          "gold_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 3,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "70042e1306bc6a33d8d9c7ccf4cbb3b160ef2ac5d0cc68c59320230d5b142089",
+          "gold_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 4,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "6f4252abf77dec06ac4456c76f092068ba2093f88fc8968a6acafd9dd887104e",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "6f4252abf77dec06ac4456c76f092068ba2093f88fc8968a6acafd9dd887104e",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "8eb5cecbda96c76a76b73f63e4ca910f001bd707e3c79aab56effc3eaad2ce20",
+          "gold_sha256": "6f4252abf77dec06ac4456c76f092068ba2093f88fc8968a6acafd9dd887104e"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 5,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "2403f53bb65f490374f288e5d5ab18d1666e996a93ae99032eba4f0e552a804c",
+          "gold_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 6,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "0952431b0784513afac282ef414a43a844138a68abfba1f4f7c74be6b2a86623",
+          "gold_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 7,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "ef444918a4a71b3c810dcc0e59c8d18daa65fc68b0c51772207bef03fe2fc38b",
+          "gold_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 8,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "02258904c01cd0376967ffa6ef6f4afaceb302058d4f8a74951eda508adb0f91",
+          "gold_sha256": "a555364cc4a79e189e469f156aa04b99788b2db241ae0508d9f2c5e48bfddb56"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 9,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "4a7c316c87aa7327d0cf7bbd7589bf88d1555e4ba643cd96cd09f9a6c7885883",
+          "gold_sha256": "215b648da9a20e1496c567209528bc323ecb1a79bba36ea2a0ef1748e66785b9"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 10,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "47cfde36f2f48506a0dc7b9a25c8a2c7b6e87af72b3d80c447524e2762ad1ad8",
+          "gold_sha256": "f3841849b345f1013ac046930bc636e59837bceecea6f3b75e4bcbb2cd119559"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 11,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "0ba5025f8bf4d4d76464c5bce3d192fbb0edb45de1c3424a27ba54a1c6183f9a",
+          "gold_sha256": "22d985159b847c009ebd48cc64561d72287dec0f964a4b4b967ce44893030746"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "train_pairs",
+          "index": 12,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "c0d25bffa2cc6853eccdc40e02987172a80bc38382a5e09bc3388159cc39da11",
+          "gold_sha256": "8962cf9908b73b9525511cd375990ec48a36adfd26bd1c5d5681a9ab8212b74b"
+        },
+        {
+          "legacy_task_id": 837,
+          "canonical_task_id": 838,
+          "split": "test_pairs",
+          "index": 0,
+          "input_shape": [
+            18,
+            27
+          ],
+          "gold_shape": [
+            18,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            18,
+            27
+          ],
+          "original_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            18,
+            27
+          ],
+          "neutral_output_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "9ddbcbec904ea761db77228f3216815a091bfc0fdb6815c01c775f36001937ae",
+          "gold_sha256": "db0f6f18da26578307ed9274f1e6c2d49042975e7da4faae85e63aa356b9f78d"
+        }
+      ]
+    },
+    {
+      "legacy_task_id": 877,
+      "canonical_task_id": 878,
+      "structure_valid": true,
+      "structure_reason": null,
+      "seeded_behavior_valid": true,
+      "seeded_behavior_reason": null,
+      "validator_seeds": [
+        0,
+        1,
+        2
+      ],
+      "elapsed_seconds": 0.06199999999989814,
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy_version": "2.3.5",
+      "stored_pairs": [
+        {
+          "legacy_task_id": 877,
+          "canonical_task_id": 878,
+          "split": "train_pairs",
+          "index": 0,
+          "input_shape": [
+            15,
+            15
+          ],
+          "gold_shape": [
+            15,
+            15
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            15,
+            15
+          ],
+          "original_output_sha256": "f09c0d2570e8b73d956b261047d7aceaff9410bb700809b7a7cb73998eb49f6e",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            15,
+            15
+          ],
+          "neutral_output_sha256": "f09c0d2570e8b73d956b261047d7aceaff9410bb700809b7a7cb73998eb49f6e",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "1007fbfccb4b148944c4bc0beaaf4346ed0b2c5acf9ecf4588768c13d1bbb899",
+          "gold_sha256": "f09c0d2570e8b73d956b261047d7aceaff9410bb700809b7a7cb73998eb49f6e"
+        },
+        {
+          "legacy_task_id": 877,
+          "canonical_task_id": 878,
+          "split": "train_pairs",
+          "index": 1,
+          "input_shape": [
+            9,
+            9
+          ],
+          "gold_shape": [
+            9,
+            9
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            9,
+            9
+          ],
+          "original_output_sha256": "3bc4f41ddb356df2305d1b9d3faaf2b0937639bc1ad2f513a0d75c24b32cf069",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            9,
+            9
+          ],
+          "neutral_output_sha256": "3bc4f41ddb356df2305d1b9d3faaf2b0937639bc1ad2f513a0d75c24b32cf069",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "d8376e2d000b37dca5a177b263464cfcf16135e746753fe20641467ba4f0c572",
+          "gold_sha256": "3bc4f41ddb356df2305d1b9d3faaf2b0937639bc1ad2f513a0d75c24b32cf069"
+        },
+        {
+          "legacy_task_id": 877,
+          "canonical_task_id": 878,
+          "split": "train_pairs",
+          "index": 2,
+          "input_shape": [
+            11,
+            11
+          ],
+          "gold_shape": [
+            11,
+            11
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            11,
+            11
+          ],
+          "original_output_sha256": "2600ddb710d1362798cf4efe6b3a2c9c3c4300bd72e2e818e8f1cb6617faf164",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            11,
+            11
+          ],
+          "neutral_output_sha256": "2600ddb710d1362798cf4efe6b3a2c9c3c4300bd72e2e818e8f1cb6617faf164",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "aa025b3aef83d45e255e09f0a63ecbeb3ad583aeea3e692792e55013b311285a",
+          "gold_sha256": "2600ddb710d1362798cf4efe6b3a2c9c3c4300bd72e2e818e8f1cb6617faf164"
+        },
+        {
+          "legacy_task_id": 877,
+          "canonical_task_id": 878,
+          "split": "train_pairs",
+          "index": 3,
+          "input_shape": [
+            7,
+            7
+          ],
+          "gold_shape": [
+            7,
+            7
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            7,
+            7
+          ],
+          "original_output_sha256": "3e928a39767bd486249811c53813dc62f2799eac1e57013e061343077cefd1ea",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            7,
+            7
+          ],
+          "neutral_output_sha256": "3e928a39767bd486249811c53813dc62f2799eac1e57013e061343077cefd1ea",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "4643f1b4302aca09c91991f168fb6a44dd62e9a066b169924db2d3045d6d0f9c",
+          "gold_sha256": "3e928a39767bd486249811c53813dc62f2799eac1e57013e061343077cefd1ea"
+        },
+        {
+          "legacy_task_id": 877,
+          "canonical_task_id": 878,
+          "split": "test_pairs",
+          "index": 0,
+          "input_shape": [
+            13,
+            13
+          ],
+          "gold_shape": [
+            13,
+            13
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            13,
+            13
+          ],
+          "original_output_sha256": "000d80142a90ff9b901eb90a7332623429a499872095483b81de090e86f5c5bd",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            13,
+            13
+          ],
+          "neutral_output_sha256": "000d80142a90ff9b901eb90a7332623429a499872095483b81de090e86f5c5bd",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "77f79d4f831b6ba4a0c35d30c17bbfe4dc924af2c0b78dfb5fcca29fd65fb895",
+          "gold_sha256": "000d80142a90ff9b901eb90a7332623429a499872095483b81de090e86f5c5bd"
+        }
+      ]
+    },
+    {
+      "legacy_task_id": 901,
+      "canonical_task_id": 902,
+      "structure_valid": true,
+      "structure_reason": null,
+      "seeded_behavior_valid": true,
+      "seeded_behavior_reason": null,
+      "validator_seeds": [
+        0,
+        1,
+        2
+      ],
+      "elapsed_seconds": 0.18800000000010186,
+      "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "numpy_version": "2.3.5",
+      "stored_pairs": [
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 0,
+          "input_shape": [
+            21,
+            22
+          ],
+          "gold_shape": [
+            21,
+            22
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            21,
+            22
+          ],
+          "original_output_sha256": "416484c50d3fb8d30a7121864a56366367edcf34f2afaed898f248de9de5f532",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            21,
+            22
+          ],
+          "neutral_output_sha256": "416484c50d3fb8d30a7121864a56366367edcf34f2afaed898f248de9de5f532",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "f0c0b7cc4d17fd2a1a9aedca7f5c837acdc2fe3a0ace3ab2f96d4111c35cc82b",
+          "gold_sha256": "416484c50d3fb8d30a7121864a56366367edcf34f2afaed898f248de9de5f532"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 1,
+          "input_shape": [
+            14,
+            18
+          ],
+          "gold_shape": [
+            14,
+            18
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            14,
+            18
+          ],
+          "original_output_sha256": "2d106ee2ff6dc1d72d89c908a39d23e2c8905568076fb3b746e2370db1345409",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            14,
+            18
+          ],
+          "neutral_output_sha256": "2d106ee2ff6dc1d72d89c908a39d23e2c8905568076fb3b746e2370db1345409",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "27481c63588a261e9be21b1115899600f2bb9e0c9f0702022a7a5f7c47eb2f96",
+          "gold_sha256": "2d106ee2ff6dc1d72d89c908a39d23e2c8905568076fb3b746e2370db1345409"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 2,
+          "input_shape": [
+            14,
+            18
+          ],
+          "gold_shape": [
+            14,
+            18
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            14,
+            18
+          ],
+          "original_output_sha256": "d2753f40af6e05fa65538f64a7165baf1412c57af988bb1423c5ea0f04cd51c7",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            14,
+            18
+          ],
+          "neutral_output_sha256": "d2753f40af6e05fa65538f64a7165baf1412c57af988bb1423c5ea0f04cd51c7",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "cf0bb40055ae2cbb868454788ea594586e898f257b8acc8dcb0bae72392d0094",
+          "gold_sha256": "d2753f40af6e05fa65538f64a7165baf1412c57af988bb1423c5ea0f04cd51c7"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 3,
+          "input_shape": [
+            16,
+            17
+          ],
+          "gold_shape": [
+            16,
+            17
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            16,
+            17
+          ],
+          "original_output_sha256": "7b81be40e57666ef0c4a86f9ec3946912f0976f186a10ce03907ee914c16332e",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            16,
+            17
+          ],
+          "neutral_output_sha256": "7b81be40e57666ef0c4a86f9ec3946912f0976f186a10ce03907ee914c16332e",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "d9a44461d26d6ad4b53aebee278b467bfc97c632c785ad5c3134f6e820ea5f35",
+          "gold_sha256": "7b81be40e57666ef0c4a86f9ec3946912f0976f186a10ce03907ee914c16332e"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 4,
+          "input_shape": [
+            26,
+            16
+          ],
+          "gold_shape": [
+            26,
+            16
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            26,
+            16
+          ],
+          "original_output_sha256": "0ed8f0898fe4cf7eea759d63ac2a76997718c85bde264b276dc5304c86685a7a",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            26,
+            16
+          ],
+          "neutral_output_sha256": "0ed8f0898fe4cf7eea759d63ac2a76997718c85bde264b276dc5304c86685a7a",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "4e45a26033782d1707fdbc2e9d5274e5843053f8ca1a8c8e12bb6b4d674e547f",
+          "gold_sha256": "0ed8f0898fe4cf7eea759d63ac2a76997718c85bde264b276dc5304c86685a7a"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 5,
+          "input_shape": [
+            26,
+            21
+          ],
+          "gold_shape": [
+            26,
+            21
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            26,
+            21
+          ],
+          "original_output_sha256": "2591c25ce49b6ad3cd1571d863b20dd08b80ceaaa8acd4dcb8fe92e641e9965b",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            26,
+            21
+          ],
+          "neutral_output_sha256": "2591c25ce49b6ad3cd1571d863b20dd08b80ceaaa8acd4dcb8fe92e641e9965b",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "c12b74cda5cb681ad3a5f2209b3731afafc44e1de48890a3bad1ee10cf2afe72",
+          "gold_sha256": "2591c25ce49b6ad3cd1571d863b20dd08b80ceaaa8acd4dcb8fe92e641e9965b"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 6,
+          "input_shape": [
+            29,
+            27
+          ],
+          "gold_shape": [
+            29,
+            27
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            29,
+            27
+          ],
+          "original_output_sha256": "efb7da69864cf70124d789be64769e0e7b7636862a72542eefce85f74ce78795",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            29,
+            27
+          ],
+          "neutral_output_sha256": "efb7da69864cf70124d789be64769e0e7b7636862a72542eefce85f74ce78795",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "db15fb868e167e5285fd80c5aa9758bb057596f1fd1fc34bc858376e1829ab37",
+          "gold_sha256": "efb7da69864cf70124d789be64769e0e7b7636862a72542eefce85f74ce78795"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 7,
+          "input_shape": [
+            20,
+            23
+          ],
+          "gold_shape": [
+            20,
+            23
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            20,
+            23
+          ],
+          "original_output_sha256": "b5ad4a34590b1811f48c802cf512c0be0d6ea2c0605aab0d581b5a84673e2f37",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            20,
+            23
+          ],
+          "neutral_output_sha256": "b5ad4a34590b1811f48c802cf512c0be0d6ea2c0605aab0d581b5a84673e2f37",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "ca41f9cad4978537cbb7f2550cc413b2e12900fce465796f2dedc8c00f7249a7",
+          "gold_sha256": "b5ad4a34590b1811f48c802cf512c0be0d6ea2c0605aab0d581b5a84673e2f37"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "train_pairs",
+          "index": 8,
+          "input_shape": [
+            17,
+            23
+          ],
+          "gold_shape": [
+            17,
+            23
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            17,
+            23
+          ],
+          "original_output_sha256": "ec3b761d4753b9cff774976056de230ba8e18430e694c989bae125d85de09838",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            17,
+            23
+          ],
+          "neutral_output_sha256": "ec3b761d4753b9cff774976056de230ba8e18430e694c989bae125d85de09838",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "29a9895567d819783fa21fbb28b877a28814021f334a79d50c5df72d0775ff6c",
+          "gold_sha256": "ec3b761d4753b9cff774976056de230ba8e18430e694c989bae125d85de09838"
+        },
+        {
+          "legacy_task_id": 901,
+          "canonical_task_id": 902,
+          "split": "test_pairs",
+          "index": 0,
+          "input_shape": [
+            13,
+            21
+          ],
+          "gold_shape": [
+            13,
+            21
+          ],
+          "original_equals_gold": true,
+          "original_shape": [
+            13,
+            21
+          ],
+          "original_output_sha256": "341f2d18b541890f693a9858c2efbe2a85c84703deae5c462fb70cd75b4a5e48",
+          "original_error": null,
+          "neutral_equals_gold": true,
+          "neutral_shape": [
+            13,
+            21
+          ],
+          "neutral_output_sha256": "341f2d18b541890f693a9858c2efbe2a85c84703deae5c462fb70cd75b4a5e48",
+          "neutral_error": null,
+          "original_equals_neutral": true,
+          "input_sha256": "1e3b758f18875eddfd4b1875983f9056919fa1c7dd8882797315ecebe00c26d5",
+          "gold_sha256": "341f2d18b541890f693a9858c2efbe2a85c84703deae5c462fb70cd75b4a5e48"
+        }
+      ]
+    }
+  ],
+  "stored_pair_count": 29,
+  "stored_original_neutral_equal_count": 29,
+  "stored_original_gold_equal_count": 29,
+  "stored_neutral_gold_equal_count": 29,
+  "stored_execution_error_count": 0,
+  "limits": [
+    "Equality on finite seeded/generated and stored inputs is empirical validation, not equivalence of programs on arbitrary inputs.",
+    "The original structure validator compares imports, top-level assignment targets, and top-level function signatures; it is not a complete alpha-equivalent AST proof.",
+    "No independent human or model validation of description semantic preservation was performed.",
+    "Fresh validation and saved review metadata do not certify every historical preprocessing call or model-serving snapshot."
+  ],
+  "validator_file": "reproducibility/support_code_validator.py",
+  "source_provenance": {
+    "validator_original_sha256": "4fd15af5ce1a30000b823f2145abdf0b35e480da8f62352d9021d386b7b8ad2b",
+    "common_original_sha256": "df11506442a1f6628fe59b377ab412cd1c8bf265ff32e477a9481e2072d18ec4",
+    "audit_original_sha256": "d3cc5bef302f980b31271d61e047971f66571512deafad0eff0f496be5095250"
+  }
+}

@@ -36,7 +36,7 @@ Thresholds 0.45, 0.50, 0.55, 0.60 and 0.65 retain 987, 622, 319, 129 and 39 task
 
 ## Human Validation Scope
 
-The score was validated against a 140-task consensus subset with 103 aligned and 37 misaligned tasks. The reported precision and recall apply to that subset, not to human verification of the full corpus. Scores are proxies for sketch-to-grid alignment and do not certify training readiness, uniquely correct analogy, or filtered-training effectiveness. The six unscored tasks' execution limitation does not establish their quality or difficulty.
+The score was validated only on a 140-task binary-agreement subset with 103 aligned and 37 misaligned tasks; 60 disagreements among 200 annotated tasks were excluded. The existing binary mapping treats `y`/`y?` as aligned and `n`/`n?` as misaligned. Before filtering, 103/140 (73.6%) consensus tasks are aligned. At threshold 0.45, 83/105 retained consensus tasks are aligned (79.0% precision), a 5.5 percentage-point increase over that base rate, with recall 83/103 (80.6%). Exact counts and other thresholds are in `statistics.json`. These are conditional consensus-subset results, not a random full-corpus quality estimate or adjudicated ground truth. The release does not certify all task quality. Scores are proxies for sketch-to-grid alignment and do not certify training readiness, uniquely correct analogy, or filtered-training effectiveness. The six unscored tasks' execution limitation does not establish their quality or difficulty.
 
 ## Observable Artifacts and Interpretation Scope
 
@@ -51,3 +51,12 @@ The corpus includes grids beyond ARC's 30x30 bound. All stored input and output 
 ## Historical Generation Records
 
 Historical generation materials lack complete rejected-candidate and API-attempt records. Filter-specific task rejection rates and actual API retry counts cannot be recovered; input, pair and program failure counts do not identify rejected-task counts.
+
+
+## Optional Stored-Grid Metadata and Selections
+
+The original `data/data.jsonl` and `data/alignment_scores.jsonl` remain byte-identical to the preceding release, preserving original task payloads, scores/status and order. `task_metadata.jsonl` and its CSV equivalent add 1,614 rows of optional dimensions, stored-pair counts and exact alignment metadata. Join by canonical `task_id` and verify the exact UTF-8 `source_sha256`; ID order is not the original JSONL order. Field definitions are in `task_metadata_schema.json`. Input/output height, width and cell maxima are independent and may come from different stored grids.
+
+`subset_ids.json` and 11 matching text files in `subset_ids/` expose optional user selections. The five inclusive alignment thresholds retain 987/622/319/129/39 tasks; intersecting each with the 798-task stored-grid size selection retains 469/285/140/61/21 tasks. Null scores remain unknown and are excluded from score selections. The dimension-only selector is independent of score status.
+
+No 30×30 requirement is imposed on the full corpus, and no primary alignment threshold is prescribed. Dimension flags cover every stored example only; they do not constrain or guarantee newly generated examples. Editing or regenerating examples requires a new audit. This addendum does not provide a new quality evaluation or completed filtered-training experiment.

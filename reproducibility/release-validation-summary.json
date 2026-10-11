@@ -1,0 +1,61 @@
+{
+  "status": "verified_local_release",
+  "release_date": "2026-10-11",
+  "new_model_api_calls": 0,
+  "new_training_runs": 0,
+  "original_generation_files_preserved": 239,
+  "paired_statistics": {
+    "normalized_records": 4200,
+    "target_tasks": 100,
+    "bootstrap_draws": 50000,
+    "core_contrasts": 6,
+    "matched_solving_contrasts": 18,
+    "all_comparisons": 34,
+    "original_table_statistics_reproduced": 126,
+    "included_csv_verification": "All regenerated reference fields match within 1e-12."
+  },
+  "finite_support_check": {
+    "support_tasks": 3,
+    "stored_inputs": 29,
+    "original_rewritten_gold_equal": 29,
+    "structure_passes": 3,
+    "seeded_behavior_passes": 3,
+    "scope": "Tested inputs only; arbitrary-input program equivalence and description semantics not established."
+  },
+  "sft_sequence_audit": {
+    "saved_numeric_rows": 12000,
+    "sequence_limit": 6144,
+    "nemo_incomplete_gifarc_by_seed": [
+      91,
+      84,
+      77
+    ],
+    "qwen_incomplete_gifarc_by_seed": [
+      90,
+      82,
+      76
+    ],
+    "denominator_per_seed": 1000,
+    "arc_baseline_incomplete_by_seed": [
+      0,
+      0,
+      0
+    ],
+    "historical_truncation_counts": null,
+    "full_tokenization_rerun_in_this_release": false,
+    "population_label_masking_checked": false
+  },
+  "optional_metadata": {
+    "total_tasks": 1614,
+    "scored": 1608,
+    "unscored": 6,
+    "all_stored_grids_within_30": 798,
+    "alignment_ge_045_and_bounded": 469
+  },
+  "commands": {
+    "statistics": "python reproducibility/analyze_saved_statistics.py --output-dir results/paired_statistics --verify-included",
+    "finite": "python reproducibility/validate_support_controls.py --output-dir results/finite_support_check",
+    "sequence_counts": "python reproducibility/summarize_sft_audit.py --output results/sft_audit.json"
+  },
+  "scope": "Offline statistics, finite code validation and aggregation of recorded sequence evidence. No new performance experiment."
+}

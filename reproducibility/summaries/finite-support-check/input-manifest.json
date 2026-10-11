@@ -1,0 +1,39 @@
+{
+  "scope": "Only the three fixed support tasks and 29 stored inputs. Paths and raw generation metadata removed; code and grids preserved.",
+  "validator_seeds": [
+    0,
+    1,
+    2
+  ],
+  "common_file": "common.py",
+  "common_sha256": "df11506442a1f6628fe59b377ab412cd1c8bf265ff32e477a9481e2072d18ec4",
+  "supports": [
+    {
+      "task_id": 838,
+      "legacy_task_id": 837,
+      "file": "support-838.json",
+      "sha256": "0955d9f4463af21696bd369b3f530369740691d444fbfb3534c136885a906181",
+      "original_solution_code_sha256": "dedad3f97dfdb0d83529ac0835822e3b314335c93480320c946316a9aae4ecb3",
+      "neutral_code_sha256": "bbe4200902a363a6ac364f8bee95f4f71e164a4a48ff468b7a0ddb05bbf56141",
+      "stored_pairs": 14
+    },
+    {
+      "task_id": 878,
+      "legacy_task_id": 877,
+      "file": "support-878.json",
+      "sha256": "7268f630ef9568f92d3b68c35fc3181ccca679fba3393de76d4ec389540bad9f",
+      "original_solution_code_sha256": "e389879cfac69e887463568d92b9ea24a55f95dd16e43f6b1d10c980d1ba2304",
+      "neutral_code_sha256": "1fbc8b13d67ba613742928788fe1bc24d8e7e17214fb8600fc6a6f1609c094ac",
+      "stored_pairs": 5
+    },
+    {
+      "task_id": 902,
+      "legacy_task_id": 901,
+      "file": "support-902.json",
+      "sha256": "827e184670586b1697ea7d6e5bc240d07960afb3310b5266a6d201116444727b",
+      "original_solution_code_sha256": "ede9e9ab7b7e37e23768c6abe953e515edd865682335adac750127d506e8d0bc",
+      "neutral_code_sha256": "2c5a3f1157dbd207a247c80f060f3730e598bc5f5c851c8a34fbc0eba44a129d",
+      "stored_pairs": 10
+    }
+  ]
+}

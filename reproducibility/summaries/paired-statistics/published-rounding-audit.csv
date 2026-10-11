@@ -1,0 +1,127 @@
+table,model,condition,metric,statistic,computed,published,digits,rounding_matches
+3,gpt-5.4,rich,MWR,mean_of_run_means,0.08202150982544136,0.082,3,True
+3,gpt-5.4,rich,MWR,sample_sd_of_run_means,0.0005458272444166606,0.001,3,True
+3,gpt-5.4,rich,AAS,mean_of_run_means,0.4520377209850102,0.452,3,True
+3,gpt-5.4,rich,AAS,sample_sd_of_run_means,0.0014403384818652398,0.001,3,True
+3,gpt-5.4,neutral,MWR,mean_of_run_means,0.072997997490517,0.073,3,True
+3,gpt-5.4,neutral,MWR,sample_sd_of_run_means,0.0019328990919209193,0.002,3,True
+3,gpt-5.4,neutral,AAS,mean_of_run_means,0.44429566248253977,0.444,3,True
+3,gpt-5.4,neutral,AAS,sample_sd_of_run_means,0.004650798229819075,0.005,3,True
+3,gpt-5.4,neutral A+G,MWR,mean_of_run_means,0.0788421669437287,0.079,3,True
+3,gpt-5.4,neutral A+G,MWR,sample_sd_of_run_means,0.001867135988757057,0.002,3,True
+3,gpt-5.4,neutral A+G,AAS,mean_of_run_means,0.4404825767321875,0.44,3,True
+3,gpt-5.4,neutral A+G,AAS,sample_sd_of_run_means,0.0013990210815590274,0.001,3,True
+3,gpt-5.4-mini,rich,MWR,mean_of_run_means,0.0978126140739722,0.098,3,True
+3,gpt-5.4-mini,rich,MWR,sample_sd_of_run_means,0.004160286195418384,0.004,3,True
+3,gpt-5.4-mini,rich,AAS,mean_of_run_means,0.45185443432231365,0.452,3,True
+3,gpt-5.4-mini,rich,AAS,sample_sd_of_run_means,0.004271575848952696,0.004,3,True
+3,gpt-5.4-mini,neutral,MWR,mean_of_run_means,0.08977117402459756,0.09,3,True
+3,gpt-5.4-mini,neutral,MWR,sample_sd_of_run_means,0.006499645321066995,0.006,3,True
+3,gpt-5.4-mini,neutral,AAS,mean_of_run_means,0.44626802916630837,0.446,3,True
+3,gpt-5.4-mini,neutral,AAS,sample_sd_of_run_means,0.0035585510995985226,0.004,3,True
+3,gpt-5.4-mini,neutral A+G,MWR,mean_of_run_means,0.09280556521029841,0.093,3,True
+3,gpt-5.4-mini,neutral A+G,MWR,sample_sd_of_run_means,0.001861828833075481,0.002,3,True
+3,gpt-5.4-mini,neutral A+G,AAS,mean_of_run_means,0.43611081424867787,0.436,3,True
+3,gpt-5.4-mini,neutral A+G,AAS,sample_sd_of_run_means,0.0036790557512277823,0.004,3,True
+9,gpt-5.4,rich,exact,mean_of_run_means,0.7719727891156463,0.772,3,True
+9,gpt-5.4,rich,exact,sample_sd_of_run_means,0.028810467500948556,0.029,3,True
+9,gpt-5.4,rich,GC,mean_of_run_means,0.919037545506106,0.919,3,True
+9,gpt-5.4,rich,GC,sample_sd_of_run_means,0.022841055041998584,0.023,3,True
+9,gpt-5.4,rich,FG,mean_of_run_means,0.8981645749257312,0.898,3,True
+9,gpt-5.4,rich,FG,sample_sd_of_run_means,0.018720958650647077,0.019,3,True
+9,gpt-5.4,neutral,exact,mean_of_run_means,0.7745017182130585,0.775,3,True
+9,gpt-5.4,neutral,exact,sample_sd_of_run_means,0.021466168745478225,0.021,3,True
+9,gpt-5.4,neutral,GC,mean_of_run_means,0.9133710794214642,0.913,3,True
+9,gpt-5.4,neutral,GC,sample_sd_of_run_means,0.02586846453102847,0.026,3,True
+9,gpt-5.4,neutral,FG,mean_of_run_means,0.8943091322167157,0.894,3,True
+9,gpt-5.4,neutral,FG,sample_sd_of_run_means,0.016285575019039465,0.016,3,True
+9,gpt-5.4,A+G,exact,mean_of_run_means,0.7826599326599327,0.783,3,True
+9,gpt-5.4,A+G,exact,sample_sd_of_run_means,0.014178282867262498,0.014,3,True
+9,gpt-5.4,A+G,GC,mean_of_run_means,0.9237290806607175,0.924,3,True
+9,gpt-5.4,A+G,GC,sample_sd_of_run_means,0.0333174338084796,0.033,3,True
+9,gpt-5.4,A+G,FG,mean_of_run_means,0.8959311225188511,0.896,3,True
+9,gpt-5.4,A+G,FG,sample_sd_of_run_means,0.03522107574062521,0.035,3,True
+9,gpt-5.4,neutral A+G,exact,mean_of_run_means,0.7517006802721088,0.752,3,True
+9,gpt-5.4,neutral A+G,exact,sample_sd_of_run_means,0.0029456646387225516,0.003,3,True
+9,gpt-5.4,neutral A+G,GC,mean_of_run_means,0.919715611858602,0.92,3,True
+9,gpt-5.4,neutral A+G,GC,sample_sd_of_run_means,0.040719004057943334,0.041,3,True
+9,gpt-5.4,neutral A+G,FG,mean_of_run_means,0.8969026760008239,0.897,3,True
+9,gpt-5.4,neutral A+G,FG,sample_sd_of_run_means,0.03064012107646933,0.031,3,True
+9,gpt-5.4,C+G,exact,mean_of_run_means,0.7725589225589226,0.773,3,True
+9,gpt-5.4,C+G,exact,sample_sd_of_run_means,0.006548020862826567,0.007,3,True
+9,gpt-5.4,C+G,GC,mean_of_run_means,0.9151692381732714,0.915,3,True
+9,gpt-5.4,C+G,GC,sample_sd_of_run_means,0.027535438335106875,0.028,3,True
+9,gpt-5.4,C+G,FG,mean_of_run_means,0.8940954795898237,0.894,3,True
+9,gpt-5.4,C+G,FG,sample_sd_of_run_means,0.018453986204952935,0.018,3,True
+9,gpt-5.4,neutral C+G,exact,mean_of_run_means,0.7633333333333333,0.763,3,True
+9,gpt-5.4,neutral C+G,exact,sample_sd_of_run_means,0.020816659994661344,0.021,3,True
+9,gpt-5.4,neutral C+G,GC,mean_of_run_means,0.9394526518065158,0.939,3,True
+9,gpt-5.4,neutral C+G,GC,sample_sd_of_run_means,0.014536918607113815,0.015,3,True
+9,gpt-5.4,neutral C+G,FG,mean_of_run_means,0.9076624925997256,0.908,3,True
+9,gpt-5.4,neutral C+G,FG,sample_sd_of_run_means,0.009375235493376958,0.009,3,True
+9,gpt-5.4,G only,exact,mean_of_run_means,0.7574226804123712,0.757,3,True
+9,gpt-5.4,G only,exact,sample_sd_of_run_means,0.01993106410604292,0.02,3,True
+9,gpt-5.4,G only,GC,mean_of_run_means,0.9126171440857915,0.913,3,True
+9,gpt-5.4,G only,GC,sample_sd_of_run_means,0.030844181916246438,0.031,3,True
+9,gpt-5.4,G only,FG,mean_of_run_means,0.8866008650177942,0.887,3,True
+9,gpt-5.4,G only,FG,sample_sd_of_run_means,0.02059646706580366,0.021,3,True
+9,gpt-5.4-mini,rich,exact,mean_of_run_means,0.15383838383838383,0.154,3,True
+9,gpt-5.4-mini,rich,exact,sample_sd_of_run_means,0.0350577816799749,0.035,3,True
+9,gpt-5.4-mini,rich,GC,mean_of_run_means,0.3857642145310895,0.386,3,True
+9,gpt-5.4-mini,rich,GC,sample_sd_of_run_means,0.031305355632655935,0.031,3,True
+9,gpt-5.4-mini,rich,FG,mean_of_run_means,0.3056915682617231,0.306,3,True
+9,gpt-5.4-mini,rich,FG,sample_sd_of_run_means,0.03064262760089,0.031,3,True
+9,gpt-5.4-mini,neutral,exact,mean_of_run_means,0.1773063973063973,0.177,3,True
+9,gpt-5.4-mini,neutral,exact,sample_sd_of_run_means,0.01612917619709045,0.016,3,True
+9,gpt-5.4-mini,neutral,GC,mean_of_run_means,0.38753176664059386,0.388,3,True
+9,gpt-5.4-mini,neutral,GC,sample_sd_of_run_means,0.04887128620972211,0.049,3,True
+9,gpt-5.4-mini,neutral,FG,mean_of_run_means,0.289194191390592,0.289,3,True
+9,gpt-5.4-mini,neutral,FG,sample_sd_of_run_means,0.017306574066861567,0.017,3,True
+9,gpt-5.4-mini,A+G,exact,mean_of_run_means,0.1366666666666667,0.137,3,True
+9,gpt-5.4-mini,A+G,exact,sample_sd_of_run_means,0.035118845842842465,0.035,3,True
+9,gpt-5.4-mini,A+G,GC,mean_of_run_means,0.36726546882651634,0.367,3,True
+9,gpt-5.4-mini,A+G,GC,sample_sd_of_run_means,0.008166354200375835,0.008,3,True
+9,gpt-5.4-mini,A+G,FG,mean_of_run_means,0.2729452431827436,0.273,3,True
+9,gpt-5.4-mini,A+G,FG,sample_sd_of_run_means,0.014542922137687294,0.015,3,True
+9,gpt-5.4-mini,neutral A+G,exact,mean_of_run_means,0.1605050505050505,0.161,3,True
+9,gpt-5.4-mini,neutral A+G,exact,sample_sd_of_run_means,0.009252767850024135,0.009,3,True
+9,gpt-5.4-mini,neutral A+G,GC,mean_of_run_means,0.35718601582740755,0.357,3,True
+9,gpt-5.4-mini,neutral A+G,GC,sample_sd_of_run_means,0.05403853835036599,0.054,3,True
+9,gpt-5.4-mini,neutral A+G,FG,mean_of_run_means,0.26919537247072706,0.269,3,True
+9,gpt-5.4-mini,neutral A+G,FG,sample_sd_of_run_means,0.03528987088093523,0.035,3,True
+9,gpt-5.4-mini,C+G,exact,mean_of_run_means,0.16666666666666666,0.167,3,True
+9,gpt-5.4-mini,C+G,exact,sample_sd_of_run_means,0.02081665999466133,0.021,3,True
+9,gpt-5.4-mini,C+G,GC,mean_of_run_means,0.37853892958265317,0.379,3,True
+9,gpt-5.4-mini,C+G,GC,sample_sd_of_run_means,0.020822836569171364,0.021,3,True
+9,gpt-5.4-mini,C+G,FG,mean_of_run_means,0.28885908753546996,0.289,3,True
+9,gpt-5.4-mini,C+G,FG,sample_sd_of_run_means,0.029262685025339966,0.029,3,True
+9,gpt-5.4-mini,neutral C+G,exact,mean_of_run_means,0.14666666666666667,0.147,3,True
+9,gpt-5.4-mini,neutral C+G,exact,sample_sd_of_run_means,0.02081665999466133,0.021,3,True
+9,gpt-5.4-mini,neutral C+G,GC,mean_of_run_means,0.39384248179932246,0.394,3,True
+9,gpt-5.4-mini,neutral C+G,GC,sample_sd_of_run_means,0.018876181791441484,0.019,3,True
+9,gpt-5.4-mini,neutral C+G,FG,mean_of_run_means,0.2976689752757744,0.298,3,True
+9,gpt-5.4-mini,neutral C+G,FG,sample_sd_of_run_means,0.018766925102341875,0.019,3,True
+9,gpt-5.4-mini,G only,exact,mean_of_run_means,0.16,0.16,3,True
+9,gpt-5.4-mini,G only,exact,sample_sd_of_run_means,0.010000000000000009,0.01,3,True
+9,gpt-5.4-mini,G only,GC,mean_of_run_means,0.35767618689907466,0.358,3,True
+9,gpt-5.4-mini,G only,GC,sample_sd_of_run_means,0.017566709243168433,0.018,3,True
+9,gpt-5.4-mini,G only,FG,mean_of_run_means,0.2748979723645808,0.275,3,True
+9,gpt-5.4-mini,G only,FG,sample_sd_of_run_means,0.02729833095295712,0.027,3,True
+8,gpt-5.4,rich,own,task_mean,0.4527298760111143,0.4527,4,True
+8,gpt-5.4,rich,other,task_mean,0.3999844733565624,0.4,4,True
+8,gpt-5.4,rich,margin,task_mean,0.05274540265455189,0.0527,4,True
+8,gpt-5.4,neutral,own,task_mean,0.4451688267091532,0.4452,4,True
+8,gpt-5.4,neutral,other,task_mean,0.3958661619654797,0.3959,4,True
+8,gpt-5.4,neutral,margin,task_mean,0.049302664743673535,0.0493,4,True
+8,gpt-5.4,neutral A+G,own,task_mean,0.440708493243626,0.4407,4,True
+8,gpt-5.4,neutral A+G,other,task_mean,0.39254312796375507,0.3925,4,True
+8,gpt-5.4,neutral A+G,margin,task_mean,0.048165365279870906,0.0482,4,True
+8,gpt-5.4-mini,rich,own,task_mean,0.4522400664705807,0.4522,4,True
+8,gpt-5.4-mini,rich,other,task_mean,0.4125036273842333,0.4125,4,True
+8,gpt-5.4-mini,rich,margin,task_mean,0.0397364390863474,0.0397,4,True
+8,gpt-5.4-mini,neutral,own,task_mean,0.44616006712205636,0.4462,4,True
+8,gpt-5.4-mini,neutral,other,task_mean,0.4084290288868366,0.4084,4,True
+8,gpt-5.4-mini,neutral,margin,task_mean,0.037731038235219796,0.0377,4,True
+8,gpt-5.4-mini,neutral A+G,own,task_mean,0.43659256072166464,0.4366,4,True
+8,gpt-5.4-mini,neutral A+G,other,task_mean,0.401289158956207,0.4013,4,True
+8,gpt-5.4-mini,neutral A+G,margin,task_mean,0.035303401765457654,0.0353,4,True

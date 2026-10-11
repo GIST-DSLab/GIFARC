@@ -1,0 +1,59 @@
+{
+  "scope": "Representative sequence equality against the complete unmodified original prepare_arc_dataset including tensor conversion and label masking; population replay still excludes label masking.",
+  "checks": [
+    {
+      "tokenizer": "nemo",
+      "original_saved_line": 1,
+      "case": "normal",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 511,
+      "label_mask_population_audit": false
+    },
+    {
+      "tokenizer": "nemo",
+      "original_saved_line": 2,
+      "case": "input_shortened_target_preserved",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 1545,
+      "label_mask_population_audit": false
+    },
+    {
+      "tokenizer": "nemo",
+      "original_saved_line": 20,
+      "case": "target_truncated",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 1841,
+      "label_mask_population_audit": false
+    },
+    {
+      "tokenizer": "qwen3_14b",
+      "original_saved_line": 1,
+      "case": "normal",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 509,
+      "label_mask_population_audit": false
+    },
+    {
+      "tokenizer": "qwen3_14b",
+      "original_saved_line": 2,
+      "case": "input_shortened_target_preserved",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 1533,
+      "label_mask_population_audit": false
+    },
+    {
+      "tokenizer": "qwen3_14b",
+      "original_saved_line": 20,
+      "case": "target_truncated",
+      "sequence_exactly_equal_to_unmodified_full_original_function": true,
+      "positions": 6144,
+      "nonmasked_label_positions": 1841,
+      "label_mask_population_audit": false
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 GIFARC contains **1,614 ARC-style tasks** with **17,010 stored input/output pairs**, derived from GIF-inspired task sketches. Each task combines an analogical task frame, executable generation/transformation code, and grid examples. It is a resource for studying how task framing appears in model-generated rule descriptions, how support components affect solving, and how GIFARC transfers to ARC-AGI.
 
-The paper finds modestly greater metaphorical wording and reference-frame alignment in emitted `inferred_rule` descriptions. These descriptions are model outputs; the analyses do not measure internal reasoning. Solving effects depend on the model, support components, and metric; matched wording comparisons show no consistent solving advantage for metaphorical wording. Supervised fine-tuning reaches up to 6.4% ARC-AGI-1 exact match and improves ARC-AGI-2 cell-level metrics, while ARC-AGI-2 exact match remains zero. In-context results are mixed across exact match, grid-cell accuracy, and foreground accuracy.
+The paper finds more metaphorical language and mixed alignment evidence in emitted `inferred_rule` descriptions. These descriptions are model outputs; the analyses do not measure internal reasoning. Solving effects depend on the model, support components, and metric; matched wording comparisons show no consistent solving advantage for metaphorical wording. Supervised fine-tuning reaches up to 6.4% ARC-AGI-1 exact match and improves ARC-AGI-2 cell-level metrics, while ARC-AGI-2 exact match remains zero. In-context results are mixed across exact match, grid-cell accuracy, and foreground accuracy.
 
 GIFARC includes grids beyond ARC's 30×30 bound: **798 tasks** have every stored input and output within 30 rows and 30 columns; **3,160 input grids** and **5,578 output grids** exceed that bound. These counts describe stored examples, without executing task programs.
 
@@ -12,7 +12,7 @@ GIFARC includes grids beyond ARC's 30×30 bound: **798 tasks** have every stored
 
 ## Inspect the review artifacts
 
-This Software supplement preserves the original generation pipeline and adds the actual alignment/evaluation helper definitions, offline filtering, saved-metric reaggregation, and a compact ICL human-review sample. The [Data supplement](Data/README.md) contains `Data/data/data.jsonl` and `Data/data/alignment_scores.jsonl`. Raw source GIFs, original crawl metadata, private logs, checkpoints, and source GIF URLs are not distributed here.
+This Software supplement preserves the original generation pipeline and adds the actual alignment/evaluation helper definitions, offline filtering, saved-metric reaggregation, task-paired bootstrap intervals, finite support-code validation, current tokenizer replay evidence, and a compact ICL human-review sample. The Data supplement is included under `Data/`, containing `Data/data/data.jsonl` and `Data/data/alignment_scores.jsonl`. Raw source GIFs, original crawl metadata, private logs, checkpoints, and source GIF URLs are not distributed here.
 
 The Data rows retain `source`, `examples`, and `seeds`, and add `task_id` and `alignment`:
 
@@ -34,7 +34,7 @@ This is a schema illustration, not an actual score for task 240. `task_id` is th
 
 ## Offline checks and filtering
 
-Python 3.11 is sufficient for filtering and cached-result aggregation; these commands need no provider credentials. Run from this repository root. For ARR ZIPs, extract Data and Software beside each other and run from Software, using `../Data/` instead of `Data/`:
+Python 3.11 is sufficient for filtering and cached-result aggregation; these commands need no provider credentials. Run from the repository root; the Data supplement is included under `Data/`:
 
 ```bash
 python reproducibility/filter_alignment.py --help
@@ -47,9 +47,16 @@ python reproducibility/reaggregate_results.py \
   --output-dir results/alignment_reaggregation
 python reproducibility/summarize_trace_margin.py --output results/trace_margin.csv
 python reproducibility/summarize_icl_review.py
+python reproducibility/analyze_saved_statistics.py \
+  --output-dir results/paired_statistics --verify-included
+python reproducibility/validate_support_controls.py \
+  --output-dir results/finite_support_check
+python reproducibility/summarize_sft_audit.py --output results/sft_audit.json
 ```
 
 Filtering retains `score >= tau`, excludes null scores, checks the sidecar source hashes, and copies selected original lines without rounding. It never executes task source. The five thresholds 0.45/0.50/0.55/0.60/0.65 retain 987/622/319/129/39 tasks, respectively, from 1,608 scored tasks; six unscored tasks are excluded. Reaggregation uses compact metrics from existing runs, keeps the original supports fixed, and reports metric-specific valid denominators.
+
+The paired analysis uses same-task, same-recorded-run valid pairs and equal task weights, with 50,000 task bootstrap draws. It reproduces six core language/alignment contrasts, all 18 matched solving contrasts, and the original table means. The finite code check covers only three supports and 29 stored inputs. The SFT audit reports current pinned-tokenizer sequence retention at 6,144 tokens; historical executed truncation counts remain unknown. See [statistical methods](docs/PAIRED_STATISTICS.md), [finite-check methods](docs/FINITE_SUPPORT_CHECK.md), and [SFT audit methods](docs/SFT_SEQUENCE_AUDIT.md).
 
 Usage Ratio is the proportion of detected **word tokens tagged as metaphorical** in an emitted rule description. Similarity is the embedding cosine similarity between that description and its reference GIFARC task frame. Existing `trace_*` filenames are retained for compatibility and refer to this rule-description analysis. GIFARC SFT jointly supervises task frames, solution code, and output grids; its transfer gains do not isolate task framing.
 
@@ -67,7 +74,6 @@ The review bundle supports local generation with user-provided GIFs. It does not
 README.md
 LICENSE
 AGENTS.md
-Data/                        processed tasks, alignment metadata, and dataset documentation
 description_executor.ipynb
 src/                         original generation code, prompts, and seed programs
 data/GIF/                    local input GIF directory
@@ -87,4 +93,4 @@ reproducibility/summaries/   compact saved metrics and reviewed sample
 }
 ```
 
-The original software is distributed under the [MIT License](LICENSE). Consult the [Data supplement](Data/DATA_LICENSE.md) for its data terms and [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md) for seed-program provenance and unresolved upstream licensing details. The software license does not grant rights to third-party GIFs, benchmark datasets, or model services.
+The original software is distributed under the [MIT License](LICENSE). Consult the Data supplement for its data terms and [Third-Party Notices](docs/THIRD_PARTY_NOTICES.md) for seed-program provenance and unresolved upstream licensing details. The software license does not grant rights to third-party GIFs, benchmark datasets, or model services.
