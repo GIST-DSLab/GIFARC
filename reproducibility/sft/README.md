@@ -23,7 +23,13 @@ python reproducibility/sft/sft_eval.py \
   --temperature 0
 ~~~
 
-Use matching, unique `(problem_id, test_index)` keys in the two evaluation files and the `messages` input format. Compare result keys with the input keys after a run. Legacy raw records mixed with message records can produce duplicate results, and missing target keys can leave rows unscored. The evaluator's completion message can appear after either case.
+## Evaluation inputs and results
+
+Give each input and its target the same *problem_id* and *test_index*. Every input needs one target. The evaluator validates the files before loading the model. For raw source/examples records, the last example supplies the test input, and an omitted test index defaults to 0. Message-format input and raw input can share one file.
+
+Transduction scores the predicted grid directly. It accepts the documented output marker or a standalone grid of space-separated color names. A wrong or unparsable prediction counts as incorrect. A runtime failure stops the run, and results already written remain available.
+
+To resume, run the same command with the same output path. The evaluator validates the saved rows, removes a truncated final line if present, and runs the missing keys. It rejects duplicate keys, extra result keys, corrupt complete lines, and mismatched run settings where those settings are recorded. Results from older versions may lack run settings, so use the original model, data, and arguments when resuming them. If an old raw result has a null test index, use a new output path to regenerate it with a valid key. A successful run reports coverage and accuracy across all expected keys, including rows written by previous runs.
 
 The historical Bash launchers expect their original dataset layouts. Set `GIFARC_TRAIN_OUTPUT_DIR` for the training output root or `GIFARC_CHECKPOINT_ROOT` for the evaluation checkpoint root. Both roots default to `./models` relative to the launch directory.
 

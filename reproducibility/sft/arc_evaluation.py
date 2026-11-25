@@ -295,10 +295,24 @@ def evaluate_induction(llm_output: str, test_input: List[List[int]], test_output
         "accuracy": accuracy
     }
 
+def parse_bare_grid(text: str) -> Optional[List[List[int]]]:
+    """Accept a standalone grid without treating prose that names colors as a grid."""
+    lines = text.strip().splitlines()
+    if len(lines) >= 3 and lines[0].strip() in ("```", "```text") and lines[-1].strip() == "```":
+        lines = lines[1:-1]
+    rows = [line.split() for line in lines]
+    if not rows or not rows[0] or any(len(row) != len(rows[0]) for row in rows):
+        return None
+    rows = [[COLOR_REPLACEMENTS.get(token, token) for token in row] for row in rows]
+    if any(token not in REVERSED_MAPPING for row in rows for token in row):
+        return None
+    return [[REVERSED_MAPPING[token] for token in row] for row in rows]
+
+
 def evaluate_transduction(llm_output: str, test_output: List[List[int]], test_input: List[List[int]] = None) -> Dict:
     """Evaluate using transduction method (direct grid parsing)"""
     # Extract predicted grid
-    predicted = extract_test_output_grid(llm_output)
+    predicted = extract_test_output_grid(llm_output) or parse_bare_grid(llm_output)
 
     if not predicted:
         result = {

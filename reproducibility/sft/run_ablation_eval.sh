@@ -136,7 +136,7 @@ for MODEL in "${MODELS[@]}"; do
         for SEED in "${SEEDS[@]}"; do
             # Create results directory for this seed
             SEED_RESULTS_DIR="./results/seed${SEED}"
-            mkdir -p ${SEED_RESULTS_DIR}
+            mkdir -p "${SEED_RESULTS_DIR}" || exit "$?"
 
             # ---- Base model evaluation (no fine-tuning) ----
             JOB_COUNT=$((JOB_COUNT + 1))
@@ -147,28 +147,22 @@ for MODEL in "${MODELS[@]}"; do
             # Use naming compatible with existing base model results
             OUTPUT_PATH="${SEED_RESULTS_DIR}/${MODEL_PREFIX}-GIFARC-ablation-base-seed${SEED}_${DATASET}-eval-${SAMPLE_COUNT}.jsonl"
 
-            if [ -f "${OUTPUT_PATH}" ]; then
-                echo "⏭ Output already exists: ${OUTPUT_PATH}"
-                echo "Skipping this evaluation..."
+            if CUDA_VISIBLE_DEVICES="${GPU_DEVICE}" python "$SCRIPT_DIR/sft_eval.py" \
+                --model_name "${MODEL_NAME}" \
+                --model_path "${EVAL_MODEL_PATH}" \
+                --input_data_path "${INPUT_DATA_PATH}" \
+                --ground_truth_data_path "${GROUND_TRUTH_EVAL_PATH}" \
+                --output_path "${OUTPUT_PATH}" \
+                --max_length "${MAX_LENGTH}" \
+                --max_new_tokens "${MAX_NEW_TOKENS}" \
+                --evaluation_mode "${EVAL_MODE}" \
+                --temperature "${TEMPERATURE}" \
+                --seed "${SEED}"; then
+                echo "✓ [${MODEL}] [${DATASET}] base seed ${SEED} completed"
             else
-                CUDA_VISIBLE_DEVICES=${GPU_DEVICE} python "$SCRIPT_DIR/sft_eval.py" \
-                    --model_name ${MODEL_NAME} \
-                    --model_path "$EVAL_MODEL_PATH" \
-                    --input_data_path ${INPUT_DATA_PATH} \
-                    --ground_truth_data_path ${GROUND_TRUTH_EVAL_PATH} \
-                    --output_path ${OUTPUT_PATH} \
-                    --max_length ${MAX_LENGTH} \
-                    --max_new_tokens ${MAX_NEW_TOKENS} \
-                    --evaluation_mode ${EVAL_MODE} \
-                    --temperature ${TEMPERATURE} \
-                    --seed ${SEED}
-
-                if [ $? -eq 0 ]; then
-                    echo "✓ [${MODEL}] [${DATASET}] base seed ${SEED} completed"
-                else
-                    echo "✗ [${MODEL}] [${DATASET}] base seed ${SEED} failed"
-                    exit 1
-                fi
+                STATUS=$?
+                echo "✗ [${MODEL}] [${DATASET}] base seed ${SEED} failed" >&2
+                exit "${STATUS}"
             fi
 
             # ---- SFT model evaluations (per training source) ----
@@ -181,7 +175,7 @@ for MODEL in "${MODELS[@]}"; do
                 echo ""
                 echo "Job ${JOB_COUNT}/${TOTAL_JOBS}: [${MODEL}] [${DATASET}] sft-${TRAIN_SRC} ${ABLATION_TYPE} seed ${SEED}..."
 
-                EVAL_MODEL_PATH=$(get_checkpoint_path ${MODEL} ${TRAIN_SRC} ${ABLATION_TYPE} ${SEED})
+                EVAL_MODEL_PATH=$(get_checkpoint_path "${MODEL}" "${TRAIN_SRC}" "${ABLATION_TYPE}" "${SEED}")
 
                 # Naming convention:
                 #   GIFARC:   {MODEL_PREFIX}-GIFARC-ablation-sft-{ablation}-seed{N}_{dataset}-eval-{count}.jsonl  (compatible with existing results)
@@ -194,35 +188,26 @@ for MODEL in "${MODELS[@]}"; do
 
                 # Check if model checkpoint exists
                 if [ ! -d "${EVAL_MODEL_PATH}" ]; then
-                    echo "⚠ Warning: Model checkpoint not found at ${EVAL_MODEL_PATH}"
-                    echo "Skipping this evaluation..."
-                    continue
+                    echo "Error: Model checkpoint not found at ${EVAL_MODEL_PATH}" >&2
+                    exit 1
                 fi
 
-                # Skip if output file already exists
-                if [ -f "${OUTPUT_PATH}" ]; then
-                    echo "⏭ Output already exists: ${OUTPUT_PATH}"
-                    echo "Skipping this evaluation..."
-                    continue
-                fi
-
-                CUDA_VISIBLE_DEVICES=${GPU_DEVICE} python "$SCRIPT_DIR/sft_eval.py" \
-                    --model_name ${MODEL_NAME} \
-                    --model_path "$EVAL_MODEL_PATH" \
-                    --input_data_path ${INPUT_DATA_PATH} \
-                    --ground_truth_data_path ${GROUND_TRUTH_EVAL_PATH} \
-                    --output_path ${OUTPUT_PATH} \
-                    --max_length ${MAX_LENGTH} \
-                    --max_new_tokens ${MAX_NEW_TOKENS} \
-                    --evaluation_mode ${EVAL_MODE} \
-                    --temperature ${TEMPERATURE} \
-                    --seed ${SEED}
-
-                if [ $? -eq 0 ]; then
+                if CUDA_VISIBLE_DEVICES="${GPU_DEVICE}" python "$SCRIPT_DIR/sft_eval.py" \
+                    --model_name "${MODEL_NAME}" \
+                    --model_path "${EVAL_MODEL_PATH}" \
+                    --input_data_path "${INPUT_DATA_PATH}" \
+                    --ground_truth_data_path "${GROUND_TRUTH_EVAL_PATH}" \
+                    --output_path "${OUTPUT_PATH}" \
+                    --max_length "${MAX_LENGTH}" \
+                    --max_new_tokens "${MAX_NEW_TOKENS}" \
+                    --evaluation_mode "${EVAL_MODE}" \
+                    --temperature "${TEMPERATURE}" \
+                    --seed "${SEED}"; then
                     echo "✓ [${MODEL}] [${DATASET}] sft-${TRAIN_SRC} ${ABLATION_TYPE} seed ${SEED} completed"
                 else
-                    echo "✗ [${MODEL}] [${DATASET}] sft-${TRAIN_SRC} ${ABLATION_TYPE} seed ${SEED} failed"
-                    exit 1
+                    STATUS=$?
+                    echo "✗ [${MODEL}] [${DATASET}] sft-${TRAIN_SRC} ${ABLATION_TYPE} seed ${SEED} failed" >&2
+                    exit "${STATUS}"
                 fi
             done
         done
